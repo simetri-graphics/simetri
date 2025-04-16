@@ -4,6 +4,7 @@ site_description: simetri.graphics computational geometry library
 
 theme:
   name: material
+  custom_dir: overrides
   font:
     text: Roboto
     code: Roboto Mono
@@ -52,6 +53,18 @@ plugins:
       post_url_format: "{slug}"
   - tags:
       tags_file: tags.md
+
+  # - git-committers:
+  #   enabled: true
+  #   repository: simetri-graphics/simetri-blog
+  #   branch: main
+  #   token:
+  #   # expiration: July 15, 2025
+  # - git-revision-date-localized:
+  #     type: datetime
+  #     fallback_to_build_date: false
+  #     enable_creation_date: true
+  #     enabled: true
   # - rss:
   #   match_path: "posts/.*"
   #   pretty_print: true
