@@ -1,0 +1,127 @@
+site_name: simetri.graphics
+site_url: https://github.com/simetri-graphics/simetri
+site_description: simetri.graphics computational geometry library
+
+theme:
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/simetri_logo_48by48.gif
+  favicon: assets/simetri_logo_48by48.ico
+  features:
+    - navigation.footer
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.path
+    - navigation.tracking
+  #   - navigation.top
+  #   - navigation.expand
+  #   - navigation.sections
+  #   - navigation.instant
+  #   - navigation.tracking
+
+  palette:
+  # Dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: amber
+      accent: deep purple
+
+    # Light mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+
+plugins:
+  - search:
+  - blog:
+      blog_dir: .
+      categories_allowed:
+        - Tutorials
+        - Updates
+        - Enhancements
+        - Releases
+        - Bugs
+        - News
+      post_url_format: "{slug}"
+  - tags:
+      tags_file: tags.md
+  # - rss:
+  #   match_path: "posts/.*"
+  #   pretty_print: true
+  #   date_from_meta:
+  #     as_creation: date.created
+  #     as_update: date.updated
+  #   draft_docs: |
+  #     drafts/               # A "drafts" directory anywhere.
+  #     _unpublished.md       # A md file ending in _unpublished.md
+  #     !/foo_unpublished.md  # But keep this particular file.
+
+  # - categories:
+  #     generate_index: true
+  #     verbose: false
+  #     base_name: 'Blog Categories'
+  #     section_title: 'Blog'
+  #     no_nav: false
+  #     category_separator: '|'
+  # - blog:
+  #   blog_dir: .
+      # archive_date_format: MM/yyyy
+      # archive_date_format: yyyy
+extra:
+  generator: false
+  social:
+    - icon: simple/youtube
+      link: https://www.youtube.com/@fbasegmez
+    - icon: fontawesome/brands/github
+      link: https://github.com/mekanimo/simetri
+    # - icon: fontawesome/brands/x-twitter
+    #   link: https://twitter.com/fbasegmez
+    # - icon: fontawesome/instagram
+    #   link: https://www.instagram.com/fahri_basegmez
+
+hooks:
+  - hooks/socialmedia.py
+markdown_extensions:
+    - attr_list
+    - md_in_html
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        # emoji_generator: !!python/name:material.extensions.emoji.to_svg
+        # emoji_index: !!python/name:material.extensions.emoji.twemoji
+    - admonition
+    - pymdownx.details
+    # - codehilite:
+    #     guess_lang: false
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true
+        combine_header_slug: true
+    - tables
+
+extra_css:
+  - stylesheets/extra.css
+
+
+    # - tables
+    # - toc:
+    #     permalink: true
+    #     toc_depth: 2
+    #     title: Table of Contents
+
+
+
+copyright: Copyright &copy; 2025 Fahri Basegmez
