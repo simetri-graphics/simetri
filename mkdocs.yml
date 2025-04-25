@@ -1,6 +1,45 @@
 site_name: simetri.graphics
 site_url: https://github.com/simetri-graphics/simetri
 site_description: simetri.graphics computational geometry library
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Elements:
+      - Conventions: topics/conventions.md
+      - Shapes: topics/shapes.md
+      - Batches: topics/batches.md
+      - Bounding-boxes: topics/bounding_boxes.md
+      - Transformations: topics/transformations.md
+      - Canvas: topics/canvas.md
+      - Images: topics/images.md
+      - Paths: topics/paths.md
+      - Patterns: topics/patterns.md
+      - Style attributes: topics/styling.md
+      - Colors: topics/colors.md
+      - Modifiers: topics/modifiers.md
+      - Animation: topics/animation.md
+      # - Implementation: topics/implementation.md
+      # - Tilings: topics/tilings.md
+  - Extensions:
+      - Interlaced patterns: topics/interlaced.md
+      - Wallpaper-groups: topics/wallpaper.md
+      - Frieze-groups: topics/frieze.md
+      - Stars: topics/stars.md
+      - Turtle-graphics: topics/turtle.md
+      - L-Systems: topics/l-systems.md
+      - Tree maker: topics/tree-maker.md
+  - Gallery: gallery.md
+  - Tutorials: tutorials.md
+  - Tags: tags.md
+  # - Posts:
+      # - blog/index.md
+      # - Tags: tags.md
+      # - Beginner: tags/#beginner
+      # - Usage: usage.md
+  # - API Reference: https://mekanimo.github.io/simetri-docs/simetri.html
+  - API Reference: API/index.html
+  - Math: math.md
+  - Reading: reading.md
 
 theme:
   name: material
@@ -11,16 +50,19 @@ theme:
   logo: assets/simetri_logo_48by48.gif
   favicon: assets/simetri_logo_48by48.ico
   features:
-    - navigation.footer
+    # - toc.integrate
+    # - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - content.code.annotate
+    - content.code.copy
+    # - navigation.instant
+    - navigation.tracking
+    # - navigation.footer
     # - navigation.tabs
     # - navigation.tabs.sticky
-    - navigation.path
-    - navigation.tracking
-  #   - navigation.top
-  #   - navigation.expand
-  #   - navigation.sections
-  #   - navigation.instant
-  #   - navigation.tracking
+    # - navigation.top
+    # - navigation.expand
 
   palette:
   # Dark mode
@@ -43,16 +85,38 @@ plugins:
   - search:
   - blog:
       blog_dir: .
-      categories_allowed:
-        - Tutorials
-        - Updates
-        - Enhancements
-        - Releases
-        - Bugs
-        - News
       post_url_format: "{slug}"
+      archive_date_format: yyyy
+      # archive_date_format: MM yyyy
   - tags:
       tags_file: tags.md
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: true
+      skip_classes:
+        - custom-skip-class-name
+      auto_caption: false
+      caption_position: bottom
+      background: white
+      shadow: true
+      manual: false
+  # - categories:
+  #     generate_index: true
+  #     verbose: false
+  #     base_name: 'Blog Categories'
+  #     section_title: 'Blog'
+  #     no_nav: false
+  #     category_separator: '|'
+  # - blog:
+  #     blog_dir: .
+  #     archive_date_format: MM yyyy
+      # archive_date_format: yyyy
 
   # - git-committers:
   #   enabled: true
@@ -76,31 +140,21 @@ plugins:
   #     _unpublished.md       # A md file ending in _unpublished.md
   #     !/foo_unpublished.md  # But keep this particular file.
 
-  # - categories:
-  #     generate_index: true
-  #     verbose: false
-  #     base_name: 'Blog Categories'
-  #     section_title: 'Blog'
-  #     no_nav: false
-  #     category_separator: '|'
-  # - blog:
-  #   blog_dir: .
-      # archive_date_format: MM/yyyy
-      # archive_date_format: yyyy
+
 extra:
-  generator: false
-  social:
-    - icon: simple/youtube
-      link: https://www.youtube.com/@fbasegmez
-    - icon: fontawesome/brands/github
-      link: https://github.com/mekanimo/simetri
+  generator: true
+  # social:
+  #   - icon: simple/youtube
+  #     link: https://www.youtube.com/@fbasegmez
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/mekanimo/simetri
     # - icon: fontawesome/brands/x-twitter
     #   link: https://twitter.com/fbasegmez
     # - icon: fontawesome/instagram
     #   link: https://www.instagram.com/fahri_basegmez
 
-hooks:
-  - hooks/socialmedia.py
+# hooks:
+#   - hooks/socialmedia.py
 markdown_extensions:
     - attr_list
     - md_in_html
@@ -124,10 +178,29 @@ markdown_extensions:
         alternate_style: true
         combine_header_slug: true
     - tables
+    - abbr
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.keys
+    - pymdownx.blocks.caption
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+    - def_list
+    - pymdownx.betterem
+
 
 extra_css:
   - stylesheets/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
     # - tables
     # - toc:
@@ -137,4 +210,4 @@ extra_css:
 
 
 
-copyright: Copyright &copy; 2025 Fahri Basegmez
+copyright: Copyright &copy; 2025 Fahri Başeğmez
