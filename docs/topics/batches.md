@@ -5,3 +5,5 @@
 /// caption
 Structure of `Batch` objects.
 ///
+
+!!! note "Batch objects can contain other Batch objects."

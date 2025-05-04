@@ -3,5 +3,4 @@
 
 ##
 
-* [A simple `Shape`](tutorials/a_simple_triangle_shape.md)
-<!-- * [A simple `Shape` 2](tutorials/basics/triangles.md) -->
+* [A simple `Shape`](posts/a_simple_triangle_shape.md)

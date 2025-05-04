@@ -2,8 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = [
         "../assets/hex_spiral.svg",
         "../assets/impossible_triangle.svg",
-        "../assets/impossible_triangle.svg",
-        "../../assets/triangles_.svg",
+        "../assets/hrp_pg_152.svg",
+        "../assets/triangles_.svg",
+        "../assets/suleyman_1.svg",
+        "../assets/frieze_1.svg",
         "../assets/lace_8_3.svg",
         "../assets/lace_8_4.svg",
         "../assets/lace_10_3.svg",
@@ -12,11 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "../assets/lace_12_4.svg",
         "../assets/lace_14_3.svg",
         "../assets/lace_14_4.svg",
+        "../assets/scale_rotate.svg",
+        "../assets/scale_rotate2.svg",
         "../assets/simple_segments2_1.svg",
         "../assets/simple_segments2_1_.svg",
         "../assets/simple_segments2_2_.svg",
         "../assets/simple_segments2_2.svg",
         "../assets/simple_segments3.svg",
+        "../assets/even_odd_lace.svg",
 
     ]; // Replace with your image URLs
     const randomImage = images[Math.floor(Math.random() * images.length)];
@@ -32,8 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = [
         "../../assets/hex_spiral.svg",
         "../../assets/impossible_triangle.svg",
-        "../../assets/impossible_triangle.svg",
+        "../../assets/hrp_pg_152.svg",
         "../../assets/triangles_.svg",
+        "../../assets/suleyman_1.svg",
+        "../../assets/frieze_1.svg",
         "../../assets/lace_8_3.svg",
         "../../assets/lace_8_4.svg",
         "../../assets/lace_10_3.svg",
@@ -42,11 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "../../assets/lace_12_4.svg",
         "../../assets/lace_14_3.svg",
         "../../assets/lace_14_4.svg",
+        "../../assets/scale_rotate.svg",
+        "../../assets/scale_rotate2.svg",
         "../../assets/simple_segments2_1.svg",
         "../../assets/simple_segments2_1_.svg",
         "../../assets/simple_segments2_2_.svg",
         "../../assets/simple_segments2_2.svg",
         "../../assets/simple_segments3.svg",
+        "../../assets/even_odd_lace.svg",
     ]; // /docsReplace with your image URLs
     const randomImage = images[Math.floor(Math.random() * images.length)];
     const imgElement = document.createElement("img");

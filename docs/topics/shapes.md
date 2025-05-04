@@ -5,7 +5,7 @@
 
 ![Shape diagram](../assets/shape_diagram2.svg){ width="400" align="left"}
 /// caption
-Structure of `Shape` objects.
+The Structure of `Shape` objects.
 ///
 
 We can create a `Shape` object by using:

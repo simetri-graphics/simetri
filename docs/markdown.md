@@ -221,3 +221,24 @@ Previously, some of the supported types defined more than one qualifier. For exa
 <a id="sec_colored_headings"></a>
 ## Colored Headings
 ## Supported image formats
+
+![1](assets/hex_spiral.svg)
+![2](assets/impossible_triangle.svg)
+![3](assets/hrp_pg_152.svg)
+![4](assets/triangles_.svg)
+![5](assets/suleyman_1.svg)
+![6](assets/lace_8_3.svg)
+![7](assets/lace_8_4.svg)
+![8](assets/lace_10_3.svg)
+![9](assets/lace_10_4.svg)
+![10](assets/lace_12_3.svg)
+![11](assets/lace_12_4.svg)
+![12](assets/lace_14_3.svg)
+![13](assets/lace_14_4.svg)
+![14](assets/simple_segments2_1.svg)
+![15](assets/simple_segments2_1_.svg)
+![16](assets/simple_segments2_2_.svg)
+![17](assets/simple_segments2_2.svg)
+![18](assets/simple_segments3.svg)
+![18](assets/scale_rotate.svg)
+![18](assets/scale_rotate2.svg)

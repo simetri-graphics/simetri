@@ -1,6 +1,9 @@
+![parquet](assets/star_parquet.svg){ width="100%" }
+
 # SİMETRİ Home
+
 ![logo](assets/sg_logo_transp.svg)
-##
+
 
 simetri.graphics (SİMETRİ) is a Python based graphics library that focuses on 2D symmetry operations and pattern generation. It uses the [TikZ library](https://tikz.net) and generates .tex files that can be compiled to create output files. It can also be used in Jupyter notebooks to create complex geometric patterns and designs. The library is designed to be easy to use and flexible, allowing users to create a wide variety of symmetrical patterns with minimal effort. The library also includes a number of computational geometry utility functions for working with 2D geometry.
 

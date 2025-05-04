@@ -12,12 +12,14 @@ nav:
       - Transformations: topics/transformations.md
       - Canvas: topics/canvas.md
       - Images: topics/images.md
-      - Paths: topics/paths.md
+      - Paths: topics/linpath_doc.md
       - Patterns: topics/patterns.md
-      - Style attributes: topics/styling.md
+      - Style attributes:
+          - Line-style: topics/styling.md
+          - Fill-style: topics/style/line_style.md
       - Colors: topics/colors.md
-      - Modifiers: topics/modifiers.md
-      - Animation: topics/animation.md
+      # - Modifiers: topics/modifiers.md
+      # - Animation: topics/animation.md
       # - Implementation: topics/implementation.md
       # - Tilings: topics/tilings.md
   - Extensions:
@@ -38,7 +40,7 @@ nav:
       # - Usage: usage.md
   # - API Reference: https://mekanimo.github.io/simetri-docs/simetri.html
   - API Reference: API/index.html
-  - Math: math.md
+  # - Math: math.md
   - Reading: reading.md
 
 theme:
@@ -158,6 +160,8 @@ extra:
 markdown_extensions:
     - attr_list
     - md_in_html
+    - toc:
+        title: On This Page
     - pymdownx.emoji:
         emoji_index: !!python/name:material.extensions.emoji.twemoji
         emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -181,6 +185,11 @@ markdown_extensions:
     - abbr
     - pymdownx.arithmatex:
         generic: true
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
     - pymdownx.keys
     - pymdownx.blocks.caption
     - pymdownx.caret
@@ -188,6 +197,16 @@ markdown_extensions:
     - pymdownx.tilde
     - def_list
     - pymdownx.betterem
+    - pymdownx.smartsymbols:
+        trademark: true
+        copyright: true
+        registered: true
+        care_of: true
+        plusminus: true
+        arrows: true
+        notequal: true
+        fractions: true
+        ordinal_numbers: true
 
 
 extra_css:
