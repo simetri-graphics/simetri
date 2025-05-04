@@ -22,14 +22,14 @@ nav:
       # - Animation: topics/animation.md
       # - Implementation: topics/implementation.md
       # - Tilings: topics/tilings.md
-  - Extensions:
-      - Interlaced patterns: topics/interlaced.md
-      - Wallpaper-groups: topics/wallpaper.md
-      - Frieze-groups: topics/frieze.md
-      - Stars: topics/stars.md
-      - Turtle-graphics: topics/turtle.md
-      - L-Systems: topics/l-systems.md
-      - Tree maker: topics/tree-maker.md
+  # - Extensions:
+  #     - Interlaced patterns: topics/interlaced.md
+  #     - Wallpaper-groups: topics/wallpaper.md
+  #     - Frieze-groups: topics/frieze.md
+  #     - Stars: topics/stars.md
+  #     - Turtle-graphics: topics/turtle.md
+  #     - L-Systems: topics/l-systems.md
+  #     - Tree maker: topics/tree-maker.md
   - Gallery: gallery.md
   - Tutorials: tutorials.md
   - Tags: tags.md
