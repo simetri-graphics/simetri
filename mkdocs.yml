@@ -14,7 +14,6 @@ nav:
       - Images: topics/images.md
       - Paths: topics/linpath_doc.md
       - Patterns: topics/patterns.md
-      - JS: js_test/example.html
       - Style attributes:
           - Line-style: topics/styling.md
           - Fill-style: topics/style/line_style.md
