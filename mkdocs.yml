@@ -1,5 +1,5 @@
 site_name: simetri.graphics
-site_url: https://github.com/simetri-graphics/simetri
+site_url: https://github.com/simetri-graphics/simetri-blog
 site_description: simetri.graphics computational geometry library
 nav:
   - Home: index.md
