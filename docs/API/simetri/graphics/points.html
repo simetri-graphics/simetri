@@ -666,11 +666,8 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Initialize a Points object.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>coords (Sequence[Point], optional):</strong>  The coordinates of the points. Defaults to None.</li>
-</ul>
+<p>Args:
+    coords (Sequence[Point], optional): The coordinates of the points. Defaults to None.</p>
 </div>
 
 
@@ -758,17 +755,11 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Append a point to the points.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    item (Point): The point to append.</p>
 
-<ul>
-<li><strong>item (Point):</strong>  The point to append.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Self: The updated Points object.</p>
-</blockquote>
+<p>Returns:
+    Self: The updated Points object.</p>
 </div>
 
 
@@ -801,17 +792,11 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Extend the points with a given sequence of points.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    items (Sequence[Point]): The sequence of points to add.</p>
 
-<ul>
-<li><strong>items (Sequence[Point]):</strong>  The sequence of points to add.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Self: The updated Points object.</p>
-</blockquote>
+<p>Returns:
+    Self: The updated Points object.</p>
 </div>
 
 
@@ -844,17 +829,11 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Remove the point at the given index and return it.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    index (int, optional): The index of the point to remove. Defaults to -1.</p>
 
-<ul>
-<li><strong>index (int, optional):</strong>  The index of the point to remove. Defaults to -1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Point: The removed point.</p>
-</blockquote>
+<p>Returns:
+    Point: The removed point.</p>
 </div>
 
 
@@ -883,11 +862,8 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Remove the first occurrence of the given point.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>value (Point):</strong>  The point value to remove.</li>
-</ul>
+<p>Args:
+    value (Point): The point value to remove.</p>
 </div>
 
 
@@ -917,12 +893,9 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Insert a point at the specified index.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>index (int):</strong>  The index to insert the point at.</li>
-<li><strong>points (Point):</strong>  The point to insert.</li>
-</ul>
+<p>Args:
+    index (int): The index to insert the point at.
+    points (Point): The point to insert.</p>
 </div>
 
 
@@ -995,11 +968,8 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Return the homogeneous coordinates of the points.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>ndarray: The homogeneous coordinates.</p>
-</blockquote>
+<p>Returns:
+    ndarray: The homogeneous coordinates.</p>
 </div>
 
 
@@ -1029,11 +999,8 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Return a copy of the Points object.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Points: A copy of the Points object.</p>
-</blockquote>
+<p>Returns:
+    Points: A copy of the Points object.</p>
 </div>
 
 
@@ -1060,11 +1027,8 @@ coordinates in nd_arrays. Used in Shape objects.</p>
 
             <div class="docstring"><p>Return a list of consecutive pairs of points.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list[tuple[Point, Point]]: A list where each element is a tuple containing two consecutive points.</p>
-</blockquote>
+<p>Returns:
+    list[tuple[Point, Point]]: A list where each element is a tuple containing two consecutive points.</p>
 </div>
 
 

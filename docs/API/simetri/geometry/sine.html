@@ -247,24 +247,18 @@
 
             <div class="docstring"><p>Sinusoidal wave generator</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    period (float, optional): Period of the sine wave. Defaults to 40.
+    amplitude (float, optional): Amplitude of the sine wave. Defaults to 20.
+    duration (float, optional): Duration of the sine wave. Defaults to 1.
+    n_points (int, optional): Sampling rate. Defaults to 100.
+    phase_angle (float, optional): Phase angle of the sine wave. Defaults to 0.
+    damping (float, optional): Damping coefficient. .001-.005 is usual. Defaults to 0.
+    rot_angle (float, optional): Rotation angle of the sine wave.. Defaults to 0.
+    xform_matrix (ndarray, optional): Transformation matrix. Defaults to None.</p>
 
-<ul>
-<li><strong>period (float, optional):</strong>  Period of the sine wave. Defaults to 40.</li>
-<li><strong>amplitude (float, optional):</strong>  Amplitude of the sine wave. Defaults to 20.</li>
-<li><strong>duration (float, optional):</strong>  Duration of the sine wave. Defaults to 1.</li>
-<li><strong>n_points (int, optional):</strong>  Sampling rate. Defaults to 100.</li>
-<li><strong>phase_angle (float, optional):</strong>  Phase angle of the sine wave. Defaults to 0.</li>
-<li><strong>damping (float, optional):</strong>  Damping coefficient. .001-.005 is usual. Defaults to 0.</li>
-<li><strong>rot_angle (float, optional):</strong>  Rotation angle of the sine wave.. Defaults to 0.</li>
-<li><strong>xform_matrix (ndarray, optional):</strong>  Transformation matrix. Defaults to None.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Shape: _description_</p>
-</blockquote>
+<p>Returns:
+    Shape: _description_</p>
 </div>
 
 
@@ -312,20 +306,14 @@
 
             <div class="docstring"><p>Initialize a Shape object.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points (Sequence[Point], optional): The points that make up the shape.
+    closed (bool, optional): Whether the shape is closed. Defaults to False.
+    xform_matrix (np.array, optional): The transformation matrix. Defaults to None.
+    **kwargs (dict): Additional attributes for the shape.</p>
 
-<ul>
-<li><strong>points (Sequence[Point], optional):</strong>  The points that make up the shape.</li>
-<li><strong>closed (bool, optional):</strong>  Whether the shape is closed. Defaults to False.</li>
-<li><strong>xform_matrix (np.array, optional):</strong>  The transformation matrix. Defaults to None.</li>
-<li><strong>**kwargs (dict):</strong>  Additional attributes for the shape.</li>
-</ul>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the provided subtype is not valid.</li>
-</ul>
+<p>Raises:
+    ValueError: If the provided subtype is not valid.</p>
 </div>
 
 
@@ -451,11 +439,8 @@
 
             <div class="docstring"><p>_description_</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>SineWave: _description_</p>
-</blockquote>
+<p>Returns:
+    SineWave: _description_</p>
 </div>
 
 

@@ -624,7 +624,7 @@ like : array_like, optional
     by it. In this case, it ensures the creation of an array object
     compatible with that passed in via this argument.</p>
 
-<pre><code>*New in version 1.20.0.*
+<pre><code>.. versionadded:: 1.20.0
 </code></pre>
 
 <h2 id="returns">Returns</h2>
@@ -737,9 +737,9 @@ not necessarily 'C' as expected. This is likely a bug.</p>
 <li><p>If both <code>a</code> and <code>b</code> are 1-D arrays, it is inner product of vectors
 (without complex conjugation).</p></li>
 <li><p>If both <code>a</code> and <code>b</code> are 2-D arrays, it is matrix multiplication,
-but using <code>matmul()</code> or <code>a @ b</code> is preferred.</p></li>
+but using :func:<code>matmul</code> or <code>a @ b</code> is preferred.</p></li>
 <li><p>If either <code>a</code> or <code>b</code> is 0-D (scalar), it is equivalent to
-<code>multiply()</code> and using <code>numpy.multiply(a, b)</code> or <code>a * b</code> is
+:func:<code>multiply</code> and using <code>numpy.multiply(a, b)</code> or <code>a * b</code> is
 preferred.</p></li>
 <li><p>If <code>a</code> is an N-D array and <code>b</code> is a 1-D array, it is a sum product over
 the last axis of <code>a</code> and <code>b</code>.</p></li>
@@ -964,25 +964,19 @@ linalg.multi_dot : Chained dot product.</p>
             <div class="docstring"><p>Given the centers and radii of 3 circles, return the center and radius
 of a circle that is tangent to all 3 circles.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    c1 (tuple): Center of the first circle.
+    r1 (float): Radius of the first circle.
+    c2 (tuple): Center of the second circle.
+    r2 (float): Radius of the second circle.
+    c3 (tuple): Center of the third circle.
+    r3 (float): Radius of the third circle.
+    s1 (int, optional): Sign for the first circle. Defaults to -1.
+    s2 (int, optional): Sign for the second circle. Defaults to -1.
+    s3 (int, optional): Sign for the third circle. Defaults to -1.</p>
 
-<ul>
-<li><strong>c1 (tuple):</strong>  Center of the first circle.</li>
-<li><strong>r1 (float):</strong>  Radius of the first circle.</li>
-<li><strong>c2 (tuple):</strong>  Center of the second circle.</li>
-<li><strong>r2 (float):</strong>  Radius of the second circle.</li>
-<li><strong>c3 (tuple):</strong>  Center of the third circle.</li>
-<li><strong>r3 (float):</strong>  Radius of the third circle.</li>
-<li><strong>s1 (int, optional):</strong>  Sign for the first circle. Defaults to -1.</li>
-<li><strong>s2 (int, optional):</strong>  Sign for the second circle. Defaults to -1.</li>
-<li><strong>s3 (int, optional):</strong>  Sign for the third circle. Defaults to -1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Center (x, y) and radius of the tangent circle.</p>
-</blockquote>
+<p>Returns:
+    tuple: Center (x, y) and radius of the tangent circle.</p>
 </div>
 
 
@@ -1032,23 +1026,17 @@ of a circle that is tangent to all 3 circles.</p>
 
             <div class="docstring"><p>Solves the Problem of Apollonius using Descartes' Theorem.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    r1 (float): Radius of the first circle.
+    r2 (float): Radius of the second circle.
+    r3 (float): Radius of the third circle.
+    z1 (complex): Center of the first circle.
+    z2 (complex): Center of the second circle.
+    z3 (complex): Center of the third circle.
+    plus_minus (int, optional): +1 for outer tangent circle, -1 for inner tangent circle. Defaults to 1.</p>
 
-<ul>
-<li><strong>r1 (float):</strong>  Radius of the first circle.</li>
-<li><strong>r2 (float):</strong>  Radius of the second circle.</li>
-<li><strong>r3 (float):</strong>  Radius of the third circle.</li>
-<li><strong>z1 (complex):</strong>  Center of the first circle.</li>
-<li><strong>z2 (complex):</strong>  Center of the second circle.</li>
-<li><strong>z3 (complex):</strong>  Center of the third circle.</li>
-<li><strong>plus_minus (int, optional):</strong>  +1 for outer tangent circle, -1 for inner tangent circle. Defaults to 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Radius and center coordinates (x, y) of the tangent circle, or None if no solution is found.</p>
-</blockquote>
+<p>Returns:
+    tuple: Radius and center coordinates (x, y) of the tangent circle, or None if no solution is found.</p>
 </div>
 
 
@@ -1285,21 +1273,15 @@ of a circle that is tangent to all 3 circles.</p>
             <div class="docstring"><p>Given the centers and radii of 2 circles, return the center
 of a circle with radius r that is tangent to both circles.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    c1 (tuple): Center of the first circle.
+    r1 (float): Radius of the first circle.
+    c2 (tuple): Center of the second circle.
+    r2 (float): Radius of the second circle.
+    r (float): Radius of the tangent circle.</p>
 
-<ul>
-<li><strong>c1 (tuple):</strong>  Center of the first circle.</li>
-<li><strong>r1 (float):</strong>  Radius of the first circle.</li>
-<li><strong>c2 (tuple):</strong>  Center of the second circle.</li>
-<li><strong>r2 (float):</strong>  Radius of the second circle.</li>
-<li><strong>r (float):</strong>  Radius of the tangent circle.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Centers (x1, y1) and (x2, y2) of the tangent circle.</p>
-</blockquote>
+<p>Returns:
+    tuple: Centers (x1, y1) and (x2, y2) of the tangent circle.</p>
 </div>
 
 
@@ -1363,21 +1345,15 @@ of a circle with radius r that is tangent to both circles.</p>
 
             <div class="docstring"><p>Returns the tangent points (p1, p2, p3, p4) in world coordinates.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    center1 (tuple): Center of the first circle.
+    radius (float): Radius of the first circle.
+    center2 (tuple): Center of the second circle.
+    radius2 (float): Radius of the second circle.
+    cross (bool, optional): Whether to calculate crossing tangents. Defaults to False.</p>
 
-<ul>
-<li><strong>center1 (tuple):</strong>  Center of the first circle.</li>
-<li><strong>radius (float):</strong>  Radius of the first circle.</li>
-<li><strong>center2 (tuple):</strong>  Center of the second circle.</li>
-<li><strong>radius2 (float):</strong>  Radius of the second circle.</li>
-<li><strong>cross (bool, optional):</strong>  Whether to calculate crossing tangents. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Tangent points (p1, p2, p3, p4) in world coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: Tangent points (p1, p2, p3, p4) in world coordinates.</p>
 </div>
 
 
@@ -1408,17 +1384,11 @@ of a circle with radius r that is tangent to both circles.</p>
 
             <div class="docstring"><p>Given the radius of a circle, return the area of the circle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rad (float): Radius of the circle.</p>
 
-<ul>
-<li><strong>rad (float):</strong>  Radius of the circle.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>float: Area of the circle.</p>
-</blockquote>
+<p>Returns:
+    float: Area of the circle.</p>
 </div>
 
 
@@ -1449,17 +1419,11 @@ of a circle with radius r that is tangent to both circles.</p>
 
             <div class="docstring"><p>Given the radius of a circle, return the circumference of the circle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    rad (float): Radius of the circle.</p>
 
-<ul>
-<li><strong>rad (float):</strong>  Radius of the circle.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>float: Circumference of the circle.</p>
-</blockquote>
+<p>Returns:
+    float: Circumference of the circle.</p>
 </div>
 
 
@@ -1498,19 +1462,13 @@ of a circle with radius r that is tangent to both circles.</p>
             <div class="docstring"><p>Given the radii of 3 circles forming an interstice, return the angle between
 the lines connecting circles' centers to center of the circle with r1 radius.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    r1 (float): Radius of the first circle.
+    r2 (float): Radius of the second circle.
+    r3 (float): Radius of the third circle.</p>
 
-<ul>
-<li><strong>r1 (float):</strong>  Radius of the first circle.</li>
-<li><strong>r2 (float):</strong>  Radius of the second circle.</li>
-<li><strong>r3 (float):</strong>  Radius of the third circle.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>float: Angle between the lines connecting circles' centers.</p>
-</blockquote>
+<p>Returns:
+    float: Angle between the lines connecting circles' centers.</p>
 </div>
 
 
@@ -1573,26 +1531,17 @@ the lines connecting circles' centers to center of the circle with r1 radius.</p
 
             <div class="docstring"><p>Steiner chain. Return a list of circles that form a flower-like pattern.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    n (int): Number of circles.
+    radius (float, optional): Radius of the circles. Defaults to 25.
+    layers (int, optional): Number of layers. Defaults to 6.
+    ratio (float, optional): Ratio for scaling. Defaults to None.</p>
 
-<ul>
-<li><strong>n (int):</strong>  Number of circles.</li>
-<li><strong>radius (float, optional):</strong>  Radius of the circles. Defaults to 25.</li>
-<li><strong>layers (int, optional):</strong>  Number of layers. Defaults to 6.</li>
-<li><strong>ratio (float, optional):</strong>  Ratio for scaling. Defaults to None.</li>
-</ul>
+<p>Returns:
+    list: List of circles forming a flower-like pattern.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: List of circles forming a flower-like pattern.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If n is less than 8.</li>
-</ul>
+<p>Raises:
+    ValueError: If n is less than 8.</p>
 </div>
 
 

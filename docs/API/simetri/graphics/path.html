@@ -933,7 +933,7 @@
 </span><span id="L-734"><a href="#L-734"><span class="linenos">734</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">operations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">PathOps</span><span class="o">.</span><span class="n">STYLE</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)))</span>
 </span><span id="L-735"><a href="#L-735"><span class="linenos">735</span></a>        <span class="k">return</span> <span class="bp">self</span>
 </span><span id="L-736"><a href="#L-736"><span class="linenos">736</span></a>
-</span><span id="L-737"><a href="#L-737"><span class="linenos">737</span></a>    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xform_matrix</span><span class="p">:</span> <span class="n">array</span><span class="p">,</span> <span class="n">reps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="L-737"><a href="#L-737"><span class="linenos">737</span></a>    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xform_matrix</span><span class="p">:</span> <span class="n">array</span><span class="p">,</span> <span class="n">reps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">merge</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="L-738"><a href="#L-738"><span class="linenos">738</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Used internally. Update the shape with a transformation matrix.</span>
 </span><span id="L-739"><a href="#L-739"><span class="linenos">739</span></a>
 </span><span id="L-740"><a href="#L-740"><span class="linenos">740</span></a><span class="sd">        Args:</span>
@@ -956,8 +956,9 @@
 </span><span id="L-757"><a href="#L-757"><span class="linenos">757</span></a>                <span class="n">path</span><span class="o">.</span><span class="n">_update</span><span class="p">(</span><span class="n">xform_matrix</span><span class="p">)</span>
 </span><span id="L-758"><a href="#L-758"><span class="linenos">758</span></a>                <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </span><span id="L-759"><a href="#L-759"><span class="linenos">759</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
-</span><span id="L-760"><a href="#L-760"><span class="linenos">760</span></a>
-</span><span id="L-761"><a href="#L-761"><span class="linenos">761</span></a>        <span class="k">return</span> <span class="n">res</span>
+</span><span id="L-760"><a href="#L-760"><span class="linenos">760</span></a>        <span class="k">if</span> <span class="n">merge</span> <span class="ow">and</span> <span class="n">reps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="L-761"><a href="#L-761"><span class="linenos">761</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">merge_shapes</span><span class="p">()</span>
+</span><span id="L-762"><a href="#L-762"><span class="linenos">762</span></a>        <span class="k">return</span> <span class="n">res</span>
 </span></pre></div>
 
 
@@ -1031,7 +1032,7 @@ like : array_like, optional
     by it. In this case, it ensures the creation of an array object
     compatible with that passed in via this argument.</p>
 
-<pre><code>*New in version 1.20.0.*
+<pre><code>.. versionadded:: 1.20.0
 </code></pre>
 
 <h2 id="returns">Returns</h2>
@@ -1161,13 +1162,10 @@ not necessarily 'C' as expected. This is likely a bug.</p>
 
             <div class="docstring"><p>An operation for a Path object.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>subtype (Types):</strong>  The subtype of the operation.</li>
-<li><strong>data (tuple):</strong>  The data associated with the operation.</li>
-<li><strong>name (str):</strong>  The name of the operation.</li>
-</ul>
+<p>Attributes:
+    subtype (Types): The subtype of the operation.
+    data (tuple): The data associated with the operation.
+    name (str): The name of the operation.</p>
 </div>
 
 
@@ -1907,7 +1905,7 @@ not necessarily 'C' as expected. This is likely a bug.</p>
 </span><span id="LinPath-735"><a href="#LinPath-735"><span class="linenos">735</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">operations</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">PathOps</span><span class="o">.</span><span class="n">STYLE</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)))</span>
 </span><span id="LinPath-736"><a href="#LinPath-736"><span class="linenos">736</span></a>        <span class="k">return</span> <span class="bp">self</span>
 </span><span id="LinPath-737"><a href="#LinPath-737"><span class="linenos">737</span></a>
-</span><span id="LinPath-738"><a href="#LinPath-738"><span class="linenos">738</span></a>    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xform_matrix</span><span class="p">:</span> <span class="n">array</span><span class="p">,</span> <span class="n">reps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="LinPath-738"><a href="#LinPath-738"><span class="linenos">738</span></a>    <span class="k">def</span> <span class="nf">_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xform_matrix</span><span class="p">:</span> <span class="n">array</span><span class="p">,</span> <span class="n">reps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">merge</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="LinPath-739"><a href="#LinPath-739"><span class="linenos">739</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Used internally. Update the shape with a transformation matrix.</span>
 </span><span id="LinPath-740"><a href="#LinPath-740"><span class="linenos">740</span></a>
 </span><span id="LinPath-741"><a href="#LinPath-741"><span class="linenos">741</span></a><span class="sd">        Args:</span>
@@ -1930,8 +1928,9 @@ not necessarily 'C' as expected. This is likely a bug.</p>
 </span><span id="LinPath-758"><a href="#LinPath-758"><span class="linenos">758</span></a>                <span class="n">path</span><span class="o">.</span><span class="n">_update</span><span class="p">(</span><span class="n">xform_matrix</span><span class="p">)</span>
 </span><span id="LinPath-759"><a href="#LinPath-759"><span class="linenos">759</span></a>                <span class="n">paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </span><span id="LinPath-760"><a href="#LinPath-760"><span class="linenos">760</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">Batch</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
-</span><span id="LinPath-761"><a href="#LinPath-761"><span class="linenos">761</span></a>
-</span><span id="LinPath-762"><a href="#LinPath-762"><span class="linenos">762</span></a>        <span class="k">return</span> <span class="n">res</span>
+</span><span id="LinPath-761"><a href="#LinPath-761"><span class="linenos">761</span></a>        <span class="k">if</span> <span class="n">merge</span> <span class="ow">and</span> <span class="n">reps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="LinPath-762"><a href="#LinPath-762"><span class="linenos">762</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">merge_shapes</span><span class="p">()</span>
+</span><span id="LinPath-763"><a href="#LinPath-763"><span class="linenos">763</span></a>        <span class="k">return</span> <span class="n">res</span>
 </span></pre></div>
 
 
@@ -1992,14 +1991,11 @@ Path objects can be transformed like other Shape and Batch objects.</p>
 
             <div class="docstring"><p>Initialize a Path object.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>start (Point, optional):</strong>  The starting point of the path. Defaults to (0, 0).</li>
-<li><strong>angle (float, optional):</strong>  The heading angle of the path. Defaults to pi/2.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments. Common properties are line_width,</li>
-<li>line_color, stroke, etc.</li>
-</ul>
+<p>Args:
+    start (Point, optional): The starting point of the path. Defaults to (0, 0).
+    angle (float, optional): The heading angle of the path. Defaults to pi/2.
+    **kwargs: Additional keyword arguments. Common properties are line_width,
+    line_color, stroke, etc.</p>
 </div>
 
 
@@ -2186,11 +2182,8 @@ Path objects can be transformed like other Shape and Batch objects.</p>
 
             <div class="docstring"><p>Return a copy of the path.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>LinPath: The copied path object.</p>
-</blockquote>
+<p>Returns:
+    LinPath: The copied path object.</p>
 </div>
 
 
@@ -2276,18 +2269,12 @@ Path objects can be transformed like other Shape and Batch objects.</p>
 coordinate system with the path's midpoint and y-axis aligned
 with the path.angle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    dx (float): The x offset.
+    dy (float): The y offset.</p>
 
-<ul>
-<li><strong>dx (float):</strong>  The x offset.</li>
-<li><strong>dy (float):</strong>  The y offset.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The relative coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The relative coordinates.</p>
 </div>
 
 
@@ -2326,18 +2313,12 @@ with the path.angle.</p>
 coordinate system with the path's midpoint and 0 degree axis aligned
 with the path.angle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    r (float): The radius.
+    angle (float): The angle in radians.</p>
 
-<ul>
-<li><strong>r (float):</strong>  The radius.</li>
-<li><strong>angle (float):</strong>  The angle in radians.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The relative coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The relative coordinates.</p>
 </div>
 
 
@@ -2371,18 +2352,12 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Add a line to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    point (Point): The end point of the line.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>point (Point):</strong>  The end point of the line.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2423,24 +2398,15 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Extend the path by the given length.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    length (float): The length to extend.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>length (float):</strong>  The length to extend.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Returns:
+    Path: The path object.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the path angle is not set.</li>
-</ul>
+<p>Raises:
+    ValueError: If the path angle is not set.</p>
 </div>
 
 
@@ -2474,18 +2440,12 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Move the path to a new point.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    point (Point): The new point.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>point (Point):</strong>  The new point.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2521,19 +2481,13 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Add a relative line to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    dx (float): The x offset.
+    dy (float): The y offset.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>dx (float):</strong>  The x offset.</li>
-<li><strong>dy (float):</strong>  The y offset.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2569,19 +2523,13 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Move the path to a new relative point.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    dx (float): The x offset.
+    dy (float): The y offset.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>dx (float):</strong>  The x offset.</li>
-<li><strong>dy (float):</strong>  The y offset.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2615,18 +2563,12 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Add a horizontal line to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    length (float): The length of the line.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>length (float):</strong>  The length of the line.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2660,18 +2602,12 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Add a vertical line to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    length (float): The length of the line.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>length (float):</strong>  The length of the line.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2705,18 +2641,12 @@ with the path.angle.</p>
 
             <div class="docstring"><p>Add a series of line segments to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points (list): The points of the segments.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>points (list):</strong>  The points of the segments.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2760,21 +2690,15 @@ with the path.angle.</p>
             <div class="docstring"><p>Add a Bézier curve with two control points to the path. Multiple blended curves can be added
 by providing additional arguments.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control1 (Point): The first control point.
+    control2 (Point): The second control point.
+    end (Point): The end point of the curve.
+    <em>args: Additional arguments for blended curves.
+    *</em>kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control1 (Point):</strong>  The first control point.</li>
-<li><strong>control2 (Point):</strong>  The second control point.</li>
-<li><strong>end (Point):</strong>  The end point of the curve.</li>
-<li><strong>*args:</strong>  Additional arguments for blended curves.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2807,18 +2731,12 @@ by providing additional arguments.</p>
 
             <div class="docstring"><p>Add a Hobby curve to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points (list): The points of the Hobby curve.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>points (list):</strong>  The points of the Hobby curve.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2877,26 +2795,17 @@ by providing additional arguments.</p>
             <div class="docstring"><p>Add a quadratic Bézier curve to the path. Multiple blended curves can be added by providing
 additional arguments.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control (Point): The control point.
+    end (Point): The end point of the curve.
+    <em>args: Additional arguments for blended curves.
+    *</em>kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control (Point):</strong>  The control point.</li>
-<li><strong>end (Point):</strong>  The end point of the curve.</li>
-<li><strong>*args:</strong>  Additional arguments for blended curves.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Returns:
+    Path: The path object.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If an argument does not have exactly two elements.</li>
-</ul>
+<p>Raises:
+    ValueError: If an argument does not have exactly two elements.</p>
 </div>
 
 
@@ -2938,20 +2847,14 @@ additional arguments.</p>
 
             <div class="docstring"><p>Add a cubic Bézier curve to the path where the first control point is computed based on a length.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control1_length (float): The length to the first control point.
+    control2 (Point): The second control point.
+    end (Point): The end point of the curve.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control1_length (float):</strong>  The length to the first control point.</li>
-<li><strong>control2 (Point):</strong>  The second control point.</li>
-<li><strong>end (Point):</strong>  The end point of the curve.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -2987,19 +2890,13 @@ additional arguments.</p>
 
             <div class="docstring"><p>Add a quadratic Bézier curve to the path where the control point is computed based on a length.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control_length (float): The length to the control point.
+    end (Point): The end point of the curve.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control_length (float):</strong>  The length to the control point.</li>
-<li><strong>end (Point):</strong>  The end point of the curve.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3077,23 +2974,17 @@ additional arguments.</p>
             <div class="docstring"><p>Add an arc to the path. The arc is defined by an ellipse (with rx as half-width and ry as half-height).
 The sign of the span angle determines the drawing direction.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    radius_x (float): The x radius of the arc.
+    radius_y (float): The y radius of the arc.
+    start_angle (float): The starting angle of the arc.
+    span_angle (float): The span angle of the arc.
+    rot_angle (float, optional): The rotation angle of the arc. Defaults to 0.
+    n_points (int, optional): The number of points to use for the arc. Defaults to None.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>radius_x (float):</strong>  The x radius of the arc.</li>
-<li><strong>radius_y (float):</strong>  The y radius of the arc.</li>
-<li><strong>start_angle (float):</strong>  The starting angle of the arc.</li>
-<li><strong>span_angle (float):</strong>  The span angle of the arc.</li>
-<li><strong>rot_angle (float, optional):</strong>  The rotation angle of the arc. Defaults to 0.</li>
-<li><strong>n_points (int, optional):</strong>  The number of points to use for the arc. Defaults to None.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3172,23 +3063,17 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Add a blended elliptic arc to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    radius_x (float): The x radius of the arc.
+    radius_y (float): The y radius of the arc.
+    start_angle (float): The starting angle of the arc.
+    span_angle (float): The span angle of the arc.
+    sharp (bool, optional): Whether the arc is sharp. Defaults to False.
+    n_points (int, optional): The number of points to use for the arc. Defaults to None.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>radius_x (float):</strong>  The x radius of the arc.</li>
-<li><strong>radius_y (float):</strong>  The y radius of the arc.</li>
-<li><strong>start_angle (float):</strong>  The starting angle of the arc.</li>
-<li><strong>span_angle (float):</strong>  The span angle of the arc.</li>
-<li><strong>sharp (bool, optional):</strong>  Whether the arc is sharp. Defaults to False.</li>
-<li><strong>n_points (int, optional):</strong>  The number of points to use for the arc. Defaults to None.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3244,23 +3129,17 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Add a sine wave to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    period (float, optional): _description_. Defaults to 40.
+    amplitude (float, optional): _description_. Defaults to 20.
+    duration (float, optional): _description_. Defaults to 1.
+    n_points (int, optional): _description_. Defaults to 100.
+    phase_angle (float, optional): _description_. Defaults to 0.
+    damping (float, optional): _description_. Defaults to 0.
+    rot_angle (float, optional): _description_. Defaults to 0.</p>
 
-<ul>
-<li><strong>period (float, optional):</strong>  _description_. Defaults to 40.</li>
-<li><strong>amplitude (float, optional):</strong>  _description_. Defaults to 20.</li>
-<li><strong>duration (float, optional):</strong>  _description_. Defaults to 1.</li>
-<li><strong>n_points (int, optional):</strong>  _description_. Defaults to 100.</li>
-<li><strong>phase_angle (float, optional):</strong>  _description_. Defaults to 0.</li>
-<li><strong>damping (float, optional):</strong>  _description_. Defaults to 0.</li>
-<li><strong>rot_angle (float, optional):</strong>  _description_. Defaults to 0.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3313,20 +3192,14 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Add a blended sine wave to the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    amplitude (float): The amplitude of the wave.
+    frequency (float): The frequency of the wave.
+    length (float): The length of the wave.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>amplitude (float):</strong>  The amplitude of the wave.</li>
-<li><strong>frequency (float):</strong>  The frequency of the wave.</li>
-<li><strong>length (float):</strong>  The length of the wave.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3358,17 +3231,11 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Close the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3410,11 +3277,8 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Return the vertices of the path.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: The vertices of the path.</p>
-</blockquote>
+<p>Returns:
+    list: The vertices of the path.</p>
 </div>
 
 
@@ -3448,19 +3312,13 @@ The sign of the span angle determines the drawing direction.</p>
 
             <div class="docstring"><p>Set the style of the path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    name (str): The name of the style.
+    value (Any): The value of the style.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>name (str):</strong>  The name of the style.</li>
-<li><strong>value (Any):</strong>  The value of the style.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Path: The path object.</p>
-</blockquote>
+<p>Returns:
+    Path: The path object.</p>
 </div>
 
 
@@ -3482,7 +3340,6 @@ The sign of the span angle determines the drawing direction.</p>
                 <dd id="LinPath.blend_group" class="variable"><a href="batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="LinPath.transparency_group" class="variable"><a href="batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="LinPath.set_attribs" class="function"><a href="batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="LinPath.set_batch_attr" class="function"><a href="batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="LinPath.proximity" class="function"><a href="batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="LinPath.append" class="function"><a href="batch.html#Batch.append">append</a></dd>
                 <dd id="LinPath.reverse" class="function"><a href="batch.html#Batch.reverse">reverse</a></dd>
@@ -3500,6 +3357,12 @@ The sign of the span angle determines the drawing direction.</p>
                 <dd id="LinPath.merge_shapes" class="function"><a href="batch.html#Batch.merge_shapes">merge_shapes</a></dd>
                 <dd id="LinPath.all_polygons" class="function"><a href="batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="LinPath.b_box" class="variable"><a href="batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="LinPath.union" class="function"><a href="batch.html#Batch.union">union</a></dd>
+                <dd id="LinPath.intersection" class="function"><a href="batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="LinPath.difference" class="function"><a href="batch.html#Batch.difference">difference</a></dd>
+                <dd id="LinPath.symmetric_difference" class="function"><a href="batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="LinPath.subset" class="function"><a href="batch.html#Batch.subset">subset</a></dd>
+                <dd id="LinPath.superset" class="function"><a href="batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="core.html#Base">simetri.graphics.core.Base</a></dt>

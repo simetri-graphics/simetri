@@ -496,13 +496,10 @@
 
             <div class="docstring"><p>A state of the turtle.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>pos (tuple):</strong>  The position of the turtle.</li>
-<li><strong>angle (float):</strong>  The angle of the turtle.</li>
-<li><strong>pen_is_down (bool):</strong>  Whether the pen is down.</li>
-</ul>
+<p>Attributes:
+    pos (tuple): The position of the turtle.
+    angle (float): The angle of the turtle.
+    pen_is_down (bool): Whether the pen is down.</p>
 </div>
 
 
@@ -793,13 +790,10 @@
 <p>This class implements a turtle graphics system that can be used to draw
 geometric shapes and patterns.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>*args:</strong>  Variable length argument list passed to the parent class.</li>
-<li><strong>in_degrees (bool, optional):</strong>  Whether angles are measured in degrees. Defaults to False.</li>
-<li><strong>**kwargs:</strong>  Arbitrary keyword arguments passed to the parent class.</li>
-</ul>
+<p>Args:
+    <em>args: Variable length argument list passed to the parent class.
+    in_degrees (bool, optional): Whether angles are measured in degrees. Defaults to False.
+    *</em>kwargs: Arbitrary keyword arguments passed to the parent class.</p>
 </div>
 
 
@@ -837,14 +831,11 @@ geometric shapes and patterns.</p>
 
             <div class="docstring"><p>Initialize a Batch object.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>elements (Sequence[Any], optional):</strong>  The elements to include in the batch.</li>
-<li><strong>modifiers (Sequence[Modifier], optional):</strong>  The modifiers to apply to the batch.</li>
-<li><strong>subtype (Types, optional):</strong>  The subtype of the batch.</li>
-<li><strong>kwargs (dict):</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Args:
+    elements (Sequence[Any], optional): The elements to include in the batch.
+    modifiers (Sequence[Modifier], optional): The modifiers to apply to the batch.
+    subtype (Types, optional): The subtype of the batch.
+    kwargs (dict): Additional keyword arguments.</p>
 </div>
 
 
@@ -957,11 +948,8 @@ geometric shapes and patterns.</p>
 
 <p>The angle is clamped to the appropriate range based on the angle mode.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>float: The current angle, normalized to 0-360 degrees or 0-2π radians.</p>
-</blockquote>
+<p>Returns:
+    float: The current angle, normalized to 0-360 degrees or 0-2π radians.</p>
 </div>
 
 
@@ -996,11 +984,8 @@ geometric shapes and patterns.</p>
 
 <p>Moves the turtle and draws a line if the pen is down.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>dist (float, optional):</strong>  The distance to move forward. Defaults to self.def_dist.</li>
-</ul>
+<p>Args:
+    dist (float, optional): The distance to move forward. Defaults to self.def_dist.</p>
 </div>
 
 
@@ -1037,11 +1022,8 @@ geometric shapes and patterns.</p>
 <p>Moves the turtle regardless of the pen state, and doesn't draw.
 Saves the current path and starts a new one.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>dist (float, optional):</strong>  The distance to move forward. Defaults to self.def_dist.</li>
-</ul>
+<p>Args:
+    dist (float, optional): The distance to move forward. Defaults to self.def_dist.</p>
 </div>
 
 
@@ -1071,11 +1053,8 @@ Saves the current path and starts a new one.</p>
 
             <div class="docstring"><p>Move the turtle backward by the given distance.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>dist (float, optional):</strong>  The distance to move backward. Defaults to self.def_dist.</li>
-</ul>
+<p>Args:
+    dist (float, optional): The distance to move backward. Defaults to self.def_dist.</p>
 </div>
 
 
@@ -1105,11 +1084,8 @@ Saves the current path and starts a new one.</p>
 
             <div class="docstring"><p>Turn the turtle left by the given angle.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>angle (float, optional):</strong>  The angle to turn left. Defaults to self.def_angle.</li>
-</ul>
+<p>Args:
+    angle (float, optional): The angle to turn left. Defaults to self.def_angle.</p>
 </div>
 
 
@@ -1139,11 +1115,8 @@ Saves the current path and starts a new one.</p>
 
             <div class="docstring"><p>Turn the turtle right by the given angle.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>angle (float, optional):</strong>  The angle to turn right. Defaults to self.def_angle.</li>
-</ul>
+<p>Args:
+    angle (float, optional): The angle to turn right. Defaults to self.def_angle.</p>
 </div>
 
 
@@ -1262,11 +1235,8 @@ to the current path.</p>
 
             <div class="docstring"><p>Move the turtle to the given position.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>pos (tuple):</strong>  The target position as (x, y) coordinates.</li>
-</ul>
+<p>Args:
+    pos (tuple): The target position as (x, y) coordinates.</p>
 </div>
 
 
@@ -1385,7 +1355,6 @@ and pen state.</p>
                 <dd id="Turtle.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="Turtle.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="Turtle.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="Turtle.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="Turtle.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="Turtle.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="Turtle.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -1404,6 +1373,12 @@ and pen state.</p>
                 <dd id="Turtle.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="Turtle.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="Turtle.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="Turtle.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="Turtle.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="Turtle.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="Turtle.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="Turtle.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="Turtle.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>
@@ -1457,24 +1432,15 @@ and pen state.</p>
 
 <p>Spirolateral helper function that adds all digits in a number.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    n (int): The number to process.</p>
 
-<ul>
-<li><strong>n (int):</strong>  The number to process.</li>
-</ul>
+<p>Returns:
+    int: The sum of all digits in n.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>int: The sum of all digits in n.</p>
-</blockquote>
-
-<h6 id="examples">Examples:</h6>
-
-<blockquote>
-  <p>10 -> 1 + 0 -> 1
-  123 -> 1 + 2 + 3 -> 6</p>
-</blockquote>
+<p>Examples:
+    10 -> 1 + 0 -> 1
+    123 -> 1 + 2 + 3 -> 6</p>
 </div>
 
 
@@ -1517,20 +1483,14 @@ and pen state.</p>
 
             <div class="docstring"><p>Draw a spirolateral with the given sequence and angle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    sequence (Sequence): Sequence of numbers determining segment lengths.
+    angle (float): Angle in degrees for turns.
+    cycles (int, optional): Number of cycles to draw. Defaults to 15.
+    multiplier (float, optional): Scaling factor for segment lengths. Defaults to 50.</p>
 
-<ul>
-<li><strong>sequence (Sequence):</strong>  Sequence of numbers determining segment lengths.</li>
-<li><strong>angle (float):</strong>  Angle in degrees for turns.</li>
-<li><strong>cycles (int, optional):</strong>  Number of cycles to draw. Defaults to 15.</li>
-<li><strong>multiplier (float, optional):</strong>  Scaling factor for segment lengths. Defaults to 50.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Turtle: The turtle object used for drawing.</p>
-</blockquote>
+<p>Returns:
+    Turtle: The turtle object used for drawing.</p>
 </div>
 
 
@@ -1572,21 +1532,15 @@ and pen state.</p>
 
             <div class="docstring"><p>Draw a spiral with the given side, angle, delta, and cycles.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    turtle (Turtle): The turtle object to use for drawing.
+    side (float): Initial length of the side.
+    angle (float): Angle to turn after drawing each side.
+    delta (float): Amount to increase the side length in each step.
+    cycles (int, optional): Number of segments to draw. Defaults to 15.</p>
 
-<ul>
-<li><strong>turtle (Turtle):</strong>  The turtle object to use for drawing.</li>
-<li><strong>side (float):</strong>  Initial length of the side.</li>
-<li><strong>angle (float):</strong>  Angle to turn after drawing each side.</li>
-<li><strong>delta (float):</strong>  Amount to increase the side length in each step.</li>
-<li><strong>cycles (int, optional):</strong>  Number of segments to draw. Defaults to 15.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Turtle: The turtle object used for drawing.</p>
-</blockquote>
+<p>Returns:
+    Turtle: The turtle object used for drawing.</p>
 </div>
 
 

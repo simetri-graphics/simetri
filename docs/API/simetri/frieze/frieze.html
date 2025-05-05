@@ -373,19 +373,13 @@
 
             <div class="docstring"><p>p1 symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Union[Batch, Shape]): The design to be repeated.
+    vector (VecType, optional): The direction and distance of the hop. Defaults to (1, 0).
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Union[Batch, Shape]):</strong>  The design to be repeated.</li>
-<li><strong>vector (VecType, optional):</strong>  The direction and distance of the hop. Defaults to (1, 0).</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with the p1 symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with the p1 symmetry.</p>
 </div>
 
 
@@ -419,19 +413,13 @@
 
             <div class="docstring"><p>p1 symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Union[Batch, Shape]): The design to be repeated.
+    vector (VecType, optional): The direction and distance of the hop. Defaults to (1, 0).
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Union[Batch, Shape]):</strong>  The design to be repeated.</li>
-<li><strong>vector (VecType, optional):</strong>  The direction and distance of the hop. Defaults to (1, 0).</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with the p1 symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with the p1 symmetry.</p>
 </div>
 
 
@@ -475,20 +463,14 @@
 
             <div class="docstring"><p>p11m symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Union[Batch, Shape]): The design to be repeated.
+    mirror_line (Line): The line to mirror the design.
+    dist (float): The distance between the shapes.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Union[Batch, Shape]):</strong>  The design to be repeated.</li>
-<li><strong>mirror_line (Line):</strong>  The line to mirror the design.</li>
-<li><strong>dist (float):</strong>  The distance between the shapes.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of shapes with the p11m symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of shapes with the p11m symmetry.</p>
 </div>
 
 
@@ -531,20 +513,14 @@
 
             <div class="docstring"><p>Jump along the given path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    mirror_line (Line): The line to mirror the design.
+    path (Sequence[Point]): The path along which to translate the design.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>mirror_line (Line):</strong>  The line to mirror the design.</li>
-<li><strong>path (Sequence[Point]):</strong>  The path along which to translate the design.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of shapes with the jump along symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of shapes with the jump along symmetry.</p>
 </div>
 
 
@@ -582,20 +558,14 @@
 
             <div class="docstring"><p>p1m1 symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    mirror_line (Line): The line to mirror the design.
+    dist (float): The distance between the shapes.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>mirror_line (Line):</strong>  The line to mirror the design.</li>
-<li><strong>dist (float):</strong>  The distance between the shapes.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with the sidle symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with the sidle symmetry.</p>
 </div>
 
 
@@ -634,20 +604,14 @@
 
             <div class="docstring"><p>Sidle along the given path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    mirror_line (Line): The line to mirror the design.
+    path (Sequence[Point]): The path along which to translate the design.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>mirror_line (Line):</strong>  The line to mirror the design.</li>
-<li><strong>path (Sequence[Point]):</strong>  The path along which to translate the design.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of shapes with the sidle along symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of shapes with the sidle along symmetry.</p>
 </div>
 
 
@@ -688,21 +652,15 @@
 
             <div class="docstring"><p>p2 symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    rotocenter (Point): The center of rotation.
+    dx (float): The distance to translate in the x direction.
+    dy (float): The distance to translate in the y direction.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>dx (float):</strong>  The distance to translate in the x direction.</li>
-<li><strong>dy (float):</strong>  The distance to translate in the y direction.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with spinning hop symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with spinning hop symmetry.</p>
 </div>
 
 
@@ -744,21 +702,15 @@
 
             <div class="docstring"><p>p2mm symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    mirror1 (Line): The first mirror line.
+    mirror2 (Line): The second mirror line.
+    dist (float): The distance between the shapes along mirror1.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>mirror1 (Line):</strong>  The first mirror line.</li>
-<li><strong>mirror2 (Line):</strong>  The second mirror line.</li>
-<li><strong>dist (float):</strong>  The distance between the shapes along mirror1.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with spinning jump symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with spinning jump symmetry.</p>
 </div>
 
 
@@ -806,22 +758,16 @@
 
             <div class="docstring"><p>p2mg symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    mirror_line (Line, optional): The mirror line. Defaults to None.
+    glide_line (Line, optional): The glide line. Defaults to None.
+    glide_dist (float, optional): The distance of the glide. Defaults to None.
+    trans_dist (float, optional): The distance of the translation. Defaults to None.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>mirror_line (Line, optional):</strong>  The mirror line. Defaults to None.</li>
-<li><strong>glide_line (Line, optional):</strong>  The glide line. Defaults to None.</li>
-<li><strong>glide_dist (float, optional):</strong>  The distance of the glide. Defaults to None.</li>
-<li><strong>trans_dist (float, optional):</strong>  The distance of the translation. Defaults to None.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with spinning sidle symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with spinning sidle symmetry.</p>
 </div>
 
 
@@ -865,20 +811,14 @@
 
             <div class="docstring"><p>p11g symmetry group.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    glide_line (Line, optional): The glide line. Defaults to None.
+    glide_dist (float, optional): The distance of the glide. Defaults to None.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>glide_line (Line, optional):</strong>  The glide line. Defaults to None.</li>
-<li><strong>glide_dist (float, optional):</strong>  The distance of the glide. Defaults to None.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of Shapes with step symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of Shapes with step symmetry.</p>
 </div>
 
 
@@ -923,21 +863,15 @@
 
             <div class="docstring"><p>Step along a path.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    design (Batch): The design to be repeated.
+    glide_line (Line, optional): The glide line. Defaults to None.
+    glide_dist (float, optional): The distance of the glide. Defaults to None.
+    path (Sequence[Point], optional): The path along which to translate the design. Defaults to None.
+    reps (int, optional): The number of repetitions. Defaults to 3.</p>
 
-<ul>
-<li><strong>design (Batch):</strong>  The design to be repeated.</li>
-<li><strong>glide_line (Line, optional):</strong>  The glide line. Defaults to None.</li>
-<li><strong>glide_dist (float, optional):</strong>  The distance of the glide. Defaults to None.</li>
-<li><strong>path (Sequence[Point], optional):</strong>  The path along which to translate the design. Defaults to None.</li>
-<li><strong>reps (int, optional):</strong>  The number of repetitions. Defaults to 3.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: A Batch of shapes with the step along symmetry.</p>
-</blockquote>
+<p>Returns:
+    Batch: A Batch of shapes with the step along symmetry.</p>
 </div>
 
 

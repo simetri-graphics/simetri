@@ -214,17 +214,11 @@
 
             <div class="docstring"><p>Returns the name of a MIDI note given its number.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    midi_note: An integer representing the MIDI note number (0-127).</p>
 
-<ul>
-<li><strong>midi_note:</strong>  An integer representing the MIDI note number (0-127).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A string representing the note name (e.g., "C4", "G#5"), or None if the input is invalid.</p>
-</blockquote>
+<p>Returns:
+    A string representing the note name (e.g., "C4", "G#5"), or None if the input is invalid.</p>
 </div>
 
 
@@ -289,27 +283,16 @@
 </span></pre></div>
 
 
-            <div class="docstring"><p>Return the note in a scale that is a certain number of steps away from a reference note.</p>
+            <div class="docstring"><p>Return the note in a scale that is a certain number of steps away from a reference note.
+Args:
+    scale: A list of MIDI notes in a scale.
+    reference: The reference note.
+    step: The number of steps away from the reference note.
+Returns:
+    The note in the scale that is a certain number of steps away from the reference note.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>scale:</strong>  A list of MIDI notes in a scale.</li>
-<li><strong>reference:</strong>  The reference note.</li>
-<li><strong>step:</strong>  The number of steps away from the reference note.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>The note in the scale that is a certain number of steps away from the reference note.</p>
-</blockquote>
-
-<h6 id="example">Example:</h6>
-
-<blockquote>
-  <p>jump_scale([60, 62, 64, 65, 67, 69, 71], 60, -2) returns 69.</p>
-</blockquote>
+<p>Example:
+    jump_scale([60, 62, 64, 65, 67, 69, 71], 60, -2) returns 69.</p>
 </div>
 
 

@@ -617,14 +617,11 @@
 
             <div class="docstring"><p>Initialize a Batch object.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>elements (Sequence[Any], optional):</strong>  The elements to include in the batch.</li>
-<li><strong>modifiers (Sequence[Modifier], optional):</strong>  The modifiers to apply to the batch.</li>
-<li><strong>subtype (Types, optional):</strong>  The subtype of the batch.</li>
-<li><strong>kwargs (dict):</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Args:
+    elements (Sequence[Any], optional): The elements to include in the batch.
+    modifiers (Sequence[Modifier], optional): The modifiers to apply to the batch.
+    subtype (Types, optional): The subtype of the batch.
+    kwargs (dict): Additional keyword arguments.</p>
 </div>
 
 
@@ -718,18 +715,12 @@
 
             <div class="docstring"><p>Returns the intersection of the lines connecting the given indices.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    line1 (Sequence[int]): A sequence containing two indices (ind1, ind2).
+    line2 (Sequence[int]): A sequence containing two indices (ind3, ind4).</p>
 
-<ul>
-<li><strong>line1 (Sequence[int]):</strong>  A sequence containing two indices (ind1, ind2).</li>
-<li><strong>line2 (Sequence[int]):</strong>  A sequence containing two indices (ind3, ind4).</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: (x, y) intersection point of the lines.</p>
-</blockquote>
+<p>Returns:
+    tuple: (x, y) intersection point of the lines.</p>
 </div>
 
 
@@ -762,18 +753,12 @@
 
             <div class="docstring"><p>Returns the line connecting the given indices.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    ind1 (int): The first index.
+    ind2 (int): The second index.</p>
 
-<ul>
-<li><strong>ind1 (int):</strong>  The first index.</li>
-<li><strong>ind2 (int):</strong>  The second index.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The line connecting the two points.</p>
-</blockquote>
+<p>Returns:
+    tuple: The line connecting the two points.</p>
 </div>
 
 
@@ -810,18 +795,12 @@
 radius is the distance from the center to the point.
 The index is the index of the point in the grid.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    radius (float): The radius.
+    index (int): The index of the point.</p>
 
-<ul>
-<li><strong>radius (float):</strong>  The radius.</li>
-<li><strong>index (int):</strong>  The index of the point.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The polar point.</p>
-</blockquote>
+<p>Returns:
+    tuple: The polar point.</p>
 </div>
 
 
@@ -864,19 +843,13 @@ The index is the index of the point in the grid.</p>
             <div class="docstring"><p>Returns the point on the line connecting the given indices interpolated
 by using the given t parameter.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    ind1 (int): The first index.
+    ind2 (int): The second index.
+    t (float): The parameter used for interpolation. Default is 0.5.</p>
 
-<ul>
-<li><strong>ind1 (int):</strong>  The first index.</li>
-<li><strong>ind2 (int):</strong>  The second index.</li>
-<li><strong>t (float):</strong>  The parameter used for interpolation. Default is 0.5.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Point: The point on the line connecting the two points.</p>
-</blockquote>
+<p>Returns:
+    Point: The point on the line connecting the two points.</p>
 </div>
 
 
@@ -899,7 +872,6 @@ by using the given t parameter.</p>
                 <dd id="Grid.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="Grid.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="Grid.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="Grid.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="Grid.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="Grid.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="Grid.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -919,6 +891,12 @@ by using the given t parameter.</p>
                 <dd id="Grid.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="Grid.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="Grid.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="Grid.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="Grid.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="Grid.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="Grid.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="Grid.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="Grid.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>
@@ -1007,14 +985,11 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Initializes the grid with the given center, radius, number of rows, and number of columns.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>center (Point):</strong>  The center point of the grid.</li>
-<li><strong>n (int):</strong>  The number of points in the regular polygon.</li>
-<li><strong>radius (float):</strong>  The radius of the grid.</li>
-<li><strong>n_circles (int):</strong>  The number of circles in the grid. Used for drawing the grid.</li>
-</ul>
+<p>Args:
+    center (Point): The center point of the grid.
+    n (int): The number of points in the regular polygon.
+    radius (float): The radius of the grid.
+    n_circles (int): The number of circles in the grid. Used for drawing the grid.</p>
 </div>
 
 
@@ -1049,7 +1024,6 @@ by using the given t parameter.</p>
                 <dd id="CircularGrid.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="CircularGrid.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="CircularGrid.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="CircularGrid.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="CircularGrid.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="CircularGrid.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="CircularGrid.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -1069,6 +1043,12 @@ by using the given t parameter.</p>
                 <dd id="CircularGrid.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="CircularGrid.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="CircularGrid.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="CircularGrid.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="CircularGrid.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="CircularGrid.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="CircularGrid.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="CircularGrid.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="CircularGrid.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>
@@ -1147,13 +1127,10 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Initializes the grid with the given center, radius, number of rows, and number of columns.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>center (Point):</strong>  The center point of the hexagon.</li>
-<li><strong>radius (float):</strong>  The circumradius of the hexagon.</li>
-<li><strong>n_circles (int):</strong>  The number of circles in the grid. Used for drawing the grid.</li>
-</ul>
+<p>Args:
+    center (Point): The center point of the hexagon.
+    radius (float): The circumradius of the hexagon.
+    n_circles (int): The number of circles in the grid. Used for drawing the grid.</p>
 </div>
 
 
@@ -1188,7 +1165,6 @@ by using the given t parameter.</p>
                 <dd id="HexGrid.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="HexGrid.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="HexGrid.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="HexGrid.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="HexGrid.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="HexGrid.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="HexGrid.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -1208,6 +1184,12 @@ by using the given t parameter.</p>
                 <dd id="HexGrid.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="HexGrid.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="HexGrid.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="HexGrid.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="HexGrid.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="HexGrid.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="HexGrid.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="HexGrid.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="HexGrid.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>
@@ -1324,13 +1306,10 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Initializes the grid with the given center, number of rows, number of columns, and cell size.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>center (Point):</strong>  The center point of the grid.</li>
-<li><strong>n (int):</strong>  The number of points in the grid. Square of an even integer.</li>
-<li><strong>cell_size (float):</strong>  The size of each cell in the grid.</li>
-</ul>
+<p>Args:
+    center (Point): The center point of the grid.
+    n (int): The number of points in the grid. Square of an even integer.
+    cell_size (float): The size of each cell in the grid.</p>
 </div>
 
 
@@ -1387,7 +1366,6 @@ by using the given t parameter.</p>
                 <dd id="SquareGrid.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="SquareGrid.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="SquareGrid.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="SquareGrid.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="SquareGrid.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="SquareGrid.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="SquareGrid.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -1407,6 +1385,12 @@ by using the given t parameter.</p>
                 <dd id="SquareGrid.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="SquareGrid.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="SquareGrid.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="SquareGrid.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="SquareGrid.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="SquareGrid.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="SquareGrid.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="SquareGrid.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="SquareGrid.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>
@@ -1456,19 +1440,13 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Converts the given (x, y) coordinates from the standard basis to the given basis.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x (float): The x-coordinate.
+    y (float): The y-coordinate.
+    basis (tuple): The basis to convert to.</p>
 
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate.</li>
-<li><strong>y (float):</strong>  The y-coordinate.</li>
-<li><strong>basis (tuple):</strong>  The basis to convert to.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The converted (x, y) coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The converted (x, y) coordinates.</p>
 </div>
 
 
@@ -1502,19 +1480,13 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Converts the given (x, y) coordinates from the given basis to the standard basis.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x (float): The x-coordinate.
+    y (float): The y-coordinate.
+    basis (tuple): The basis to convert from.</p>
 
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate.</li>
-<li><strong>y (float):</strong>  The y-coordinate.</li>
-<li><strong>basis (tuple):</strong>  The basis to convert from.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The converted (x, y) coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The converted (x, y) coordinates.</p>
 </div>
 
 
@@ -1547,18 +1519,12 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Converts the given (x, y) coordinates to isometric coordinates.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x (float): The x-coordinate.
+    y (float): The y-coordinate.</p>
 
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate.</li>
-<li><strong>y (float):</strong>  The y-coordinate.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The isometric (x, y) coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The isometric (x, y) coordinates.</p>
 </div>
 
 
@@ -1591,18 +1557,12 @@ by using the given t parameter.</p>
 
             <div class="docstring"><p>Converts the given isometric (x, y) coordinates to Cartesian coordinates.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x (float): The x-coordinate.
+    y (float): The y-coordinate.</p>
 
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate.</li>
-<li><strong>y (float):</strong>  The y-coordinate.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: The Cartesian (x, y) coordinates.</p>
-</blockquote>
+<p>Returns:
+    tuple: The Cartesian (x, y) coordinates.</p>
 </div>
 
 

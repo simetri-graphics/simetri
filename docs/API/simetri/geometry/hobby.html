@@ -652,18 +652,15 @@
 
 <p>We subclass <code>complex</code> to perform complex arithmetic with points on the Hobby curve, as required in the algorithm.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate of the point.</li>
-<li><strong>y (float):</strong>  The y-coordinate of the point.</li>
-<li><strong>alpha (float):</strong>  The reciprocal of tension for incoming segment.</li>
-<li><strong>beta (float):</strong>  The reciprocal of tension for outgoing segment.</li>
-<li><strong>d_val (float):</strong>  Distance between this point and next.</li>
-<li><strong>theta (float):</strong>  Angle of polygonal line from this point to next.</li>
-<li><strong>phi (float):</strong>  Offset angle.</li>
-<li><strong>psi (float):</strong>  Another offset angle.</li>
-</ul>
+<p>Attributes:
+    x (float): The x-coordinate of the point.
+    y (float): The y-coordinate of the point.
+    alpha (float): The reciprocal of tension for incoming segment.
+    beta (float): The reciprocal of tension for outgoing segment.
+    d_val (float): Distance between this point and next.
+    theta (float): Angle of polygonal line from this point to next.
+    phi (float): Offset angle.
+    psi (float): Another offset angle.</p>
 </div>
 
 
@@ -699,13 +696,10 @@
 
             <div class="docstring"><p>Initialize a HobbyPoint with coordinates and tension.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>x:</strong>  The x-coordinate of the point.</li>
-<li><strong>y:</strong>  The y-coordinate of the point.</li>
-<li><strong>tension:</strong>  The tension value for the curve.</li>
-</ul>
+<p>Args:
+    x: The x-coordinate of the point.
+    y: The y-coordinate of the point.
+    tension: The tension value for the curve.</p>
 </div>
 
 
@@ -829,11 +823,8 @@
 
             <div class="docstring"><p>Return a string with the point's information.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A string containing the point's coordinates and all of its computational values.</p>
-</blockquote>
+<p>Returns:
+    A string containing the point's coordinates and all of its computational values.</p>
 </div>
 
 
@@ -1057,17 +1048,14 @@
 
             <div class="docstring"><p>A class for calculating the control points required to draw a Hobby curve.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>points (list[HobbyPoint]):</strong>  The list of points defining the curve.</li>
-<li><strong>ctrl_pts (list[tuple]):</strong>  The calculated control points.</li>
-<li><strong>is_cyclic (bool):</strong>  Whether the curve is closed.</li>
-<li><strong>begin_curl (float):</strong>  Curl value for the beginning of the curve.</li>
-<li><strong>end_curl (float):</strong>  Curl value for the end of the curve.</li>
-<li><strong>n_points (int):</strong>  Number of points in the curve.</li>
-<li><strong>debug_mode (bool):</strong>  Whether to print debug information.</li>
-</ul>
+<p>Attributes:
+    points (list[HobbyPoint]): The list of points defining the curve.
+    ctrl_pts (list[tuple]): The calculated control points.
+    is_cyclic (bool): Whether the curve is closed.
+    begin_curl (float): Curl value for the beginning of the curve.
+    end_curl (float): Curl value for the end of the curve.
+    n_points (int): Number of points in the curve.
+    debug_mode (bool): Whether to print debug information.</p>
 </div>
 
 
@@ -1117,22 +1105,16 @@
 
             <div class="docstring"><p>Initialize a HobbyCurve with the given parameters.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points: List of (x, y) tuples representing the curve's points.
+    tension: Tension parameter controlling the "tightness" of the curve.
+    cyclic: Whether the curve should be closed.
+    begin_curl: Curl value for the beginning of the curve.
+    end_curl: Curl value for the end of the curve.
+    debug: Whether to print debug information.</p>
 
-<ul>
-<li><strong>points:</strong>  List of (x, y) tuples representing the curve's points.</li>
-<li><strong>tension:</strong>  Tension parameter controlling the "tightness" of the curve.</li>
-<li><strong>cyclic:</strong>  Whether the curve should be closed.</li>
-<li><strong>begin_curl:</strong>  Curl value for the beginning of the curve.</li>
-<li><strong>end_curl:</strong>  Curl value for the end of the curve.</li>
-<li><strong>debug:</strong>  Whether to print debug information.</li>
-</ul>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If fewer than 2 points are provided.</li>
-</ul>
+<p>Raises:
+    ValueError: If fewer than 2 points are provided.</p>
 </div>
 
 
@@ -1249,11 +1231,8 @@
 <p>Executes the Hobby algorithm by calculating distance values, psi values,
 theta values, and phi values, then uses these to compute control points.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A list of (x, y) tuples representing the Bezier control points.</p>
-</blockquote>
+<p>Returns:
+    A list of (x, y) tuples representing the Bezier control points.</p>
 </div>
 
 
@@ -1325,11 +1304,8 @@ theta values, and phi values, then uses these to compute control points.</p>
 
             <div class="docstring"><p>Calculate the psi values by finding the angle of the polygonal turns.</p>
 
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ZeroDivisionError:</strong>  If consecutive points have the same coordinates.</li>
-</ul>
+<p>Raises:
+    ZeroDivisionError: If consecutive points have the same coordinates.</p>
 </div>
 
 
@@ -1480,12 +1456,9 @@ to find the optimal angles for smooth splines.</p>
 
             <div class="docstring"><p>Calculate the Bezier control points between consecutive points.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A list of (x, y) tuples representing the control points, with two control points
-  for each curve segment between consecutive points.</p>
-</blockquote>
+<p>Returns:
+    A list of (x, y) tuples representing the control points, with two control points
+    for each curve segment between consecutive points.</p>
 </div>
 
 
@@ -1591,22 +1564,16 @@ to find the optimal angles for smooth splines.</p>
 
             <div class="docstring"><p>Calculate cubic Bezier control points using John Hobby's algorithm.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points: List of (x, y) tuples representing the curve's points.
+    tension: Controls the "tightness" of the curve (lower is tighter).
+    cyclic: Whether the curve should be closed.
+    begin_curl: Curl value for the beginning of the curve.
+    end_curl: Curl value for the end of the curve.
+    debug: Whether to print debug information.</p>
 
-<ul>
-<li><strong>points:</strong>  List of (x, y) tuples representing the curve's points.</li>
-<li><strong>tension:</strong>  Controls the "tightness" of the curve (lower is tighter).</li>
-<li><strong>cyclic:</strong>  Whether the curve should be closed.</li>
-<li><strong>begin_curl:</strong>  Curl value for the beginning of the curve.</li>
-<li><strong>end_curl:</strong>  Curl value for the end of the curve.</li>
-<li><strong>debug:</strong>  Whether to print debug information.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A list of (x, y) tuples representing the Bezier control points.</p>
-</blockquote>
+<p>Returns:
+    A list of (x, y) tuples representing the Bezier control points.</p>
 </div>
 
 
@@ -1650,18 +1617,12 @@ to find the optimal angles for smooth splines.</p>
 
 <p>This function implements the specific velocity formula from Knuth's Metafont.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    theta: The theta angle value.
+    phi: The phi angle value.</p>
 
-<ul>
-<li><strong>theta:</strong>  The theta angle value.</li>
-<li><strong>phi:</strong>  The phi angle value.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>The computed velocity value used in control point calculations.</p>
-</blockquote>
+<p>Returns:
+    The computed velocity value used in control point calculations.</p>
 </div>
 
 
@@ -1725,22 +1686,16 @@ to find the optimal angles for smooth splines.</p>
 <p>This function calculates cubic Bezier control points using Hobby's algorithm,
 then creates a Shape object by generating points along the resulting Bezier curves.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    points: List of (x, y) tuples representing the curve's points.
+    cyclic: Whether the curve should be closed.
+    tension: Controls the "tightness" of the curve (lower is tighter).
+    begin_curl: Curl value for the beginning of the curve.
+    end_curl: Curl value for the end of the curve.
+    debug: Whether to print debug information.</p>
 
-<ul>
-<li><strong>points:</strong>  List of (x, y) tuples representing the curve's points.</li>
-<li><strong>cyclic:</strong>  Whether the curve should be closed.</li>
-<li><strong>tension:</strong>  Controls the "tightness" of the curve (lower is tighter).</li>
-<li><strong>begin_curl:</strong>  Curl value for the beginning of the curve.</li>
-<li><strong>end_curl:</strong>  Curl value for the end of the curve.</li>
-<li><strong>debug:</strong>  Whether to print debug information.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A Shape object containing points along the smooth Hobby curve.</p>
-</blockquote>
+<p>Returns:
+    A Shape object containing points along the smooth Hobby curve.</p>
 </div>
 
 

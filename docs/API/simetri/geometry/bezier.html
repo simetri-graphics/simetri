@@ -889,7 +889,7 @@ like : array_like, optional
     by it. In this case, it ensures the creation of an array object
     compatible with that passed in via this argument.</p>
 
-<pre><code>*New in version 1.20.0.*
+<pre><code>.. versionadded:: 1.20.0
 </code></pre>
 
 <h2 id="returns">Returns</h2>
@@ -1221,13 +1221,10 @@ Number of control points determines the type of Bezier curve.
 A cubic Bezier curve has 4 control points, while a quadratic Bezier curve has 3.
 curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>control_points (Sequence[Point]):</strong>  Control points of the Bezier curve.</li>
-<li><strong>cubic (bool):</strong>  True if the Bezier curve is cubic, False if quadratic.</li>
-<li><strong>matrix (array):</strong>  Polynomial matrix for the Bezier curve.</li>
-</ul>
+<p>Attributes:
+    control_points (Sequence[Point]): Control points of the Bezier curve.
+    cubic (bool): True if the Bezier curve is cubic, False if quadratic.
+    matrix (array): Polynomial matrix for the Bezier curve.</p>
 </div>
 
 
@@ -1290,20 +1287,14 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Initializes a Bezier curve.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control_points (Sequence[Point]): Control points of the Bezier curve.
+    xform_matrix (array, optional): Transformation matrix. Defaults to None.
+    n_points (int, optional): Number of points on the curve. Defaults to None.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control_points (Sequence[Point]):</strong>  Control points of the Bezier curve.</li>
-<li><strong>xform_matrix (array, optional):</strong>  Transformation matrix. Defaults to None.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points on the curve. Defaults to None.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the number of control points is not 3 or 4.</li>
-</ul>
+<p>Raises:
+    ValueError: If the number of control points is not 3 or 4.</p>
 </div>
 
 
@@ -1330,11 +1321,8 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the control points of the Bezier curve.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Sequence[Point]: Control points of the Bezier curve.</p>
-</blockquote>
+<p>Returns:
+    Sequence[Point]: Control points of the Bezier curve.</p>
 </div>
 
 
@@ -1365,11 +1353,8 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return a copy of the Bezier curve.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Shape: Copy of the Bezier curve.</p>
-</blockquote>
+<p>Returns:
+    Shape: Copy of the Bezier curve.</p>
 </div>
 
 
@@ -1403,17 +1388,11 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the point on the Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Point on the Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Point on the Bezier curve at t.</p>
 </div>
 
 
@@ -1457,17 +1436,11 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the point on the Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Point on the Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Point on the Bezier curve at t.</p>
 </div>
 
 
@@ -1501,17 +1474,11 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the derivative of the Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Derivative of the Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Derivative of the Bezier curve at t.</p>
 </div>
 
 
@@ -1544,17 +1511,11 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the normal of the Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Normal of the Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Normal of the Bezier curve at t.</p>
 </div>
 
 
@@ -1588,17 +1549,11 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Draw a unit tangent vector at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Unit tangent vector at t.</p>
-</blockquote>
+<p>Returns:
+    list: Unit tangent vector at t.</p>
 </div>
 
 
@@ -1708,21 +1663,15 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the points on a Bezier curve with equidistant spacing.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    p0 (list): First control point.
+    p1 (list): Second control point.
+    p2 (list): Third control point.
+    p3 (list): Fourth control point.
+    n_points (int, optional): Number of points. Defaults to 10.</p>
 
-<ul>
-<li><strong>p0 (list):</strong>  First control point.</li>
-<li><strong>p1 (list):</strong>  Second control point.</li>
-<li><strong>p2 (list):</strong>  Third control point.</li>
-<li><strong>p3 (list):</strong>  Fourth control point.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points. Defaults to 10.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Points on the Bezier curve, equidistant points, tangents, and normals.</p>
-</blockquote>
+<p>Returns:
+    tuple: Points on the Bezier curve, equidistant points, tangents, and normals.</p>
 </div>
 
 
@@ -1787,20 +1736,14 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 
             <div class="docstring"><p>Return the points on the offset curve.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    controls (list): Control points of the Bezier curve.
+    offset (float): Offset distance.
+    n_points (int): Number of points on the curve.
+    double (bool, optional): If True, return double offset points. Defaults to False.</p>
 
-<ul>
-<li><strong>controls (list):</strong>  Control points of the Bezier curve.</li>
-<li><strong>offset (float):</strong>  Offset distance.</li>
-<li><strong>n_points (int):</strong>  Number of points on the curve.</li>
-<li><strong>double (bool, optional):</strong>  If True, return double offset points. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Points on the offset curve.</p>
-</blockquote>
+<p>Returns:
+    list: Points on the offset curve.</p>
 </div>
 
 
@@ -1889,15 +1832,12 @@ curve.subtype reflects this as Types.BEZIER or Types.Q_BEZIER.</p>
 <p>These points are spaced evenly along the curve (unlike parametric points).
 Normal and tangent unit vectors are also available at these points.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>control_points (Sequence[Point]):</strong>  Control points of the Bezier curve.</li>
-<li><strong>param_points (list):</strong>  Parametric points on the Bezier curve.</li>
-<li><strong>tangents (list):</strong>  Tangent vectors at the points.</li>
-<li><strong>normals (list):</strong>  Normal vectors at the points.</li>
-<li><strong>n_points (int):</strong>  Number of points on the curve.</li>
-</ul>
+<p>Attributes:
+    control_points (Sequence[Point]): Control points of the Bezier curve.
+    param_points (list): Parametric points on the Bezier curve.
+    tangents (list): Tangent vectors at the points.
+    normals (list): Normal vectors at the points.
+    n_points (int): Number of points on the curve.</p>
 </div>
 
 
@@ -1941,19 +1881,13 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Initializes Bezier points.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    control_points (Sequence[Point]): Control points of the Bezier curve.
+    n_points (int, optional): Number of points on the curve. Defaults to 10.
+    **kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>control_points (Sequence[Point]):</strong>  Control points of the Bezier curve.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points on the curve. Defaults to 10.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the number of control points is not 3 or 4.</li>
-</ul>
+<p>Raises:
+    ValueError: If the number of control points is not 3 or 4.</p>
 </div>
 
 
@@ -2054,18 +1988,12 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the points on the offset curve.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    offset (float): Offset distance.
+    double (bool, optional): If True, return double offset points. Defaults to False.</p>
 
-<ul>
-<li><strong>offset (float):</strong>  Offset distance.</li>
-<li><strong>double (bool, optional):</strong>  If True, return double offset points. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Points on the offset curve.</p>
-</blockquote>
+<p>Returns:
+    list: Points on the offset curve.</p>
 </div>
 
 
@@ -2182,27 +2110,18 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the points on a cubic Bezier curve.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    p0 (list): First control point.
+    p1 (list): Second control point.
+    p2 (list): Third control point.
+    p3 (list): Fourth control point.
+    n_points (int, optional): Number of points. Defaults to 10.</p>
 
-<ul>
-<li><strong>p0 (list):</strong>  First control point.</li>
-<li><strong>p1 (list):</strong>  Second control point.</li>
-<li><strong>p2 (list):</strong>  Third control point.</li>
-<li><strong>p3 (list):</strong>  Fourth control point.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points. Defaults to 10.</li>
-</ul>
+<p>Returns:
+    list: Points on the cubic Bezier curve.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Points on the cubic Bezier curve.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If n_points is less than 5.</li>
-</ul>
+<p>Raises:
+    ValueError: If n_points is less than 5.</p>
 </div>
 
 
@@ -2264,26 +2183,17 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the points on a quadratic Bezier curve.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    p0 (list): First control point.
+    p1 (list): Second control point.
+    p2 (list): Third control point.
+    n_points (int): Number of points.</p>
 
-<ul>
-<li><strong>p0 (list):</strong>  First control point.</li>
-<li><strong>p1 (list):</strong>  Second control point.</li>
-<li><strong>p2 (list):</strong>  Third control point.</li>
-<li><strong>n_points (int):</strong>  Number of points.</li>
-</ul>
+<p>Returns:
+    list: Points on the quadratic Bezier curve.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Points on the quadratic Bezier curve.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If n_points is less than 5.</li>
-</ul>
+<p>Raises:
+    ValueError: If n_points is less than 5.</p>
 </div>
 
 
@@ -2342,22 +2252,16 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Split a cubic Bezier curve at t=z.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    p0 (list): First control point.
+    p1 (list): Second control point.
+    p2 (list): Third control point.
+    p3 (list): Fourth control point.
+    z (float): Parameter z, where 0 &lt;= z &lt;= 1.
+    n_points (int, optional): Number of points. Defaults to 10.</p>
 
-<ul>
-<li><strong>p0 (list):</strong>  First control point.</li>
-<li><strong>p1 (list):</strong>  Second control point.</li>
-<li><strong>p2 (list):</strong>  Third control point.</li>
-<li><strong>p3 (list):</strong>  Fourth control point.</li>
-<li><strong>z (float):</strong>  Parameter z, where 0 &lt;= z &lt;= 1.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points. Defaults to 10.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Two Bezier curves split at t=z.</p>
-</blockquote>
+<p>Returns:
+    tuple: Two Bezier curves split at t=z.</p>
 </div>
 
 
@@ -2407,21 +2311,15 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Split a quadratic Bezier curve at t=z.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    p0 (list): First control point.
+    p1 (list): Second control point.
+    p2 (list): Third control point.
+    z (float): Parameter z, where 0 &lt;= z &lt;= 1.
+    n_points (int, optional): Number of points. Defaults to 10.</p>
 
-<ul>
-<li><strong>p0 (list):</strong>  First control point.</li>
-<li><strong>p1 (list):</strong>  Second control point.</li>
-<li><strong>p2 (list):</strong>  Third control point.</li>
-<li><strong>z (float):</strong>  Parameter z, where 0 &lt;= z &lt;= 1.</li>
-<li><strong>n_points (int, optional):</strong>  Number of points. Defaults to 10.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>tuple: Two Bezier curves split at t=z.</p>
-</blockquote>
+<p>Returns:
+    tuple: Two Bezier curves split at t=z.</p>
 </div>
 
 
@@ -2456,18 +2354,12 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the mirror of cp about vertex.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    cp (list): Control point to be mirrored.
+    vertex (list): Vertex point.</p>
 
-<ul>
-<li><strong>cp (list):</strong>  Control point to be mirrored.</li>
-<li><strong>vertex (list):</strong>  Vertex point.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Mirrored control point.</p>
-</blockquote>
+<p>Returns:
+    list: Mirrored control point.</p>
 </div>
 
 
@@ -2524,28 +2416,19 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return a cubic Bezier curve/s.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    v1 (list): First vertex.
+    c1 (list): First control point.
+    c2 (list): Second control point.
+    v2 (list): Second vertex.
+    <em>args: Additional control points and vertices.
+    *</em>kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>v1 (list):</strong>  First vertex.</li>
-<li><strong>c1 (list):</strong>  First control point.</li>
-<li><strong>c2 (list):</strong>  Second control point.</li>
-<li><strong>v2 (list):</strong>  Second vertex.</li>
-<li><strong>*args:</strong>  Additional control points and vertices.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Returns:
+    list: List of cubic Bezier curves.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: List of cubic Bezier curves.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the number of control points is invalid.</li>
-</ul>
+<p>Raises:
+    ValueError: If the number of control points is invalid.</p>
 </div>
 
 
@@ -2599,27 +2482,18 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return a quadratic Bezier curve/s.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    v1 (list): First vertex.
+    c (list): Control point.
+    v2 (list): Second vertex.
+    <em>args: Additional control points and vertices.
+    *</em>kwargs: Additional keyword arguments.</p>
 
-<ul>
-<li><strong>v1 (list):</strong>  First vertex.</li>
-<li><strong>c (list):</strong>  Control point.</li>
-<li><strong>v2 (list):</strong>  Second vertex.</li>
-<li><strong>*args:</strong>  Additional control points and vertices.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Returns:
+    list: List of quadratic Bezier curves.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: List of quadratic Bezier curves.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If the number of control points is invalid.</li>
-</ul>
+<p>Raises:
+    ValueError: If the number of control points is invalid.</p>
 </div>
 
 
@@ -2659,18 +2533,12 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the derivative of a quadratic Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.
+    points (list): Control points of the Bezier curve.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-<li><strong>points (list):</strong>  Control points of the Bezier curve.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Derivative of the quadratic Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Derivative of the quadratic Bezier curve at t.</p>
 </div>
 
 
@@ -2715,18 +2583,12 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the derivative of a cubic Bezier curve at t.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    t (float): Parameter t, where 0 &lt;= t &lt;= 1.
+    points (list): Control points of the Bezier curve.</p>
 
-<ul>
-<li><strong>t (float):</strong>  Parameter t, where 0 &lt;= t &lt;= 1.</li>
-<li><strong>points (list):</strong>  Control points of the Bezier curve.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Derivative of the cubic Bezier curve at t.</p>
-</blockquote>
+<p>Returns:
+    list: Derivative of the cubic Bezier curve at t.</p>
 </div>
 
 
@@ -2758,17 +2620,11 @@ Normal and tangent unit vectors are also available at these points.</p>
 
             <div class="docstring"><p>Return the normal of a given line.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    d (list): Derivative of the line.</p>
 
-<ul>
-<li><strong>d (list):</strong>  Derivative of the line.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>list: Normal of the line.</p>
-</blockquote>
+<p>Returns:
+    list: Normal of the line.</p>
 </div>
 
 

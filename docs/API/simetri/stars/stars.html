@@ -438,21 +438,15 @@
 
             <div class="docstring"><p>Returns a pattern with cyclic or dihedral symmetry with n petals.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    n (int): Number of petals.
+    kernel (Union[Shape, Batch]): The base shape or batch to be used as a petal.
+    cyclic (bool, optional): If True, creates a cyclic pattern. Defaults to False.
+    axis (Line, optional): The axis for mirroring. Defaults to axis_x.
+    merge (bool, optional): If True, merges shapes. Defaults to True.</p>
 
-<ul>
-<li><strong>n (int):</strong>  Number of petals.</li>
-<li><strong>kernel (Union[Shape, Batch]):</strong>  The base shape or batch to be used as a petal.</li>
-<li><strong>cyclic (bool, optional):</strong>  If True, creates a cyclic pattern. Defaults to False.</li>
-<li><strong>axis (Line, optional):</strong>  The axis for mirroring. Defaults to axis_x.</li>
-<li><strong>merge (bool, optional):</strong>  If True, merges shapes. Defaults to True.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern with n petals.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern with n petals.</p>
 </div>
 
 
@@ -731,14 +725,11 @@
 
             <div class="docstring"><p>Represents a star shape with n points.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>n (int):</strong>  Number of points of the star.</li>
-<li><strong>inner_radius (float, optional):</strong>  Inner radius of the star. Defaults to None.</li>
-<li><strong>circumradius (float, optional):</strong>  Circumradius of the star. Defaults to None.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Args:
+    n (int): Number of points of the star.
+    inner_radius (float, optional): Inner radius of the star. Defaults to None.
+    circumradius (float, optional): Circumradius of the star. Defaults to None.
+    **kwargs: Additional keyword arguments.</p>
 </div>
 
 
@@ -776,14 +767,11 @@
 
             <div class="docstring"><p>Initialize a Batch object.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>elements (Sequence[Any], optional):</strong>  The elements to include in the batch.</li>
-<li><strong>modifiers (Sequence[Modifier], optional):</strong>  The modifiers to apply to the batch.</li>
-<li><strong>subtype (Types, optional):</strong>  The subtype of the batch.</li>
-<li><strong>kwargs (dict):</strong>  Additional keyword arguments.</li>
-</ul>
+<p>Args:
+    elements (Sequence[Any], optional): The elements to include in the batch.
+    modifiers (Sequence[Modifier], optional): The modifiers to apply to the batch.
+    subtype (Types, optional): The subtype of the batch.
+    kwargs (dict): Additional keyword arguments.</p>
 </div>
 
 
@@ -888,23 +876,14 @@
 
             <div class="docstring"><p>Returns the kernel of the star at the specified level.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    level (int): The level of the star.</p>
 
-<ul>
-<li><strong>level (int):</strong>  The level of the star.</li>
-</ul>
+<p>Returns:
+    Shape: The kernel shape of the star.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Shape: The kernel shape of the star.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If level is not a positive integer or zero.</li>
-</ul>
+<p>Raises:
+    ValueError: If level is not a positive integer or zero.</p>
 </div>
 
 
@@ -954,23 +933,14 @@
 
             <div class="docstring"><p>Returns the petal of the star at the specified level.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    level (int): The level of the star.</p>
 
-<ul>
-<li><strong>level (int):</strong>  The level of the star.</li>
-</ul>
+<p>Returns:
+    Shape: The petal shape of the star.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Shape: The petal shape of the star.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If level is not a positive integer or zero.</li>
-</ul>
+<p>Raises:
+    ValueError: If level is not a positive integer or zero.</p>
 </div>
 
 
@@ -1035,23 +1005,14 @@
 
             <div class="docstring"><p>Returns the star at the specified level.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    n (int): The level of the star.</p>
 
-<ul>
-<li><strong>n (int):</strong>  The level of the star.</li>
-</ul>
+<p>Returns:
+    Batch: The star shape at the specified level.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The star shape at the specified level.</p>
-</blockquote>
-
-<h6 id="raises">Raises:</h6>
-
-<ul>
-<li><strong>ValueError:</strong>  If level is not a positive integer or zero.</li>
-</ul>
+<p>Raises:
+    ValueError: If level is not a positive integer or zero.</p>
 </div>
 
 
@@ -1073,7 +1034,6 @@
                 <dd id="Star.blend_group" class="variable"><a href="../graphics/batch.html#Batch.blend_group">blend_group</a></dd>
                 <dd id="Star.transparency_group" class="variable"><a href="../graphics/batch.html#Batch.transparency_group">transparency_group</a></dd>
                 <dd id="Star.set_attribs" class="function"><a href="../graphics/batch.html#Batch.set_attribs">set_attribs</a></dd>
-                <dd id="Star.set_batch_attr" class="function"><a href="../graphics/batch.html#Batch.set_batch_attr">set_batch_attr</a></dd>
                 <dd id="Star.proximity" class="function"><a href="../graphics/batch.html#Batch.proximity">proximity</a></dd>
                 <dd id="Star.append" class="function"><a href="../graphics/batch.html#Batch.append">append</a></dd>
                 <dd id="Star.reverse" class="function"><a href="../graphics/batch.html#Batch.reverse">reverse</a></dd>
@@ -1093,6 +1053,12 @@
                 <dd id="Star.all_polygons" class="function"><a href="../graphics/batch.html#Batch.all_polygons">all_polygons</a></dd>
                 <dd id="Star.copy" class="function"><a href="../graphics/batch.html#Batch.copy">copy</a></dd>
                 <dd id="Star.b_box" class="variable"><a href="../graphics/batch.html#Batch.b_box">b_box</a></dd>
+                <dd id="Star.union" class="function"><a href="../graphics/batch.html#Batch.union">union</a></dd>
+                <dd id="Star.intersection" class="function"><a href="../graphics/batch.html#Batch.intersection">intersection</a></dd>
+                <dd id="Star.difference" class="function"><a href="../graphics/batch.html#Batch.difference">difference</a></dd>
+                <dd id="Star.symmetric_difference" class="function"><a href="../graphics/batch.html#Batch.symmetric_difference">symmetric_difference</a></dd>
+                <dd id="Star.subset" class="function"><a href="../graphics/batch.html#Batch.subset">subset</a></dd>
+                <dd id="Star.superset" class="function"><a href="../graphics/batch.html#Batch.superset">superset</a></dd>
 
             </div>
             <div><dt><a href="../graphics/core.html#Base">simetri.graphics.core.Base</a></dt>

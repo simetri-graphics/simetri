@@ -213,66 +213,67 @@
 </span><span id="L-109"><a href="#L-109"><span class="linenos">109</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-110"><a href="#L-110"><span class="linenos">110</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">can_continue</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
 </span><span id="L-111"><a href="#L-111"><span class="linenos">111</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_func_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span><span id="L-112"><a href="#L-112"><span class="linenos">112</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </span><span id="L-113"><a href="#L-113"><span class="linenos">113</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span id="L-114"><a href="#L-114"><span class="linenos">114</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
 </span><span id="L-115"><a href="#L-115"><span class="linenos">115</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_update_state</span><span class="p">()</span>
-</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>
-</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
-</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a>
-</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a><span class="sd">        Args:</span>
-</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a><span class="sd">            target (object): The target object.</span>
-</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a>
-</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a><span class="sd">        Returns:</span>
-</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
-</span><span id="L-127"><a href="#L-127"><span class="linenos">127</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
-</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
-</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
-</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
-</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
-</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a>
-</span><span id="L-135"><a href="#L-135"><span class="linenos">135</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
-</span><span id="L-136"><a href="#L-136"><span class="linenos">136</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="L-137"><a href="#L-137"><span class="linenos">137</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-138"><a href="#L-138"><span class="linenos">138</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
-</span><span id="L-139"><a href="#L-139"><span class="linenos">139</span></a>
-</span><span id="L-140"><a href="#L-140"><span class="linenos">140</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
-</span><span id="L-141"><a href="#L-141"><span class="linenos">141</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="L-142"><a href="#L-142"><span class="linenos">142</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-143"><a href="#L-143"><span class="linenos">143</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
-</span><span id="L-144"><a href="#L-144"><span class="linenos">144</span></a>
-</span><span id="L-145"><a href="#L-145"><span class="linenos">145</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
-</span><span id="L-146"><a href="#L-146"><span class="linenos">146</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
-</span><span id="L-147"><a href="#L-147"><span class="linenos">147</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="L-148"><a href="#L-148"><span class="linenos">148</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="L-149"><a href="#L-149"><span class="linenos">149</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="L-150"><a href="#L-150"><span class="linenos">150</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-151"><a href="#L-151"><span class="linenos">151</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="L-152"><a href="#L-152"><span class="linenos">152</span></a>        <span class="k">return</span> <span class="n">res</span>
-</span><span id="L-153"><a href="#L-153"><span class="linenos">153</span></a>
-</span><span id="L-154"><a href="#L-154"><span class="linenos">154</span></a>    <span class="k">def</span> <span class="nf">_update_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-155"><a href="#L-155"><span class="linenos">155</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the state of the modifier based on its life span and count.&quot;&quot;&quot;</span>
-</span><span id="L-156"><a href="#L-156"><span class="linenos">156</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="L-157"><a href="#L-157"><span class="linenos">157</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="L-158"><a href="#L-158"><span class="linenos">158</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
-</span><span id="L-159"><a href="#L-159"><span class="linenos">159</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="L-160"><a href="#L-160"><span class="linenos">160</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">:</span>
-</span><span id="L-161"><a href="#L-161"><span class="linenos">161</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
-</span><span id="L-162"><a href="#L-162"><span class="linenos">162</span></a>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
-</span><span id="L-163"><a href="#L-163"><span class="linenos">163</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">-=</span> <span class="mi">1</span>
-</span><span id="L-164"><a href="#L-164"><span class="linenos">164</span></a>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="L-165"><a href="#L-165"><span class="linenos">165</span></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="L-166"><a href="#L-166"><span class="linenos">166</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="L-167"><a href="#L-167"><span class="linenos">167</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="L-168"><a href="#L-168"><span class="linenos">168</span></a>
-</span><span id="L-169"><a href="#L-169"><span class="linenos">169</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-170"><a href="#L-170"><span class="linenos">170</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
-</span><span id="L-171"><a href="#L-171"><span class="linenos">171</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="L-116"><a href="#L-116"><span class="linenos">116</span></a>            <span class="k">return</span> <span class="n">res</span>
+</span><span id="L-117"><a href="#L-117"><span class="linenos">117</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-118"><a href="#L-118"><span class="linenos">118</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="L-119"><a href="#L-119"><span class="linenos">119</span></a>
+</span><span id="L-120"><a href="#L-120"><span class="linenos">120</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span><span id="L-121"><a href="#L-121"><span class="linenos">121</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
+</span><span id="L-122"><a href="#L-122"><span class="linenos">122</span></a>
+</span><span id="L-123"><a href="#L-123"><span class="linenos">123</span></a><span class="sd">        Args:</span>
+</span><span id="L-124"><a href="#L-124"><span class="linenos">124</span></a><span class="sd">            target (object): The target object.</span>
+</span><span id="L-125"><a href="#L-125"><span class="linenos">125</span></a>
+</span><span id="L-126"><a href="#L-126"><span class="linenos">126</span></a><span class="sd">        Returns:</span>
+</span><span id="L-127"><a href="#L-127"><span class="linenos">127</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
+</span><span id="L-128"><a href="#L-128"><span class="linenos">128</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-129"><a href="#L-129"><span class="linenos">129</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
+</span><span id="L-130"><a href="#L-130"><span class="linenos">130</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="L-131"><a href="#L-131"><span class="linenos">131</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="L-132"><a href="#L-132"><span class="linenos">132</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
+</span><span id="L-133"><a href="#L-133"><span class="linenos">133</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
+</span><span id="L-134"><a href="#L-134"><span class="linenos">134</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
+</span><span id="L-135"><a href="#L-135"><span class="linenos">135</span></a>
+</span><span id="L-136"><a href="#L-136"><span class="linenos">136</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
+</span><span id="L-137"><a href="#L-137"><span class="linenos">137</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="L-138"><a href="#L-138"><span class="linenos">138</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-139"><a href="#L-139"><span class="linenos">139</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
+</span><span id="L-140"><a href="#L-140"><span class="linenos">140</span></a>
+</span><span id="L-141"><a href="#L-141"><span class="linenos">141</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
+</span><span id="L-142"><a href="#L-142"><span class="linenos">142</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="L-143"><a href="#L-143"><span class="linenos">143</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-144"><a href="#L-144"><span class="linenos">144</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
+</span><span id="L-145"><a href="#L-145"><span class="linenos">145</span></a>
+</span><span id="L-146"><a href="#L-146"><span class="linenos">146</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
+</span><span id="L-147"><a href="#L-147"><span class="linenos">147</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
+</span><span id="L-148"><a href="#L-148"><span class="linenos">148</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="L-149"><a href="#L-149"><span class="linenos">149</span></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="L-150"><a href="#L-150"><span class="linenos">150</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="L-151"><a href="#L-151"><span class="linenos">151</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-152"><a href="#L-152"><span class="linenos">152</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="L-153"><a href="#L-153"><span class="linenos">153</span></a>        <span class="k">return</span> <span class="n">res</span>
+</span><span id="L-154"><a href="#L-154"><span class="linenos">154</span></a>
+</span><span id="L-155"><a href="#L-155"><span class="linenos">155</span></a>    <span class="k">def</span> <span class="nf">_update_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-156"><a href="#L-156"><span class="linenos">156</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the state of the modifier based on its life span and count.&quot;&quot;&quot;</span>
+</span><span id="L-157"><a href="#L-157"><span class="linenos">157</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="L-158"><a href="#L-158"><span class="linenos">158</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="L-159"><a href="#L-159"><span class="linenos">159</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
+</span><span id="L-160"><a href="#L-160"><span class="linenos">160</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="L-161"><a href="#L-161"><span class="linenos">161</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">:</span>
+</span><span id="L-162"><a href="#L-162"><span class="linenos">162</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
+</span><span id="L-163"><a href="#L-163"><span class="linenos">163</span></a>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+</span><span id="L-164"><a href="#L-164"><span class="linenos">164</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="L-165"><a href="#L-165"><span class="linenos">165</span></a>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="L-166"><a href="#L-166"><span class="linenos">166</span></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="L-167"><a href="#L-167"><span class="linenos">167</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="L-168"><a href="#L-168"><span class="linenos">168</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="L-169"><a href="#L-169"><span class="linenos">169</span></a>
+</span><span id="L-170"><a href="#L-170"><span class="linenos">170</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="L-171"><a href="#L-171"><span class="linenos">171</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
+</span><span id="L-172"><a href="#L-172"><span class="linenos">172</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
 </span></pre></div>
 
 
@@ -393,84 +394,82 @@
 </span><span id="Modifier-110"><a href="#Modifier-110"><span class="linenos">110</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Modifier-111"><a href="#Modifier-111"><span class="linenos">111</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">can_continue</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
 </span><span id="Modifier-112"><a href="#Modifier-112"><span class="linenos">112</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_func_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="Modifier-113"><a href="#Modifier-113"><span class="linenos">113</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span><span id="Modifier-113"><a href="#Modifier-113"><span class="linenos">113</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </span><span id="Modifier-114"><a href="#Modifier-114"><span class="linenos">114</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-115"><a href="#Modifier-115"><span class="linenos">115</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span id="Modifier-115"><a href="#Modifier-115"><span class="linenos">115</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
 </span><span id="Modifier-116"><a href="#Modifier-116"><span class="linenos">116</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_update_state</span><span class="p">()</span>
-</span><span id="Modifier-117"><a href="#Modifier-117"><span class="linenos">117</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-118"><a href="#Modifier-118"><span class="linenos">118</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="Modifier-119"><a href="#Modifier-119"><span class="linenos">119</span></a>
-</span><span id="Modifier-120"><a href="#Modifier-120"><span class="linenos">120</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-</span><span id="Modifier-121"><a href="#Modifier-121"><span class="linenos">121</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
-</span><span id="Modifier-122"><a href="#Modifier-122"><span class="linenos">122</span></a>
-</span><span id="Modifier-123"><a href="#Modifier-123"><span class="linenos">123</span></a><span class="sd">        Args:</span>
-</span><span id="Modifier-124"><a href="#Modifier-124"><span class="linenos">124</span></a><span class="sd">            target (object): The target object.</span>
-</span><span id="Modifier-125"><a href="#Modifier-125"><span class="linenos">125</span></a>
-</span><span id="Modifier-126"><a href="#Modifier-126"><span class="linenos">126</span></a><span class="sd">        Returns:</span>
-</span><span id="Modifier-127"><a href="#Modifier-127"><span class="linenos">127</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
-</span><span id="Modifier-128"><a href="#Modifier-128"><span class="linenos">128</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Modifier-129"><a href="#Modifier-129"><span class="linenos">129</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
-</span><span id="Modifier-130"><a href="#Modifier-130"><span class="linenos">130</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier-131"><a href="#Modifier-131"><span class="linenos">131</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
-</span><span id="Modifier-132"><a href="#Modifier-132"><span class="linenos">132</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
-</span><span id="Modifier-133"><a href="#Modifier-133"><span class="linenos">133</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
-</span><span id="Modifier-134"><a href="#Modifier-134"><span class="linenos">134</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
-</span><span id="Modifier-135"><a href="#Modifier-135"><span class="linenos">135</span></a>
-</span><span id="Modifier-136"><a href="#Modifier-136"><span class="linenos">136</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
-</span><span id="Modifier-137"><a href="#Modifier-137"><span class="linenos">137</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier-138"><a href="#Modifier-138"><span class="linenos">138</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-139"><a href="#Modifier-139"><span class="linenos">139</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
-</span><span id="Modifier-140"><a href="#Modifier-140"><span class="linenos">140</span></a>
-</span><span id="Modifier-141"><a href="#Modifier-141"><span class="linenos">141</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
-</span><span id="Modifier-142"><a href="#Modifier-142"><span class="linenos">142</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier-143"><a href="#Modifier-143"><span class="linenos">143</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-144"><a href="#Modifier-144"><span class="linenos">144</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
-</span><span id="Modifier-145"><a href="#Modifier-145"><span class="linenos">145</span></a>
-</span><span id="Modifier-146"><a href="#Modifier-146"><span class="linenos">146</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
-</span><span id="Modifier-147"><a href="#Modifier-147"><span class="linenos">147</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
-</span><span id="Modifier-148"><a href="#Modifier-148"><span class="linenos">148</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Modifier-149"><a href="#Modifier-149"><span class="linenos">149</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-150"><a href="#Modifier-150"><span class="linenos">150</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="Modifier-151"><a href="#Modifier-151"><span class="linenos">151</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-152"><a href="#Modifier-152"><span class="linenos">152</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="Modifier-153"><a href="#Modifier-153"><span class="linenos">153</span></a>        <span class="k">return</span> <span class="n">res</span>
-</span><span id="Modifier-154"><a href="#Modifier-154"><span class="linenos">154</span></a>
-</span><span id="Modifier-155"><a href="#Modifier-155"><span class="linenos">155</span></a>    <span class="k">def</span> <span class="nf">_update_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Modifier-156"><a href="#Modifier-156"><span class="linenos">156</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the state of the modifier based on its life span and count.&quot;&quot;&quot;</span>
-</span><span id="Modifier-157"><a href="#Modifier-157"><span class="linenos">157</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="Modifier-158"><a href="#Modifier-158"><span class="linenos">158</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="Modifier-159"><a href="#Modifier-159"><span class="linenos">159</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
-</span><span id="Modifier-160"><a href="#Modifier-160"><span class="linenos">160</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="Modifier-161"><a href="#Modifier-161"><span class="linenos">161</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">:</span>
-</span><span id="Modifier-162"><a href="#Modifier-162"><span class="linenos">162</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
-</span><span id="Modifier-163"><a href="#Modifier-163"><span class="linenos">163</span></a>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
-</span><span id="Modifier-164"><a href="#Modifier-164"><span class="linenos">164</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">-=</span> <span class="mi">1</span>
-</span><span id="Modifier-165"><a href="#Modifier-165"><span class="linenos">165</span></a>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="Modifier-166"><a href="#Modifier-166"><span class="linenos">166</span></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="Modifier-167"><a href="#Modifier-167"><span class="linenos">167</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier-168"><a href="#Modifier-168"><span class="linenos">168</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
-</span><span id="Modifier-169"><a href="#Modifier-169"><span class="linenos">169</span></a>
-</span><span id="Modifier-170"><a href="#Modifier-170"><span class="linenos">170</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Modifier-171"><a href="#Modifier-171"><span class="linenos">171</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
-</span><span id="Modifier-172"><a href="#Modifier-172"><span class="linenos">172</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="Modifier-117"><a href="#Modifier-117"><span class="linenos">117</span></a>            <span class="k">return</span> <span class="n">res</span>
+</span><span id="Modifier-118"><a href="#Modifier-118"><span class="linenos">118</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-119"><a href="#Modifier-119"><span class="linenos">119</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="Modifier-120"><a href="#Modifier-120"><span class="linenos">120</span></a>
+</span><span id="Modifier-121"><a href="#Modifier-121"><span class="linenos">121</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span><span id="Modifier-122"><a href="#Modifier-122"><span class="linenos">122</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
+</span><span id="Modifier-123"><a href="#Modifier-123"><span class="linenos">123</span></a>
+</span><span id="Modifier-124"><a href="#Modifier-124"><span class="linenos">124</span></a><span class="sd">        Args:</span>
+</span><span id="Modifier-125"><a href="#Modifier-125"><span class="linenos">125</span></a><span class="sd">            target (object): The target object.</span>
+</span><span id="Modifier-126"><a href="#Modifier-126"><span class="linenos">126</span></a>
+</span><span id="Modifier-127"><a href="#Modifier-127"><span class="linenos">127</span></a><span class="sd">        Returns:</span>
+</span><span id="Modifier-128"><a href="#Modifier-128"><span class="linenos">128</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
+</span><span id="Modifier-129"><a href="#Modifier-129"><span class="linenos">129</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Modifier-130"><a href="#Modifier-130"><span class="linenos">130</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
+</span><span id="Modifier-131"><a href="#Modifier-131"><span class="linenos">131</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier-132"><a href="#Modifier-132"><span class="linenos">132</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Modifier-133"><a href="#Modifier-133"><span class="linenos">133</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
+</span><span id="Modifier-134"><a href="#Modifier-134"><span class="linenos">134</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
+</span><span id="Modifier-135"><a href="#Modifier-135"><span class="linenos">135</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
+</span><span id="Modifier-136"><a href="#Modifier-136"><span class="linenos">136</span></a>
+</span><span id="Modifier-137"><a href="#Modifier-137"><span class="linenos">137</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
+</span><span id="Modifier-138"><a href="#Modifier-138"><span class="linenos">138</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier-139"><a href="#Modifier-139"><span class="linenos">139</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-140"><a href="#Modifier-140"><span class="linenos">140</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
+</span><span id="Modifier-141"><a href="#Modifier-141"><span class="linenos">141</span></a>
+</span><span id="Modifier-142"><a href="#Modifier-142"><span class="linenos">142</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
+</span><span id="Modifier-143"><a href="#Modifier-143"><span class="linenos">143</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier-144"><a href="#Modifier-144"><span class="linenos">144</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-145"><a href="#Modifier-145"><span class="linenos">145</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
+</span><span id="Modifier-146"><a href="#Modifier-146"><span class="linenos">146</span></a>
+</span><span id="Modifier-147"><a href="#Modifier-147"><span class="linenos">147</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
+</span><span id="Modifier-148"><a href="#Modifier-148"><span class="linenos">148</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
+</span><span id="Modifier-149"><a href="#Modifier-149"><span class="linenos">149</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Modifier-150"><a href="#Modifier-150"><span class="linenos">150</span></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-151"><a href="#Modifier-151"><span class="linenos">151</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Modifier-152"><a href="#Modifier-152"><span class="linenos">152</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-153"><a href="#Modifier-153"><span class="linenos">153</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Modifier-154"><a href="#Modifier-154"><span class="linenos">154</span></a>        <span class="k">return</span> <span class="n">res</span>
+</span><span id="Modifier-155"><a href="#Modifier-155"><span class="linenos">155</span></a>
+</span><span id="Modifier-156"><a href="#Modifier-156"><span class="linenos">156</span></a>    <span class="k">def</span> <span class="nf">_update_state</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Modifier-157"><a href="#Modifier-157"><span class="linenos">157</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the state of the modifier based on its life span and count.&quot;&quot;&quot;</span>
+</span><span id="Modifier-158"><a href="#Modifier-158"><span class="linenos">158</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="Modifier-159"><a href="#Modifier-159"><span class="linenos">159</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="Modifier-160"><a href="#Modifier-160"><span class="linenos">160</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
+</span><span id="Modifier-161"><a href="#Modifier-161"><span class="linenos">161</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="Modifier-162"><a href="#Modifier-162"><span class="linenos">162</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">:</span>
+</span><span id="Modifier-163"><a href="#Modifier-163"><span class="linenos">163</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span>
+</span><span id="Modifier-164"><a href="#Modifier-164"><span class="linenos">164</span></a>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">:</span>
+</span><span id="Modifier-165"><a href="#Modifier-165"><span class="linenos">165</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">-=</span> <span class="mi">1</span>
+</span><span id="Modifier-166"><a href="#Modifier-166"><span class="linenos">166</span></a>                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="Modifier-167"><a href="#Modifier-167"><span class="linenos">167</span></a>                    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="Modifier-168"><a href="#Modifier-168"><span class="linenos">168</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier-169"><a href="#Modifier-169"><span class="linenos">169</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="Modifier-170"><a href="#Modifier-170"><span class="linenos">170</span></a>
+</span><span id="Modifier-171"><a href="#Modifier-171"><span class="linenos">171</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Modifier-172"><a href="#Modifier-172"><span class="linenos">172</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
+</span><span id="Modifier-173"><a href="#Modifier-173"><span class="linenos">173</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>Used to modify the properties of a Batch object.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>function (callable):</strong>  The function to modify the property.</li>
-<li><strong>life_span (int):</strong>  The number of times the modifier can be applied.</li>
-<li><strong>randomness (float or callable):</strong>  Determines the randomness of the modification.</li>
-<li><strong>condition (bool or callable):</strong>  Condition to apply the modification.</li>
-<li><strong>state (State):</strong>  The current state of the modifier.</li>
-<li><strong>_d_state (dict):</strong>  Mapping of control states to modifier states.</li>
-<li><strong>count (int):</strong>  Counter for the number of times the modifier has been applied.</li>
-<li><strong>args (tuple):</strong>  Additional arguments for the function.</li>
-<li><strong>kwargs (dict):</strong>  Additional keyword arguments for the function.</li>
-</ul>
+<p>Attributes:
+    function (callable): The function to modify the property.
+    life_span (int): The number of times the modifier can be applied.
+    randomness (float or callable): Determines the randomness of the modification.
+    condition (bool or callable): Condition to apply the modification.
+    state (State): The current state of the modifier.
+    _d_state (dict): Mapping of control states to modifier states.
+    count (int): Counter for the number of times the modifier has been applied.
+    args (tuple): Additional arguments for the function.
+    kwargs (dict): Additional keyword arguments for the function.</p>
 </div>
 
 
@@ -516,16 +515,13 @@
 </span></pre></div>
 
 
-            <div class="docstring"><h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>function (callable):</strong>  The function to modify the property.</li>
-<li><strong>life_span (int, optional):</strong>  The number of times the modifier can be applied. Defaults to 10000.</li>
-<li><strong>randomness (float or callable, optional):</strong>  Determines the randomness of the modification. Defaults to 1.0.</li>
-<li><strong>condition (bool or callable, optional):</strong>  Condition to apply the modification. Defaults to True.</li>
-<li><strong>*args:</strong>  Additional arguments for the function.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments for the function.</li>
-</ul>
+            <div class="docstring"><p>Args:
+    function (callable): The function to modify the property.
+    life_span (int, optional): The number of times the modifier can be applied. Defaults to 10000.
+    randomness (float or callable, optional): Determines the randomness of the modification. Defaults to 1.0.
+    condition (bool or callable, optional): Condition to apply the modification. Defaults to True.
+    <em>args: Additional arguments for the function.
+    *</em>kwargs: Additional keyword arguments for the function.</p>
 </div>
 
 
@@ -652,11 +648,8 @@
 
             <div class="docstring"><p>Sets the state of the modifier based on the control value.</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>control (Control):</strong>  The control value to set the state.</li>
-</ul>
+<p>Args:
+    control (Control): The control value to set the state.</p>
 </div>
 
 
@@ -696,20 +689,14 @@
 
             <div class="docstring"><p>Gets the value from an object or callable.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    obj (object or callable): The object or callable to get the value from.
+    target (object): The target object.
+    <em>args: Additional arguments for the callable.
+    *</em>kwargs: Additional keyword arguments for the callable.</p>
 
-<ul>
-<li><strong>obj (object or callable):</strong>  The object or callable to get the value from.</li>
-<li><strong>target (object):</strong>  The target object.</li>
-<li><strong>*args:</strong>  Additional arguments for the callable.</li>
-<li><strong>**kwargs:</strong>  Additional keyword arguments for the callable.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>object: The value obtained from the object or callable.</p>
-</blockquote>
+<p>Returns:
+    object: The value obtained from the object or callable.</p>
 </div>
 
 
@@ -738,12 +725,13 @@
 </span><span id="Modifier.apply-110"><a href="#Modifier.apply-110"><span class="linenos">110</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Modifier.apply-111"><a href="#Modifier.apply-111"><span class="linenos">111</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">can_continue</span><span class="p">(</span><span class="n">element</span><span class="p">):</span>
 </span><span id="Modifier.apply-112"><a href="#Modifier.apply-112"><span class="linenos">112</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_func_args</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="Modifier.apply-113"><a href="#Modifier.apply-113"><span class="linenos">113</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span><span id="Modifier.apply-113"><a href="#Modifier.apply-113"><span class="linenos">113</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
 </span><span id="Modifier.apply-114"><a href="#Modifier.apply-114"><span class="linenos">114</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.apply-115"><a href="#Modifier.apply-115"><span class="linenos">115</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span id="Modifier.apply-115"><a href="#Modifier.apply-115"><span class="linenos">115</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
 </span><span id="Modifier.apply-116"><a href="#Modifier.apply-116"><span class="linenos">116</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_update_state</span><span class="p">()</span>
-</span><span id="Modifier.apply-117"><a href="#Modifier.apply-117"><span class="linenos">117</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.apply-118"><a href="#Modifier.apply-118"><span class="linenos">118</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+</span><span id="Modifier.apply-117"><a href="#Modifier.apply-117"><span class="linenos">117</span></a>            <span class="k">return</span> <span class="n">res</span>
+</span><span id="Modifier.apply-118"><a href="#Modifier.apply-118"><span class="linenos">118</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier.apply-119"><a href="#Modifier.apply-119"><span class="linenos">119</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
 </span></pre></div>
 
 
@@ -754,11 +742,8 @@ Control.STOP, Control.PAUSE, Control.RESUME, and Control.RESTART are the only co
 Functions should have the following signature:
 def funct(target, modifier, <em>args, *</em>kwargs):</p>
 
-<h6 id="arguments">Arguments:</h6>
-
-<ul>
-<li><strong>element (object):</strong>  The element to apply the modifier to.</li>
-</ul>
+<p>Args:
+    element (object): The element to apply the modifier to.</p>
 </div>
 
 
@@ -774,56 +759,50 @@ def funct(target, modifier, <em>args, *</em>kwargs):</p>
 
     </div>
     <a class="headerlink" href="#Modifier.can_continue"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Modifier.can_continue-120"><a href="#Modifier.can_continue-120"><span class="linenos">120</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-</span><span id="Modifier.can_continue-121"><a href="#Modifier.can_continue-121"><span class="linenos">121</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
-</span><span id="Modifier.can_continue-122"><a href="#Modifier.can_continue-122"><span class="linenos">122</span></a>
-</span><span id="Modifier.can_continue-123"><a href="#Modifier.can_continue-123"><span class="linenos">123</span></a><span class="sd">        Args:</span>
-</span><span id="Modifier.can_continue-124"><a href="#Modifier.can_continue-124"><span class="linenos">124</span></a><span class="sd">            target (object): The target object.</span>
-</span><span id="Modifier.can_continue-125"><a href="#Modifier.can_continue-125"><span class="linenos">125</span></a>
-</span><span id="Modifier.can_continue-126"><a href="#Modifier.can_continue-126"><span class="linenos">126</span></a><span class="sd">        Returns:</span>
-</span><span id="Modifier.can_continue-127"><a href="#Modifier.can_continue-127"><span class="linenos">127</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
-</span><span id="Modifier.can_continue-128"><a href="#Modifier.can_continue-128"><span class="linenos">128</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Modifier.can_continue-129"><a href="#Modifier.can_continue-129"><span class="linenos">129</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
-</span><span id="Modifier.can_continue-130"><a href="#Modifier.can_continue-130"><span class="linenos">130</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier.can_continue-131"><a href="#Modifier.can_continue-131"><span class="linenos">131</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-132"><a href="#Modifier.can_continue-132"><span class="linenos">132</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
-</span><span id="Modifier.can_continue-133"><a href="#Modifier.can_continue-133"><span class="linenos">133</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
-</span><span id="Modifier.can_continue-134"><a href="#Modifier.can_continue-134"><span class="linenos">134</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
-</span><span id="Modifier.can_continue-135"><a href="#Modifier.can_continue-135"><span class="linenos">135</span></a>
-</span><span id="Modifier.can_continue-136"><a href="#Modifier.can_continue-136"><span class="linenos">136</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
-</span><span id="Modifier.can_continue-137"><a href="#Modifier.can_continue-137"><span class="linenos">137</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier.can_continue-138"><a href="#Modifier.can_continue-138"><span class="linenos">138</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-139"><a href="#Modifier.can_continue-139"><span class="linenos">139</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
-</span><span id="Modifier.can_continue-140"><a href="#Modifier.can_continue-140"><span class="linenos">140</span></a>
-</span><span id="Modifier.can_continue-141"><a href="#Modifier.can_continue-141"><span class="linenos">141</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
-</span><span id="Modifier.can_continue-142"><a href="#Modifier.can_continue-142"><span class="linenos">142</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-</span><span id="Modifier.can_continue-143"><a href="#Modifier.can_continue-143"><span class="linenos">143</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-144"><a href="#Modifier.can_continue-144"><span class="linenos">144</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
-</span><span id="Modifier.can_continue-145"><a href="#Modifier.can_continue-145"><span class="linenos">145</span></a>
-</span><span id="Modifier.can_continue-146"><a href="#Modifier.can_continue-146"><span class="linenos">146</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-147"><a href="#Modifier.can_continue-147"><span class="linenos">147</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
-</span><span id="Modifier.can_continue-148"><a href="#Modifier.can_continue-148"><span class="linenos">148</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
-</span><span id="Modifier.can_continue-149"><a href="#Modifier.can_continue-149"><span class="linenos">149</span></a>            <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-150"><a href="#Modifier.can_continue-150"><span class="linenos">150</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="Modifier.can_continue-151"><a href="#Modifier.can_continue-151"><span class="linenos">151</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Modifier.can_continue-152"><a href="#Modifier.can_continue-152"><span class="linenos">152</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
-</span><span id="Modifier.can_continue-153"><a href="#Modifier.can_continue-153"><span class="linenos">153</span></a>        <span class="k">return</span> <span class="n">res</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Modifier.can_continue-121"><a href="#Modifier.can_continue-121"><span class="linenos">121</span></a>    <span class="k">def</span> <span class="nf">can_continue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+</span><span id="Modifier.can_continue-122"><a href="#Modifier.can_continue-122"><span class="linenos">122</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if the modifier can continue to be applied.</span>
+</span><span id="Modifier.can_continue-123"><a href="#Modifier.can_continue-123"><span class="linenos">123</span></a>
+</span><span id="Modifier.can_continue-124"><a href="#Modifier.can_continue-124"><span class="linenos">124</span></a><span class="sd">        Args:</span>
+</span><span id="Modifier.can_continue-125"><a href="#Modifier.can_continue-125"><span class="linenos">125</span></a><span class="sd">            target (object): The target object.</span>
+</span><span id="Modifier.can_continue-126"><a href="#Modifier.can_continue-126"><span class="linenos">126</span></a>
+</span><span id="Modifier.can_continue-127"><a href="#Modifier.can_continue-127"><span class="linenos">127</span></a><span class="sd">        Returns:</span>
+</span><span id="Modifier.can_continue-128"><a href="#Modifier.can_continue-128"><span class="linenos">128</span></a><span class="sd">            bool: True if the modifier can continue, False otherwise.</span>
+</span><span id="Modifier.can_continue-129"><a href="#Modifier.can_continue-129"><span class="linenos">129</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Modifier.can_continue-130"><a href="#Modifier.can_continue-130"><span class="linenos">130</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">):</span>
+</span><span id="Modifier.can_continue-131"><a href="#Modifier.can_continue-131"><span class="linenos">131</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier.can_continue-132"><a href="#Modifier.can_continue-132"><span class="linenos">132</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-133"><a href="#Modifier.can_continue-133"><span class="linenos">133</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">randomness</span> <span class="o">&gt;=</span> <span class="n">random</span><span class="p">()</span>
+</span><span id="Modifier.can_continue-134"><a href="#Modifier.can_continue-134"><span class="linenos">134</span></a>        <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
+</span><span id="Modifier.can_continue-135"><a href="#Modifier.can_continue-135"><span class="linenos">135</span></a>            <span class="n">randomness</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">randomness</span><span class="p">)</span>
+</span><span id="Modifier.can_continue-136"><a href="#Modifier.can_continue-136"><span class="linenos">136</span></a>
+</span><span id="Modifier.can_continue-137"><a href="#Modifier.can_continue-137"><span class="linenos">137</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">):</span>
+</span><span id="Modifier.can_continue-138"><a href="#Modifier.can_continue-138"><span class="linenos">138</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">condition</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier.can_continue-139"><a href="#Modifier.can_continue-139"><span class="linenos">139</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-140"><a href="#Modifier.can_continue-140"><span class="linenos">140</span></a>            <span class="n">condition</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">condition</span>
+</span><span id="Modifier.can_continue-141"><a href="#Modifier.can_continue-141"><span class="linenos">141</span></a>
+</span><span id="Modifier.can_continue-142"><a href="#Modifier.can_continue-142"><span class="linenos">142</span></a>        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">):</span>
+</span><span id="Modifier.can_continue-143"><a href="#Modifier.can_continue-143"><span class="linenos">143</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">life_span</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+</span><span id="Modifier.can_continue-144"><a href="#Modifier.can_continue-144"><span class="linenos">144</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-145"><a href="#Modifier.can_continue-145"><span class="linenos">145</span></a>            <span class="n">life_span</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">life_span</span>
+</span><span id="Modifier.can_continue-146"><a href="#Modifier.can_continue-146"><span class="linenos">146</span></a>
+</span><span id="Modifier.can_continue-147"><a href="#Modifier.can_continue-147"><span class="linenos">147</span></a>        <span class="k">if</span> <span class="n">life_span</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">condition</span> <span class="ow">and</span> <span class="n">randomness</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-148"><a href="#Modifier.can_continue-148"><span class="linenos">148</span></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">State</span><span class="o">.</span><span class="n">INITIAL</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RUNNING</span><span class="p">,</span> <span class="n">State</span><span class="o">.</span><span class="n">RESTARTING</span><span class="p">]:</span>
+</span><span id="Modifier.can_continue-149"><a href="#Modifier.can_continue-149"><span class="linenos">149</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="Modifier.can_continue-150"><a href="#Modifier.can_continue-150"><span class="linenos">150</span></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-151"><a href="#Modifier.can_continue-151"><span class="linenos">151</span></a>                <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Modifier.can_continue-152"><a href="#Modifier.can_continue-152"><span class="linenos">152</span></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="Modifier.can_continue-153"><a href="#Modifier.can_continue-153"><span class="linenos">153</span></a>            <span class="n">res</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="Modifier.can_continue-154"><a href="#Modifier.can_continue-154"><span class="linenos">154</span></a>        <span class="k">return</span> <span class="n">res</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>Checks if the modifier can continue to be applied.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    target (object): The target object.</p>
 
-<ul>
-<li><strong>target (object):</strong>  The target object.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>bool: True if the modifier can continue, False otherwise.</p>
-</blockquote>
+<p>Returns:
+    bool: True if the modifier can continue, False otherwise.</p>
 </div>
 
 
@@ -839,9 +818,9 @@ def funct(target, modifier, <em>args, *</em>kwargs):</p>
 
     </div>
     <a class="headerlink" href="#Modifier.stop"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Modifier.stop-170"><a href="#Modifier.stop-170"><span class="linenos">170</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Modifier.stop-171"><a href="#Modifier.stop-171"><span class="linenos">171</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
-</span><span id="Modifier.stop-172"><a href="#Modifier.stop-172"><span class="linenos">172</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Modifier.stop-171"><a href="#Modifier.stop-171"><span class="linenos">171</span></a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="Modifier.stop-172"><a href="#Modifier.stop-172"><span class="linenos">172</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Stops the modifier.&quot;&quot;&quot;</span>
+</span><span id="Modifier.stop-173"><a href="#Modifier.stop-173"><span class="linenos">173</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="n">STOPPED</span>
 </span></pre></div>
 
 

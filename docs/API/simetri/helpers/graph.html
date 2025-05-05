@@ -618,17 +618,11 @@
 
             <div class="docstring"><p>Given a list of edges, return a connected list of nodes.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    edges (Sequence[Sequence]): List of edges.</p>
 
-<ul>
-<li><strong>edges (Sequence[Sequence]):</strong>  List of edges.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Sequence: Connected list of nodes.</p>
-</blockquote>
+<p>Returns:
+    Sequence: Connected list of nodes.</p>
 </div>
 
 
@@ -669,17 +663,11 @@
 
             <div class="docstring"><p>Computes all the cycles in a given graph of edges.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    edges (Sequence[GraphEdge]): List of graph edges.</p>
 
-<ul>
-<li><strong>edges (Sequence[GraphEdge]):</strong>  List of graph edges.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Sequence[GraphEdge]: List of cycles if any cycle is found, None otherwise.</p>
-</blockquote>
+<p>Returns:
+    Sequence[GraphEdge]: List of cycles if any cycle is found, None otherwise.</p>
 </div>
 
 
@@ -717,18 +705,12 @@
 
             <div class="docstring"><p>Find all paths starting from a given node.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    graph (nx.Graph): The graph.
+    node: The starting node.</p>
 
-<ul>
-<li><strong>graph (nx.Graph):</strong>  The graph.</li>
-<li><strong>node:</strong>  The starting node.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>List: All paths starting from the given node.</p>
-</blockquote>
+<p>Returns:
+    List: All paths starting from the given node.</p>
 </div>
 
 
@@ -762,18 +744,12 @@
 
             <div class="docstring"><p>Given a NetworkX Graph and an island, return True if the given island is an open walk.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    graph (nx.Graph): The graph.
+    island: The island.</p>
 
-<ul>
-<li><strong>graph (nx.Graph):</strong>  The graph.</li>
-<li><strong>island:</strong>  The island.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>bool: True if the island is an open walk, False otherwise.</p>
-</blockquote>
+<p>Returns:
+    bool: True if the island is an open walk, False otherwise.</p>
 </div>
 
 
@@ -835,17 +811,11 @@
 
             <div class="docstring"><p>Given a list of graph edges, return a list of connected nodes.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    edges (Sequence[Sequence]): List of graph edges.</p>
 
-<ul>
-<li><strong>edges (Sequence[Sequence]):</strong>  List of graph edges.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Sequence: List of connected nodes.</p>
-</blockquote>
+<p>Returns:
+    Sequence: List of connected nodes.</p>
 </div>
 
 
@@ -879,18 +849,12 @@
 
             <div class="docstring"><p>Given a NetworkX Graph and an island, return True if the given island is a cycle.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    graph (nx.Graph): The graph.
+    island (Sequence): The island.</p>
 
-<ul>
-<li><strong>graph (nx.Graph):</strong>  The graph.</li>
-<li><strong>island (Sequence):</strong>  The island.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>bool: True if the island is a cycle, False otherwise.</p>
-</blockquote>
+<p>Returns:
+    bool: True if the island is a cycle, False otherwise.</p>
 </div>
 
 
@@ -926,18 +890,12 @@
 
             <div class="docstring"><p>Given a NetworkX Graph and an island, return True if the given island is an open walk.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    graph (nx.Graph): The graph.
+    island (Sequence): The island.</p>
 
-<ul>
-<li><strong>graph (nx.Graph):</strong>  The graph.</li>
-<li><strong>island (Sequence):</strong>  The island.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>bool: True if the island is an open walk, False otherwise.</p>
-</blockquote>
+<p>Returns:
+    bool: True if the island is an open walk, False otherwise.</p>
 </div>
 
 
@@ -986,17 +944,11 @@
 
             <div class="docstring"><p>Return a summary of a graph including cycles, open walks and degenerate nodes.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    graph (nx.Graph): The graph.</p>
 
-<ul>
-<li><strong>graph (nx.Graph):</strong>  The graph.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>str: Summary of the graph.</p>
-</blockquote>
+<p>Returns:
+    str: Summary of the graph.</p>
 </div>
 
 
@@ -1053,12 +1005,9 @@
             <div class="docstring"><p>A Node object is a 2D point with x and y coordinates.
 Used in graphs corresponding to shapes and batches.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>x (float):</strong>  X coordinate.</li>
-<li><strong>y (float):</strong>  Y coordinate.</li>
-</ul>
+<p>Attributes:
+    x (float): X coordinate.
+    y (float): Y coordinate.</p>
 </div>
 
 
@@ -1209,13 +1158,10 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>A Graph object is a collection of nodes and edges.</p>
 
-<h6 id="attributes">Attributes:</h6>
-
-<ul>
-<li><strong>type (Types):</strong>  The type of the graph.</li>
-<li><strong>subtype (Types):</strong>  The subtype of the graph.</li>
-<li><strong>nx_graph (nx.Graph):</strong>  The NetworkX graph object.</li>
-</ul>
+<p>Attributes:
+    type (Types): The type of the graph.
+    subtype (Types): The subtype of the graph.
+    nx_graph (nx.Graph): The NetworkX graph object.</p>
 </div>
 
 
@@ -1292,11 +1238,8 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>Return a list of all islands both cyclic and acyclic.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>List: List of all islands.</p>
-</blockquote>
+<p>Returns:
+    List: List of all islands.</p>
 </div>
 
 
@@ -1324,11 +1267,8 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>Return a list of cycles.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>List: List of cycles.</p>
-</blockquote>
+<p>Returns:
+    List: List of cycles.</p>
 </div>
 
 
@@ -1360,11 +1300,8 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>Return a list of open walks (aka open chains).</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>List: List of open walks.</p>
-</blockquote>
+<p>Returns:
+    List: List of open walks.</p>
 </div>
 
 
@@ -1392,11 +1329,8 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>Return the edges of the graph.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>EdgeView: Edges of the graph.</p>
-</blockquote>
+<p>Returns:
+    EdgeView: Edges of the graph.</p>
 </div>
 
 
@@ -1424,11 +1358,8 @@ Used in graphs corresponding to shapes and batches.</p>
 
             <div class="docstring"><p>Return the nodes of the graph.</p>
 
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>NodeView: Nodes of the graph.</p>
-</blockquote>
+<p>Returns:
+    NodeView: Nodes of the graph.</p>
 </div>
 
 

@@ -1061,22 +1061,16 @@
 
             <div class="docstring"><p>Covers an area with a hexagonal pattern.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    item (Union[Batch, Shape, Tag]): The item to be repeated.
+    size (float): The size of the hexagons.
+    gap (float, optional): The gap between hexagons. Defaults to 0.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 2.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 2.
+    flat (bool, optional): If True, hexagons are flat-topped. Defaults to True.</p>
 
-<ul>
-<li><strong>item (Union[Batch, Shape, Tag]):</strong>  The item to be repeated.</li>
-<li><strong>size (float):</strong>  The size of the hexagons.</li>
-<li><strong>gap (float, optional):</strong>  The gap between hexagons. Defaults to 0.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 2.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 2.</li>
-<li><strong>flat (bool, optional):</strong>  If True, hexagons are flat-topped. Defaults to True.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1120,20 +1114,14 @@
 
             <div class="docstring"><p>Covers an area with a rhombic pattern.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    item (Union[Batch, Shape, Tag]): The item to be repeated.
+    size (float): The size of the rhombuses.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 2.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 2.</p>
 
-<ul>
-<li><strong>item (Union[Batch, Shape, Tag]):</strong>  The item to be repeated.</li>
-<li><strong>size (float):</strong>  The size of the rhombuses.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 2.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 2.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1179,21 +1167,15 @@
 
             <div class="docstring"><p>Creates a hexagonal grid with pointy tops.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    x (float): The x-coordinate of the starting point.
+    y (float): The y-coordinate of the starting point.
+    size (float): The size of the hexagons.
+    n_rows (int): Number of rows in the grid.
+    n_cols (int): Number of columns in the grid.</p>
 
-<ul>
-<li><strong>x (float):</strong>  The x-coordinate of the starting point.</li>
-<li><strong>y (float):</strong>  The y-coordinate of the starting point.</li>
-<li><strong>size (float):</strong>  The size of the hexagons.</li>
-<li><strong>n_rows (int):</strong>  Number of rows in the grid.</li>
-<li><strong>n_cols (int):</strong>  Number of columns in the grid.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting grid as a Batch of Shapes.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting grid as a Batch of Shapes.</p>
 </div>
 
 
@@ -1245,21 +1227,15 @@
 
             <div class="docstring"><p>Covers an area with a hexagonal pattern with pointy tops.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    item (Union[Shape, Batch, Tag]): The item to be repeated.
+    size (float): The size of the hexagons.
+    gap (float, optional): The gap between hexagons. Defaults to 0.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 2.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 2.</p>
 
-<ul>
-<li><strong>item (Union[Shape, Batch, Tag]):</strong>  The item to be repeated.</li>
-<li><strong>size (float):</strong>  The size of the hexagons.</li>
-<li><strong>gap (float, optional):</strong>  The gap between hexagons. Defaults to 0.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 2.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 2.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1310,21 +1286,15 @@
 
             <div class="docstring"><p>Covers an area with a hexagonal pattern with flat tops.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    item (Union[Batch, Shape, Tag]): The item to be repeated.
+    size (float): The size of the hexagons.
+    gap (float, optional): The gap between hexagons. Defaults to 0.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 2.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 2.</p>
 
-<ul>
-<li><strong>item (Union[Batch, Shape, Tag]):</strong>  The item to be repeated.</li>
-<li><strong>size (float):</strong>  The size of the hexagons.</li>
-<li><strong>gap (float, optional):</strong>  The gap between hexagons. Defaults to 0.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 2.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 2.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1379,21 +1349,15 @@ Conway: o
 Oblique lattice
 Point group: C1</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    vector1 (VecType): The translation vector in the x direction.
+    vector2 (VecType): The translation vector in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>vector1 (VecType):</strong>  The translation vector in the x direction.</li>
-<li><strong>vector2 (VecType):</strong>  The translation vector in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting wallpaper pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting wallpaper pattern as a Batch object.</p>
 </div>
 
 
@@ -1450,21 +1414,15 @@ Conway: 2222
 Oblique lattice
 Point group: C2</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Shape, Batch, Tag]): The repeating motif.
+    vector1 (VecType): The translation vector in the x direction.
+    vector2 (VecType): The translation vector in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Shape, Batch, Tag]):</strong>  The repeating motif.</li>
-<li><strong>vector1 (VecType):</strong>  The translation vector in the x direction.</li>
-<li><strong>vector2 (VecType):</strong>  The translation vector in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting wallpaper pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting wallpaper pattern as a Batch object.</p>
 </div>
 
 
@@ -1582,22 +1540,16 @@ Conway: 333
 Hexagonal lattice.
 Point group: C3</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Shape, Batch, Tag]): The repeating motif.
+    rotocenter (Point): The center of rotation.
+    distance (float): The distance between the centers of the hexagons.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    flat_hex (bool, optional): If True, hexagons are flat-topped. Defaults to False.</p>
 
-<ul>
-<li><strong>generator (Union[Shape, Batch, Tag]):</strong>  The repeating motif.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>distance (float):</strong>  The distance between the centers of the hexagons.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>flat_hex (bool, optional):</strong>  If True, hexagons are flat-topped. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting wallpaper pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting wallpaper pattern as a Batch object.</p>
 </div>
 
 
@@ -1651,21 +1603,15 @@ Conway: 442
 Square lattice
 Point group: C4</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    rotocenter (Point): The center of rotation.
+    distance (float): The distance between the centers of the squares.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>distance (float):</strong>  The distance between the centers of the squares.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting wallpaper pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting wallpaper pattern as a Batch object.</p>
 </div>
 
 
@@ -1723,22 +1669,16 @@ Conway : 632
 Hexagonal lattice
 Point group: C6</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    rotocenter (Point): The center of rotation.
+    hex_size (float): The size of the hexagons.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    flat_hex (bool, optional): If True, hexagons are flat-topped. Defaults to False.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>hex_size (float):</strong>  The size of the hexagons.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>flat_hex (bool, optional):</strong>  If True, hexagons are flat-topped. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1796,22 +1736,16 @@ Conway : **
 Rectangular lattice
 Point group: D1</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_line (Line): The line of symmetry.
+    dx (float): Translation distance in the x direction.
+    dy (float): Translation distance in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_line (Line):</strong>  The line of symmetry.</li>
-<li><strong>dx (float):</strong>  Translation distance in the x direction.</li>
-<li><strong>dy (float):</strong>  Translation distance in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1869,23 +1803,17 @@ Conway : xx
 Rectangular lattice
 Point group: D1</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_line (Line): The line of symmetry.
+    distance (float): The distance for the glide reflection.
+    dx (float): Translation distance in the x direction.
+    dy (float): Translation distance in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_line (Line):</strong>  The line of symmetry.</li>
-<li><strong>distance (float):</strong>  The distance for the glide reflection.</li>
-<li><strong>dx (float):</strong>  Translation distance in the x direction.</li>
-<li><strong>dy (float):</strong>  Translation distance in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -1950,22 +1878,16 @@ Conway : *x
 Rhombic lattice
 Point group: D1</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_point (Point): The point of symmetry.
+    rhomb_size (float): The size of the rhombuses.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    horizontal (bool, optional): If True, the mirror line is horizontal. Defaults to True.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_point (Point):</strong>  The point of symmetry.</li>
-<li><strong>rhomb_size (float):</strong>  The size of the rhombuses.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>horizontal (bool, optional):</strong>  If True, the mirror line is horizontal. Defaults to True.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2025,22 +1947,16 @@ Conway : *2222
 Rectangular lattice
 Point group: D2</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_cross (Point): The point where the mirror lines cross.
+    dx (float): Translation distance in the x direction.
+    dy (float): Translation distance in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_cross (Point):</strong>  The point where the mirror lines cross.</li>
-<li><strong>dx (float):</strong>  Translation distance in the x direction.</li>
-<li><strong>dy (float):</strong>  Translation distance in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2106,23 +2022,17 @@ Conway : 22*
 Rectangular lattice
 Point group: D2</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    center_point (Point): The center point for the symmetry.
+    dx (float): Translation distance in the x direction.
+    dy (float): Translation distance in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    horizontal (bool, optional): If True, the mirror line is horizontal. Defaults to True.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>center_point (Point):</strong>  The center point for the symmetry.</li>
-<li><strong>dx (float):</strong>  Translation distance in the x direction.</li>
-<li><strong>dy (float):</strong>  Translation distance in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>horizontal (bool, optional):</strong>  If True, the mirror line is horizontal. Defaults to True.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2187,23 +2097,17 @@ Conway : 22x
 Rectangular lattice
 Point group: D2</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    rotocenter (Point): The center of rotation.
+    dx (float): Translation distance in the x direction.
+    dy (float): Translation distance in the y direction.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    horizontal (bool, optional): If True, the glide reflection is horizontal. Defaults to True.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>dx (float):</strong>  Translation distance in the x direction.</li>
-<li><strong>dy (float):</strong>  Translation distance in the y direction.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>horizontal (bool, optional):</strong>  If True, the glide reflection is horizontal. Defaults to True.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2260,21 +2164,15 @@ Conway : 2*22
 Rhombic lattice
 Point group: D2</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_cross (Point): The point where the mirror lines cross.
+    rhomb_size (float): The size of the rhombuses.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_cross (Point):</strong>  The point where the mirror lines cross.</li>
-<li><strong>rhomb_size (float):</strong>  The size of the rhombuses.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2332,21 +2230,15 @@ Conway : *442
 Square lattice
 Point group: D4</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    mirror_cross (Point): The point where the mirror lines cross.
+    side_length (float): The side length of the squares.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>mirror_cross (Point):</strong>  The point where the mirror lines cross.</li>
-<li><strong>side_length (float):</strong>  The side length of the squares.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2401,20 +2293,14 @@ Conway : 4*2
 Square lattice
 Point group: D4</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    dist (float): The distance between the centers of the squares.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>dist (float):</strong>  The distance between the centers of the squares.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2470,21 +2356,15 @@ Conway : *333
 Hexagonal lattice
 Point group: D3</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    center_point (Point): The center point for the symmetry.
+    hex_size (float): The size of the hexagons.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>center_point (Point):</strong>  The center point for the symmetry.</li>
-<li><strong>hex_size (float):</strong>  The size of the hexagons.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2544,21 +2424,15 @@ Conway : 3*3
 Hexagonal lattice
 Point group: D3</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    center_point (Point): The center point for the symmetry.
+    hex_size (float): The size of the hexagons.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>center_point (Point):</strong>  The center point for the symmetry.</li>
-<li><strong>hex_size (float):</strong>  The size of the hexagons.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 
@@ -2624,23 +2498,17 @@ Conway : *632
 Hexagonal lattice
 Point group: D6</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    generator (Union[Batch, Shape, Tag]): The repeating motif.
+    rotocenter (Point): The center of rotation.
+    mirror_cross (Point): The point where the mirror lines cross.
+    hex_size (float): The size of the hexagons.
+    reps1 (int, optional): Number of repetitions in the x direction. Defaults to 4.
+    reps2 (int, optional): Number of repetitions in the y direction. Defaults to 4.
+    flat_hex (bool, optional): If True, hexagons are flat-topped. Defaults to False.</p>
 
-<ul>
-<li><strong>generator (Union[Batch, Shape, Tag]):</strong>  The repeating motif.</li>
-<li><strong>rotocenter (Point):</strong>  The center of rotation.</li>
-<li><strong>mirror_cross (Point):</strong>  The point where the mirror lines cross.</li>
-<li><strong>hex_size (float):</strong>  The size of the hexagons.</li>
-<li><strong>reps1 (int, optional):</strong>  Number of repetitions in the x direction. Defaults to 4.</li>
-<li><strong>reps2 (int, optional):</strong>  Number of repetitions in the y direction. Defaults to 4.</li>
-<li><strong>flat_hex (bool, optional):</strong>  If True, hexagons are flat-topped. Defaults to False.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>Batch: The resulting pattern as a Batch object.</p>
-</blockquote>
+<p>Returns:
+    Batch: The resulting pattern as a Batch object.</p>
 </div>
 
 

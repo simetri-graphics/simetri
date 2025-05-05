@@ -4583,19 +4583,13 @@
 
             <div class="docstring"><p>Changes the hue of a color by a specified delta value.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    color: The Color object to modify.
+    delta: The amount to adjust the hue value (between 0.0 and 1.0).
+        Positive values increase hue, negative values decrease it.</p>
 
-<ul>
-<li><strong>color:</strong>  The Color object to modify.</li>
-<li><strong>delta:</strong>  The amount to adjust the hue value (between 0.0 and 1.0).
-Positive values increase hue, negative values decrease it.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A new Color instance with the modified hue value.</p>
-</blockquote>
+<p>Returns:
+    A new Color instance with the modified hue value.</p>
 </div>
 
 
@@ -4631,19 +4625,13 @@ Positive values increase hue, negative values decrease it.</li>
 
             <div class="docstring"><p>Changes the lightness of a color by a specified delta value.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    color: The Color object to modify.
+    delta: The amount to adjust the lightness value (between -1.0 and 1.0).
+        Positive values increase lightness, negative values decrease it.</p>
 
-<ul>
-<li><strong>color:</strong>  The Color object to modify.</li>
-<li><strong>delta:</strong>  The amount to adjust the lightness value (between -1.0 and 1.0).
-Positive values increase lightness, negative values decrease it.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A new Color instance with the modified lightness value.</p>
-</blockquote>
+<p>Returns:
+    A new Color instance with the modified lightness value.</p>
 </div>
 
 
@@ -4679,19 +4667,13 @@ Positive values increase lightness, negative values decrease it.</li>
 
             <div class="docstring"><p>Changes the saturation of a color by a specified delta value.</p>
 
-<h6 id="arguments">Arguments:</h6>
+<p>Args:
+    color: The Color object to modify.
+    delta: The amount to adjust the saturation value (between -1.0 and 1.0).
+        Positive values increase saturation, negative values decrease it.</p>
 
-<ul>
-<li><strong>color:</strong>  The Color object to modify.</li>
-<li><strong>delta:</strong>  The amount to adjust the saturation value (between -1.0 and 1.0).
-Positive values increase saturation, negative values decrease it.</li>
-</ul>
-
-<h6 id="returns">Returns:</h6>
-
-<blockquote>
-  <p>A new Color instance with the modified saturation value.</p>
-</blockquote>
+<p>Returns:
+    A new Color instance with the modified saturation value.</p>
 </div>
 
 
@@ -4961,25 +4943,23 @@ Positive values increase saturation, negative values decrease it.</li>
 for the components are normalized between 0.0 and 1.0. Values outside this range
 are automatically converted from the 0-255 range.</p>
 
-<h6 id="attributes">Attributes:</h6>
+<p>Attributes:
+    red: The red component of the color (0.0 to 1.0).
+    green: The green component of the color (0.0 to 1.0).
+    blue: The blue component of the color (0.0 to 1.0).
+    alpha: The alpha (transparency) component (0.0 to 1.0), default is 1.
+    space: The color space, default is "rgb".</p>
 
-<ul>
-<li><strong>red:</strong>  The red component of the color (0.0 to 1.0).</li>
-<li><strong>green:</strong>  The green component of the color (0.0 to 1.0).</li>
-<li><strong>blue:</strong>  The blue component of the color (0.0 to 1.0).</li>
-<li><strong>alpha:</strong>  The alpha (transparency) component (0.0 to 1.0), default is 1.</li>
-<li><strong>space:</strong>  The color space, default is "rgb".</li>
-</ul>
-
-<h6 id="examples">Examples:</h6>
+<p>Examples:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">red</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">transparent_blue</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb255</span> <span class="o">=</span> <span class="n">Color</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>  <span class="c1"># Will be automatically normalized</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>red = Color(1.0, 0.0, 0.0)
+      transparent_blue = Color(0.0, 0.0, 1.0, 0.5)
+      rgb255 = Color(255, 0, 128)  # Will be automatically normalized</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -5554,28 +5534,26 @@ if value is a Color return value</p>
 
 <p>This class defines a linear gradient between two points with specified colors.</p>
 
-<h6 id="attributes">Attributes:</h6>
+<p>Attributes:
+    x1: The x-coordinate of the starting point.
+    y1: The y-coordinate of the starting point.
+    x2: The x-coordinate of the ending point.
+    y2: The y-coordinate of the ending point.
+    colors: A sequence of Color objects defining the gradient colors.
+    positions: A sequence of Point objects defining the gradient positions.
+    extend: Whether to extend the gradient beyond its endpoints.</p>
 
-<ul>
-<li><strong>x1:</strong>  The x-coordinate of the starting point.</li>
-<li><strong>y1:</strong>  The y-coordinate of the starting point.</li>
-<li><strong>x2:</strong>  The x-coordinate of the ending point.</li>
-<li><strong>y2:</strong>  The y-coordinate of the ending point.</li>
-<li><strong>colors:</strong>  A sequence of Color objects defining the gradient colors.</li>
-<li><strong>positions:</strong>  A sequence of Point objects defining the gradient positions.</li>
-<li><strong>extend:</strong>  Whether to extend the gradient beyond its endpoints.</li>
-</ul>
-
-<h6 id="examples">Examples:</h6>
+<p>Examples:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn"><a href="../graphics/common.html">simetri.graphics.common</a></span> <span class="kn">import</span> <span class="n">Point</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span> <span class="o">=</span> <span class="n">LinearGradient</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
-<span class="gp">... </span>                         <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)])</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>from <a href="../graphics/common.html">simetri.graphics.common</a> import Point
+      gradient = LinearGradient(0, 0, 100, 100,
+          ...                          [Color(1, 0, 0), Color(0, 0, 1)],
+          ...                          [Point(0, 0), Point(100, 100)])</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
@@ -5727,27 +5705,25 @@ if value is a Color return value</p>
 
 <p>This class defines a radial gradient that radiates outward from a center point.</p>
 
-<h6 id="attributes">Attributes:</h6>
+<p>Attributes:
+    x: The x-coordinate of the center point.
+    y: The y-coordinate of the center point.
+    radius: The radius of the gradient.
+    colors: A sequence of Color objects defining the gradient colors.
+    positions: A sequence of Point objects defining the gradient positions.
+    extend: Whether to extend the gradient beyond its defined radius.</p>
 
-<ul>
-<li><strong>x:</strong>  The x-coordinate of the center point.</li>
-<li><strong>y:</strong>  The y-coordinate of the center point.</li>
-<li><strong>radius:</strong>  The radius of the gradient.</li>
-<li><strong>colors:</strong>  A sequence of Color objects defining the gradient colors.</li>
-<li><strong>positions:</strong>  A sequence of Point objects defining the gradient positions.</li>
-<li><strong>extend:</strong>  Whether to extend the gradient beyond its defined radius.</li>
-</ul>
-
-<h6 id="examples">Examples:</h6>
+<p>Examples:</p>
 
 <blockquote>
-  <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn"><a href="../graphics/common.html">simetri.graphics.common</a></span> <span class="kn">import</span> <span class="n">Point</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gradient</span> <span class="o">=</span> <span class="n">RadialGradient</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="n">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span>
-<span class="gp">... </span>                        <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">Point</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">)])</span>
-</code></pre>
-  </div>
+  <blockquote>
+    <blockquote>
+      <p>from <a href="../graphics/common.html">simetri.graphics.common</a> import Point
+      gradient = RadialGradient(50, 50, 30,
+          ...                         [Color(1, 1, 1), Color(0, 0, 0)],
+          ...                         [Point(50, 50), Point(80, 50)])</p>
+    </blockquote>
+  </blockquote>
 </blockquote>
 </div>
 
