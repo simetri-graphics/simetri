@@ -38,7 +38,7 @@ Since Shape objects hold a sequence of 2D points the canonical data structure fo
 
 ## List operations
 append(point)
-:   Add a point to the end of the points. It will fail if this would cause redundant points in the Shape object. If the Shape object is closed then when drawn this new appended point will be connected to the first point.
+:   Add a point to the end of the points. If the Shape object is closed then when drawn this new appended point will be connected to the first point.
 
 clear()
 :   Remove all points from the Shape.
@@ -47,7 +47,7 @@ copy()
 :   Return a copy of the Shape object. **Not just the points but the whole Shape object will be copied.** To copy just the vertices use `vertices_copy = shape.vertices`.
 
 count(point, proxy=False)
-:   Since all points are unique, count will return either 1 or 0. By default it will use exact coordinates for comparison (by using RTOL and ATOL, see the [Numerical Issues] section). If the `proxy` argument is set to be True than it will search by using distances.
+:   By default it will use exact coordinates for comparison (by using RTOL and ATOL, see the [Numerical Issues] section). If the `proxy` argument is set to be True than it will search by using distances.
 
 *[RTOL]: Relative tolerance for comparing floating point numbers.
 *[ATOL]:  Absolute tolerance for comparing floating point numbers.
@@ -55,8 +55,8 @@ count(point, proxy=False)
 extend(<points> or Shape)
 :   Add points from another sequence of points or Shape object to the end of the points. It will fail if this would cause redundant points in the Shape object.
 
-index(point, proxy=False)
-:   Return the index of the first occurrence of a specified point. By default it will use exact coordinates for comparison (by using RTOL and ATOL, see the [Numerical Issues] section). If the `proxy` argument is set to be True than it will search by using distances.
+index(point, start=0, end=None, proxy=False)
+:   Return the index of the first occurrence of a specified point. By default it will use exact coordinates for comparison (by using RTOL and ATOL, see the [Numerical Issues] section). If the `proxy` argument is set to be True than it will search by using distances. It will raise a `ValueError` if the point is not found. The `start` and `end` arguments are optional and can be used to specify a range in which to search for the point.
 
 insert(index, point)
 :   Insert a point at a specified position. It will fail if this would cause redundant points in the Shape object.

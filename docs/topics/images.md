@@ -1,5 +1,7 @@
 <div id="random-image-container2"></div>
 
+# Images
+
 ## Working with images
 
 ## PIL Image Object

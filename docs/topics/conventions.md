@@ -193,13 +193,7 @@ canvas.draw(shape).translate(100, 0).draw(shape2).save('output.png')
 
 ## Arguments with `None` default values
 
-Allmost all methods in SİMETRİ have default values for their arguments. If an argument is not specified, the default value will be used. For example, the `draw` method has the following signature:
-
-pos (Point, optional): Lower-left corner of the grid. Defaults to None.
-width (float, optional): Length of the grid along the x-axis. Defaults to None.
-height (float, optional): Length of the grid along the y-axis. Defaults to None.
-step_size (optional): Step size for the grid. Defaults to None.
-cs_size (float, optional): Size of the coordinate system. Defaults to None.
+Allmost all methods in SİMETRİ have default values for their arguments. If an argument is not specified, the default value will be used.
 
 <!-- $$
 \cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}

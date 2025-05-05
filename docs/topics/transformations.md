@@ -6,17 +6,19 @@ Transformations are used to change the position, size, and orientation of shapes
 
 Transformations can be performed successively by using repetitions. The number of repetitions can be specified using the `reps` argument. The default value is 0. This is a very powerful technique to create intricate patterns with ease.
 
+!!! tip "When an object is not active, it cannot be transformed."
+
 ## Transformation Types
 
 All `Shape`, `LinPath`, `Image`, and `Batch` objects can be transformed by using one of the following methods:
 
-* `#!python translate(dx: float, dy: float, reps: int=0)`
-* `#!python rotate(angle: float, about: Point, reps: int=0)`
-* `#!python mirror(about: Line, reps: int=0)`
-* `#!python scale(scale_x: float, scale_y: float, about: Point, reps: int=0)`
-* `#!python glide(mirror_line: Line, distance: float, reps: int=0)`
-* `#!python shear(angle_x: float, angle_y: float, reps: int=0)`
-* `#!python transform(transform_matrix: array, reps: int=0)`
+* `#!python translate(dx: float, dy: float, reps: int=0, key: Callable=None)`
+* `#!python rotate(angle: float, about: Point, reps: int=0, key: Callable=None)`
+* `#!python mirror(about: Line, reps: int=0, key: Callable=None)`
+* `#!python scale(scale_x: float, scale_y: float, about: Point, reps: int=0, key: Callable=None)`
+* `#!python glide(mirror_line: Line, distance: float, reps: int=0, key: Callable=None)`
+* `#!python shear(angle_x: float, angle_y: float, reps: int=0, key: Callable=None)`
+* `#!python transform(transform_matrix: array, reps: int=0, key: Callable=None)`
 
 There is a special transformation method called `move_to` that can be used to move a shape, path, image, or batch object to a new position without changing its size or orientation. The `move_to` method moves the midpoint of the target object's boundary box to the specified position by default. This can be changed by specifying an anchor point. The `move_to` method has the following signature:
 
