@@ -1,7 +1,7 @@
 <div id="random-image-container"></div>
 # Reading
 
-These are the books that I used and liked. There will be brief summaries of each book. Books are grouped by their tags. Each book may have one or more tags. You can view a list of categorized books in [the tags page](tags.md).
+These are the books that I used and liked. There will be brief summaries of each book. Books are grouped by their tags and each book may have one or more tags. You can view a list of categorized books in [the tags page](tags.md).
 
 [![cover](assets/book_covers_and_pages/tilings_and_patterns.jpg){width="125"}](books/tilings_and_patterns.md)
 [![cover](assets/book_covers_and_pages/symmetries_of_things.jpg){width="125"}](books/the_symmetries_of_things.md)
