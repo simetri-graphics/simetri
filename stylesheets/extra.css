@@ -1,0 +1,152 @@
+:root {
+  --color-heading: rgb(194, 124, 20);
+  --color-deflist: rgb(188, 184, 138);
+  --base-border-radius: 0.5rem;
+}
+
+.md-content img {
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-color: red; */
+  /* outline-width: 3px; */
+  /* outline-style: solid; */
+  /* outline-color: rgb(243, 228, 199); */
+  border-radius: var(--base-border-radius);
+}
+/* Maximum space for text block */
+.md-grid {
+    display: flex;
+    /* max-width: initial; */
+    grid-template-columns: 70% 30%;
+    align-items: center;
+  }
+  /* max-width: 100%; or 100%, if you want to stretch to full-width */
+
+.md-typeset .admonition,
+  .md-typeset details {
+    font-size: 16px;
+    font-family: 'Verdana', sans-serif;
+  }
+
+article.md-post--excerpt p {
+    font-size: 16px;
+    font-family: 'Verdana', sans-serif;
+  }
+article.md-post--excerpt nav {
+    display: none;
+  }
+
+  /* for indenting the nav bar */
+  .md-nav__item--section > .md-nav > .md-nav__list {
+    margin-left: 0.5rem;
+  }
+
+  [data-md-color-scheme="custom"] .md-typeset h2 {
+    /* color: var(--md-primary-fg-color--dark); */
+    color: rgb(197, 234, 130);;
+  }
+
+h1, h2, h3 {
+  /* color: rgb(194, 124, 20); */
+  color: var(--color-heading);
+}
+dt {
+  color: var(--color-deflist);
+  font-weight: bold;
+  /* font-size: 1.2em; */
+}
+
+/*
+.column1 {
+    flex: 40%;
+    padding: 5px;
+  }
+.column2 {
+    flex: 60%;
+    padding: 5px;
+  } */
+
+
+
+  /* Change font family of filename present on top of code block. */
+.highlight span.filename {
+  border-bottom: none;
+  border-radius: var(--base-border-radius);
+  display: inline;
+  font-family: var(--md-code-font-family);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.highlight span.filename + pre > code {
+  border-radius: var(--base-border-radius);
+  border-top-left-radius: 0;
+}
+.md-typeset pre > code {
+  border-radius: var(--base-border-radius);
+}
+
+/* Grid Cards */
+.md-typeset .grid.cards > ul > li {
+  border-radius: var(--base-border-radius);
+}
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 0 0.2rem #ffffff40;
+}
+
+/* Markdown Button */
+.md-typeset .md-button {
+  border-radius: var(--base-border-radius);
+}
+
+/* Critic, Mark */
+ins.critic,
+del.critic {
+  text-decoration: none;
+}
+
+.md-typeset .critic,
+.md-typeset mark {
+  border-radius: 0.2rem;
+  padding: 0 0.2rem;
+}
+
+.md-typeset mark {
+  box-shadow: 0 0 0 0.1rem var(--md-typeset-mark-color);
+}
+
+.md-typeset ins.critic {
+  box-shadow: 0 0 0 0.1rem var(--md-typeset-ins-color);
+}
+
+.md-typeset del.critic {
+  box-shadow: 0 0 0 0.1rem var(--md-typeset-del-color);
+}
+
+/* Forms */
+.md-search__form {
+  border-radius: var(--base-border-radius);
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  border-top-right-radius: var(--base-border-radius);
+  border-top-left-radius: var(--base-border-radius);
+}
+
+[dir="ltr"] .md-search__output {
+  border-bottom-right-radius: var(--base-border-radius);
+  border-bottom-left-radius: var(--base-border-radius);
+}
+
+/* Blog - index.md */
+.md-post--excerpt {
+  background-color: var(--md-accent-fg-color--transparent);
+  box-shadow: 0 0 0 1rem var(--md-accent-fg-color--transparent);
+  border-radius: var(--base-border-radius);
+}
+
+/* Table */
+.md-typeset table:not([class]) {
+  border-radius: var(--base-border-radius);
+}
