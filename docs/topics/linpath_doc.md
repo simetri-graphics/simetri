@@ -60,7 +60,6 @@ canvas.display()
 ```
 
 
-
 ![png](linpath_doc_files/linpath_doc_3_0.png)
 
 
@@ -88,7 +87,7 @@ canvas.display()
 
 
 
-![png](linpath_doc_files/linpath_doc_4_0.png)
+![png](linpath_doc_files/linpath_doc_4_0.png){style="border-radius:20px"}
 
 
 

@@ -1,3 +1,10 @@
+---
+categories:
+    - Elements
+tags:
+    - images
+readtime: 5
+---
 <div id="random-image-container2"></div>
 
 # Images

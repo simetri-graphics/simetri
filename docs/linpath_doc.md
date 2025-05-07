@@ -1,3 +1,9 @@
+---
+categories:
+    - Elements
+tags:
+    - SİMETRİ Basics
+---
 # `LinPath` Path Objects
 
 

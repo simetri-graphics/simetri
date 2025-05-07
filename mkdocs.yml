@@ -85,6 +85,13 @@ theme:
 
 plugins:
   - search:
+  - categories:
+      generate_index: true
+      verbose: false
+      base_name: 'Categories'
+      section_title: 'Categories'
+      no_nav: false
+      category_separator: '|'
   - blog:
       blog_dir: .
       post_url_format: "{slug}"
@@ -108,13 +115,7 @@ plugins:
       background: white
       shadow: true
       manual: false
-  # - categories:
-  #     generate_index: true
-  #     verbose: false
-  #     base_name: 'Blog Categories'
-  #     section_title: 'Blog'
-  #     no_nav: false
-  #     category_separator: '|'
+
   # - blog:
   #     blog_dir: .
   #     archive_date_format: MM yyyy
