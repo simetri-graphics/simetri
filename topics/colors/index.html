@@ -1,0 +1,2266 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="simetri.graphics computational geometry library">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/simetri-graphics/simetri-blog/topics/colors/">
+      
+      
+        <link rel="prev" href="../style/line_style/">
+      
+      
+        <link rel="next" href="../../gallery/">
+      
+      
+      <link rel="icon" href="../../assets/simetri_logo_48by48.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Colors - simetri.graphics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#colors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="simetri.graphics" class="md-header__button md-logo" aria-label="simetri.graphics" data-md-component="logo">
+      
+  <img src="../../assets/simetri_logo_48by48.gif" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            simetri.graphics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Colors
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="simetri.graphics" class="md-nav__button md-logo" aria-label="simetri.graphics" data-md-component="logo">
+      
+  <img src="../../assets/simetri_logo_48by48.gif" alt="logo">
+
+    </a>
+    simetri.graphics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Elements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Elements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conventions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Conventions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shapes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bounding_boxes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bounding-boxes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../canvas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Canvas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Images
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linpath_doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Paths
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Style attributes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Style attributes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../styling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Line-style
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../style/line_style/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fill-style
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Colors
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Colors
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On This Page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On This Page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#named-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Named-colors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorsys-conversions-between-color-systems-from-python-3133-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      colorsys -- Conversions between color systems (from Python 3.13.3 documentation)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gallery
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tags
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Reading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tutorials
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On This Page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On This Page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#named-colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Named-colors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colorsys-conversions-between-color-systems-from-python-3133-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      colorsys -- Conversions between color systems (from Python 3.13.3 documentation)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<div id="random-image-container2"></div>
+
+<h1 id="colors">Colors</h1>
+<p><a id="sec_color_chart"></a></p>
+<h2 id="named-colors">Named-colors</h2>
+<p>SİMETRİ provides a comprehensive list of colors that can be used in your designs. These colors can be accessed by using <code>sg.color_name</code>. The chart of all available named-colors is shown below.</p>
+<div class="admonition note">
+<p class="admonition-title">These names come from the <code>xkcd color survey</code></p>
+<p>The colors are defined in the <a href="https://www.w3.org/TR/css-color-4/#named-colors">CSS Color Module Level 4</a> specification. The list is not exhaustive, and you can always define your own colors using RGB or HEX values.</p>
+</div>
+<p><a class="glightbox" href="../../assets/sg_color_chart.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="named_color_chart" src="../../assets/sg_color_chart.svg" width="800" /></a></p>
+<h2 id="colorsys-conversions-between-color-systems-from-python-3133-documentation">colorsys -- Conversions between color systems (<a href="https://docs.python.org/3/library/colorsys.html">from Python 3.13.3 documentation</a>)</h2>
+<p>colorsys — Conversions between color systems
+Source code: Lib/colorsys.py</p>
+<p>The colorsys module defines bidirectional conversions of color values between colors expressed in the RGB (Red Green Blue) color space used in computer monitors and three other coordinate systems: YIQ, HLS (Hue Lightness Saturation) and HSV (Hue Saturation Value). Coordinates in all of these color spaces are floating-point values. In the YIQ space, the Y coordinate is between 0 and 1, but the I and Q coordinates can be positive or negative. In all other spaces, the coordinates are all between 0 and 1.</p>
+<p>See also More information about color spaces can be found at <a href="https://poynton.ca/ColorFAQ.html">https://poynton.ca/ColorFAQ.html</a> and <a href="https://www.cambridgeincolour.com/tutorials/color-spaces.htm">https://www.cambridgeincolour.com/tutorials/color-spaces.htm</a>.
+The colorsys module defines the following functions:</p>
+<dl>
+<dt>colorsys.rgb_to_yiq(r, g, b)</dt>
+<dd>Convert the color from RGB coordinates to YIQ coordinates.</dd>
+<dt>colorsys.yiq_to_rgb(y, i, q)</dt>
+<dd>Convert the color from YIQ coordinates to RGB coordinates.</dd>
+<dt>colorsys.rgb_to_hls(r, g, b)</dt>
+<dd>Convert the color from RGB coordinates to HLS coordinates.</dd>
+<dt>colorsys.hls_to_rgb(h, l, s)</dt>
+<dd>Convert the color from HLS coordinates to RGB coordinates.</dd>
+<dt>colorsys.rgb_to_hsv(r, g, b)</dt>
+<dd>Convert the color from RGB coordinates to HSV coordinates.</dd>
+<dt>colorsys.hsv_to_rgb(h, s, v)</dt>
+<dd>Convert the color from HSV coordinates to RGB coordinates.</dd>
+</dl>
+<p>Example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span><span class="w"> </span><span class="nn">colorsys</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="o">&gt;&gt;&gt;</span><span class="n">colorsys</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="o">&gt;&gt;&gt;</span>
+</span></code></pre></div>
+<!-- From [css named-colors](https://www.w3.org/TR/css-color-4/#named-colors)
+
+black   #000000
+silver  #c0c0c0
+gray    #808080
+white   #ffffff
+maroon  #800000
+red #ff0000
+purple  #800080
+fuchsia #ff00ff
+green   #008000
+lime    #00ff00
+olive   #808000
+yellow  #ffff00
+navy    #000080
+blue    #0000ff
+teal    #008080
+aqua    #00ffff
+In addition to these 16 colors, about 150 other colors have a keyword associated to them: -->
+
+<!-- # Keyword  RGB hex value   Sample
+# aliceblue #f0f8ff
+# antiquewhite  #faebd7
+# aqua  #00ffff
+# aquamarine    #7fffd4
+# azure #f0ffff
+# beige #f5f5dc
+# bisque    #ffe4c4
+# black #000000
+# blanchedalmond    #ffebcd
+# blue  #0000ff
+# blueviolet    #8a2be2
+# brown #a52a2a
+# burlywood #deb887
+# cadetblue #5f9ea0
+# chartreuse    #7fff00
+# chocolate #d2691e
+# coral #ff7f50
+# cornflowerblue    #6495ed
+# cornsilk  #fff8dc
+# crimson   #dc143c
+# cyan
+# #00ffff (synonym of aqua)
+# darkblue  #00008b
+# darkcyan  #008b8b
+# darkgoldenrod #b8860b
+# darkgray  #a9a9a9
+# darkgreen #006400
+# darkgrey  #a9a9a9
+# darkkhaki #bdb76b
+# darkmagenta   #8b008b
+# darkolivegreen    #556b2f
+# darkorange    #ff8c00
+# darkorchid    #9932cc
+# darkred   #8b0000
+# darksalmon    #e9967a
+# darkseagreen  #8fbc8f
+# darkslateblue #483d8b
+# darkslategray #2f4f4f
+# darkslategrey #2f4f4f
+# darkturquoise #00ced1
+# darkviolet    #9400d3
+# deeppink  #ff1493
+# deepskyblue   #00bfff
+# dimgray   #696969
+# dimgrey   #696969
+# dodgerblue    #1e90ff
+# firebrick #b22222
+# floralwhite   #fffaf0
+# forestgreen   #228b22
+# fuchsia   #ff00ff
+# gainsboro #dcdcdc
+# ghostwhite    #f8f8ff
+# gold  #ffd700
+# goldenrod #daa520
+# gray  #808080
+# green #008000
+# greenyellow   #adff2f
+# grey  #808080 (synonym of gray)
+# honeydew  #f0fff0
+# hotpink   #ff69b4
+# indianred #cd5c5c
+# indigo    #4b0082
+# ivory #fffff0
+# khaki #f0e68c
+# lavender  #e6e6fa
+# lavenderblush #fff0f5
+# lawngreen #7cfc00
+# lemonchiffon  #fffacd
+# lightblue #add8e6
+# lightcoral    #f08080
+# lightcyan #e0ffff
+# lightgoldenrodyellow  #fafad2
+# lightgray #d3d3d3
+# lightgreen    #90ee90
+# lightgrey #d3d3d3
+# lightpink #ffb6c1
+# lightsalmon   #ffa07a
+# lightseagreen #20b2aa
+# lightskyblue  #87cefa
+# lightslategray    #778899
+# lightslategrey    #778899
+# lightsteelblue    #b0c4de
+# lightyellow   #ffffe0
+# lime  #00ff00
+# limegreen #32cd32
+# linen #faf0e6
+# magenta
+# #ff00ff (synonym of fuchsia)
+# maroon    #800000
+# mediumaquamarine  #66cdaa
+# mediumblue    #0000cd
+# mediumorchid  #ba55d3
+# mediumpurple  #9370db
+# mediumseagreen    #3cb371
+# mediumslateblue   #7b68ee
+# mediumspringgreen #00fa9a
+# mediumturquoise   #48d1cc
+# mediumvioletred   #c71585
+# midnightblue  #191970
+# mintcream #f5fffa
+# mistyrose #ffe4e1
+# moccasin  #ffe4b5
+# navajowhite   #ffdead
+# navy  #000080
+# oldlace   #fdf5e6
+# olive #808000
+# olivedrab #6b8e23
+# orange    #ffa500
+# orangered #ff4500
+# orchid    #da70d6
+# palegoldenrod #eee8aa
+# palegreen #98fb98
+# paleturquoise #afeeee
+# palevioletred #db7093
+# papayawhip    #ffefd5
+# peachpuff #ffdab9
+# peru  #cd853f
+# pink  #ffc0cb
+# plum  #dda0dd
+# powderblue    #b0e0e6
+# purple    #800080
+# rebeccapurple #663399
+# red   #ff0000
+# rosybrown #bc8f8f
+# royalblue #4169e1
+# saddlebrown   #8b4513
+# salmon    #fa8072
+# sandybrown    #f4a460
+# seagreen  #2e8b57
+# seashell  #fff5ee
+# sienna    #a0522d
+# silver    #c0c0c0
+# skyblue   #87ceeb
+# slateblue #6a5acd
+# slategray #708090
+# slategrey #708090
+# snow  #fffafa
+# springgreen   #00ff7f
+# steelblue #4682b4
+# tan   #d2b48c
+# teal  #008080
+# thistle   #d8bfd8
+# tomato    #ff6347
+# transparent   See transparent.
+# turquoise #40e0d0
+# violet    #ee82ee
+# wheat #f5deb3
+# white #ffffff
+# whitesmoke    #f5f5f5
+# yellow    #ffff00
+# yellowgreen   #9acd32
+
+
+<table class="named-color-table">
+    <thead>
+     <tr>
+      <th>Named
+      <th>Numeric
+      <th>Color name
+      <th>Hex rgb
+      <th>Decimal
+    <tbody>
+     <tr>
+      <td style="background:aliceblue">
+      <td style="background:#f0f8ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-aliceblue">aliceblue</dfn>
+      <td>#f0f8ff
+      <td>240 248 255
+     <tr>
+      <td style="background:antiquewhite">
+      <td style="background:#faebd7">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-antiquewhite">antiquewhite</dfn>
+      <td>#faebd7
+      <td>250 235 215
+     <tr>
+      <td style="background:aqua">
+      <td style="background:#00ffff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-aqua">aqua</dfn>
+      <td>#00ffff
+      <td>0 255 255
+     <tr>
+      <td style="background:aquamarine">
+      <td style="background:#7fffd4">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-aquamarine">aquamarine</dfn>
+      <td>#7fffd4
+      <td>127 255 212
+     <tr>
+      <td style="background:azure">
+      <td style="background:#f0ffff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-azure">azure</dfn>
+      <td>#f0ffff
+      <td>240 255 255
+     <tr>
+      <td style="background:beige">
+      <td style="background:#f5f5dc">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-beige">beige</dfn>
+      <td>#f5f5dc
+      <td>245 245 220
+     <tr>
+      <td style="background:bisque">
+      <td style="background:#ffe4c4">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-bisque">bisque</dfn>
+      <td>#ffe4c4
+      <td>255 228 196
+     <tr>
+      <td style="background:black">
+      <td style="background:#000000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-black">black</dfn>
+      <td>#000000
+      <td>0 0 0
+     <tr>
+      <td style="background:blanchedalmond">
+      <td style="background:#ffebcd">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-blanchedalmond">blanchedalmond</dfn>
+      <td>#ffebcd
+      <td>255 235 205
+     <tr>
+      <td style="background:blue">
+      <td style="background:#0000ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-blue">blue</dfn>
+      <td>#0000ff
+      <td>0 0 255
+     <tr>
+      <td style="background:blueviolet">
+      <td style="background:#8a2be2">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-blueviolet">blueviolet</dfn>
+      <td>#8a2be2
+      <td>138 43 226
+     <tr>
+      <td style="background:brown">
+      <td style="background:#a52a2a">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-brown">brown</dfn>
+      <td>#a52a2a
+      <td>165 42 42
+     <tr>
+      <td style="background:burlywood">
+      <td style="background:#deb887">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-burlywood">burlywood</dfn>
+      <td>#deb887
+      <td>222 184 135
+     <tr>
+      <td style="background:cadetblue">
+      <td style="background:#5f9ea0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-cadetblue">cadetblue</dfn>
+      <td>#5f9ea0
+      <td>95 158 160
+     <tr>
+      <td style="background:chartreuse">
+      <td style="background:#7fff00">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-chartreuse">chartreuse</dfn>
+      <td>#7fff00
+      <td>127 255 0
+     <tr>
+      <td style="background:chocolate">
+      <td style="background:#d2691e">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-chocolate">chocolate</dfn>
+      <td>#d2691e
+      <td>210 105 30
+     <tr>
+      <td style="background:coral">
+      <td style="background:#ff7f50">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-coral">coral</dfn>
+      <td>#ff7f50
+      <td>255 127 80
+     <tr>
+      <td style="background:cornflowerblue">
+      <td style="background:#6495ed">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-cornflowerblue">cornflowerblue</dfn>
+      <td>#6495ed
+      <td>100 149 237
+     <tr>
+      <td style="background:cornsilk">
+      <td style="background:#fff8dc">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-cornsilk">cornsilk</dfn>
+      <td>#fff8dc
+      <td>255 248 220
+     <tr>
+      <td style="background:crimson">
+      <td style="background:#dc143c">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-crimson">crimson</dfn>
+      <td>#dc143c
+      <td>220 20 60
+     <tr>
+      <td style="background:cyan">
+      <td style="background:#00ffff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-cyan">cyan</dfn>
+      <td>#00ffff
+      <td>0 255 255
+     <tr>
+      <td style="background:darkblue">
+      <td style="background:#00008b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkblue">darkblue</dfn>
+      <td>#00008b
+      <td>0 0 139
+     <tr>
+      <td style="background:darkcyan">
+      <td style="background:#008b8b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkcyan">darkcyan</dfn>
+      <td>#008b8b
+      <td>0 139 139
+     <tr>
+      <td style="background:darkgoldenrod">
+      <td style="background:#b8860b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkgoldenrod">darkgoldenrod</dfn>
+      <td>#b8860b
+      <td>184 134 11
+     <tr>
+      <td style="background:darkgray">
+      <td style="background:#a9a9a9">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkgray">darkgray</dfn>
+      <td>#a9a9a9
+      <td>169 169 169
+     <tr>
+      <td style="background:darkgreen">
+      <td style="background:#006400">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkgreen">darkgreen</dfn>
+      <td>#006400
+      <td>0 100 0
+     <tr>
+      <td style="background:darkgrey">
+      <td style="background:#a9a9a9">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkgrey">darkgrey</dfn>
+      <td>#a9a9a9
+      <td>169 169 169
+     <tr>
+      <td style="background:darkkhaki">
+      <td style="background:#bdb76b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkkhaki">darkkhaki</dfn>
+      <td>#bdb76b
+      <td>189 183 107
+     <tr>
+      <td style="background:darkmagenta">
+      <td style="background:#8b008b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkmagenta">darkmagenta</dfn>
+      <td>#8b008b
+      <td>139 0 139
+     <tr>
+      <td style="background:darkolivegreen">
+      <td style="background:#556b2f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkolivegreen">darkolivegreen</dfn>
+      <td>#556b2f
+      <td>85 107 47
+     <tr>
+      <td style="background:darkorange">
+      <td style="background:#ff8c00">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkorange">darkorange</dfn>
+      <td>#ff8c00
+      <td>255 140 0
+     <tr>
+      <td style="background:darkorchid">
+      <td style="background:#9932cc">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkorchid">darkorchid</dfn>
+      <td>#9932cc
+      <td>153 50 204
+     <tr>
+      <td style="background:darkred">
+      <td style="background:#8b0000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkred">darkred</dfn>
+      <td>#8b0000
+      <td>139 0 0
+     <tr>
+      <td style="background:darksalmon">
+      <td style="background:#e9967a">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darksalmon">darksalmon</dfn>
+      <td>#e9967a
+      <td>233 150 122
+     <tr>
+      <td style="background:darkseagreen">
+      <td style="background:#8fbc8f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkseagreen">darkseagreen</dfn>
+      <td>#8fbc8f
+      <td>143 188 143
+     <tr>
+      <td style="background:darkslateblue">
+      <td style="background:#483d8b">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkslateblue">darkslateblue</dfn>
+      <td>#483d8b
+      <td>72 61 139
+     <tr>
+      <td style="background:darkslategray">
+      <td style="background:#2f4f4f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkslategray">darkslategray</dfn>
+      <td>#2f4f4f
+      <td>47 79 79
+     <tr>
+      <td style="background:darkslategrey">
+      <td style="background:#2f4f4f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkslategrey">darkslategrey</dfn>
+      <td>#2f4f4f
+      <td>47 79 79
+     <tr>
+      <td style="background:darkturquoise">
+      <td style="background:#00ced1">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkturquoise">darkturquoise</dfn>
+      <td>#00ced1
+      <td>0 206 209
+     <tr>
+      <td style="background:darkviolet">
+      <td style="background:#9400d3">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-darkviolet">darkviolet</dfn>
+      <td>#9400d3
+      <td>148 0 211
+     <tr>
+      <td style="background:deeppink">
+      <td style="background:#ff1493">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-deeppink">deeppink</dfn>
+      <td>#ff1493
+      <td>255 20 147
+     <tr>
+      <td style="background:deepskyblue">
+      <td style="background:#00bfff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-deepskyblue">deepskyblue</dfn>
+      <td>#00bfff
+      <td>0 191 255
+     <tr>
+      <td style="background:dimgray">
+      <td style="background:#696969">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-dimgray">dimgray</dfn>
+      <td>#696969
+      <td>105 105 105
+     <tr>
+      <td style="background:dimgrey">
+      <td style="background:#696969">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-dimgrey">dimgrey</dfn>
+      <td>#696969
+      <td>105 105 105
+     <tr>
+      <td style="background:dodgerblue">
+      <td style="background:#1e90ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-dodgerblue">dodgerblue</dfn>
+      <td>#1e90ff
+      <td>30 144 255
+     <tr>
+      <td style="background:firebrick">
+      <td style="background:#b22222">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-firebrick">firebrick</dfn>
+      <td>#b22222
+      <td>178 34 34
+     <tr>
+      <td style="background:floralwhite">
+      <td style="background:#fffaf0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-floralwhite">floralwhite</dfn>
+      <td>#fffaf0
+      <td>255 250 240
+     <tr>
+      <td style="background:forestgreen">
+      <td style="background:#228b22">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-forestgreen">forestgreen</dfn>
+      <td>#228b22
+      <td>34 139 34
+     <tr>
+      <td style="background:fuchsia">
+      <td style="background:#ff00ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-fuchsia">fuchsia</dfn>
+      <td>#ff00ff
+      <td>255 0 255
+     <tr>
+      <td style="background:gainsboro">
+      <td style="background:#dcdcdc">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-gainsboro">gainsboro</dfn>
+      <td>#dcdcdc
+      <td>220 220 220
+     <tr>
+      <td style="background:ghostwhite">
+      <td style="background:#f8f8ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-ghostwhite">ghostwhite</dfn>
+      <td>#f8f8ff
+      <td>248 248 255
+     <tr>
+      <td style="background:gold">
+      <td style="background:#ffd700">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-gold">gold</dfn>
+      <td>#ffd700
+      <td>255 215 0
+     <tr>
+      <td style="background:goldenrod">
+      <td style="background:#daa520">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-goldenrod">goldenrod</dfn>
+      <td>#daa520
+      <td>218 165 32
+     <tr>
+      <td style="background:gray">
+      <td style="background:#808080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-gray">gray</dfn>
+      <td>#808080
+      <td>128 128 128
+     <tr>
+      <td style="background:green">
+      <td style="background:#008000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-green">green</dfn>
+      <td>#008000
+      <td>0 128 0
+     <tr>
+      <td style="background:greenyellow">
+      <td style="background:#adff2f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-greenyellow">greenyellow</dfn>
+      <td>#adff2f
+      <td>173 255 47
+     <tr>
+      <td style="background:grey">
+      <td style="background:#808080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-grey">grey</dfn>
+      <td>#808080
+      <td>128 128 128
+     <tr>
+      <td style="background:honeydew">
+      <td style="background:#f0fff0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-honeydew">honeydew</dfn>
+      <td>#f0fff0
+      <td>240 255 240
+     <tr>
+      <td style="background:hotpink">
+      <td style="background:#ff69b4">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-hotpink">hotpink</dfn>
+      <td>#ff69b4
+      <td>255 105 180
+     <tr>
+      <td style="background:indianred">
+      <td style="background:#cd5c5c">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-indianred">indianred</dfn>
+      <td>#cd5c5c
+      <td>205 92 92
+     <tr>
+      <td style="background:indigo">
+      <td style="background:#4b0082">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-indigo">indigo</dfn>
+      <td>#4b0082
+      <td>75 0 130
+     <tr>
+      <td style="background:ivory">
+      <td style="background:#fffff0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-ivory">ivory</dfn>
+      <td>#fffff0
+      <td>255 255 240
+     <tr>
+      <td style="background:khaki">
+      <td style="background:#f0e68c">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-khaki">khaki</dfn>
+      <td>#f0e68c
+      <td>240 230 140
+     <tr>
+      <td style="background:lavender">
+      <td style="background:#e6e6fa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lavender">lavender</dfn>
+      <td>#e6e6fa
+      <td>230 230 250
+     <tr>
+      <td style="background:lavenderblush">
+      <td style="background:#fff0f5">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lavenderblush">lavenderblush</dfn>
+      <td>#fff0f5
+      <td>255 240 245
+     <tr>
+      <td style="background:lawngreen">
+      <td style="background:#7cfc00">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lawngreen">lawngreen</dfn>
+      <td>#7cfc00
+      <td>124 252 0
+     <tr>
+      <td style="background:lemonchiffon">
+      <td style="background:#fffacd">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lemonchiffon">lemonchiffon</dfn>
+      <td>#fffacd
+      <td>255 250 205
+     <tr>
+      <td style="background:lightblue">
+      <td style="background:#add8e6">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightblue">lightblue</dfn>
+      <td>#add8e6
+      <td>173 216 230
+     <tr>
+      <td style="background:lightcoral">
+      <td style="background:#f08080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightcoral">lightcoral</dfn>
+      <td>#f08080
+      <td>240 128 128
+     <tr>
+      <td style="background:lightcyan">
+      <td style="background:#e0ffff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightcyan">lightcyan</dfn>
+      <td>#e0ffff
+      <td>224 255 255
+     <tr>
+      <td style="background:lightgoldenrodyellow">
+      <td style="background:#fafad2">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightgoldenrodyellow">lightgoldenrodyellow</dfn>
+      <td>#fafad2
+      <td>250 250 210
+     <tr>
+      <td style="background:lightgray">
+      <td style="background:#d3d3d3">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightgray">lightgray</dfn>
+      <td>#d3d3d3
+      <td>211 211 211
+     <tr>
+      <td style="background:lightgreen">
+      <td style="background:#90ee90">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightgreen">lightgreen</dfn>
+      <td>#90ee90
+      <td>144 238 144
+     <tr>
+      <td style="background:lightgrey">
+      <td style="background:#d3d3d3">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightgrey">lightgrey</dfn>
+      <td>#d3d3d3
+      <td>211 211 211
+     <tr>
+      <td style="background:lightpink">
+      <td style="background:#ffb6c1">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightpink">lightpink</dfn>
+      <td>#ffb6c1
+      <td>255 182 193
+     <tr>
+      <td style="background:lightsalmon">
+      <td style="background:#ffa07a">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightsalmon">lightsalmon</dfn>
+      <td>#ffa07a
+      <td>255 160 122
+     <tr>
+      <td style="background:lightseagreen">
+      <td style="background:#20b2aa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightseagreen">lightseagreen</dfn>
+      <td>#20b2aa
+      <td>32 178 170
+     <tr>
+      <td style="background:lightskyblue">
+      <td style="background:#87cefa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightskyblue">lightskyblue</dfn>
+      <td>#87cefa
+      <td>135 206 250
+     <tr>
+      <td style="background:lightslategray">
+      <td style="background:#778899">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightslategray">lightslategray</dfn>
+      <td>#778899
+      <td>119 136 153
+     <tr>
+      <td style="background:lightslategrey">
+      <td style="background:#778899">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightslategrey">lightslategrey</dfn>
+      <td>#778899
+      <td>119 136 153
+     <tr>
+      <td style="background:lightsteelblue">
+      <td style="background:#b0c4de">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightsteelblue">lightsteelblue</dfn>
+      <td>#b0c4de
+      <td>176 196 222
+     <tr>
+      <td style="background:lightyellow">
+      <td style="background:#ffffe0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lightyellow">lightyellow</dfn>
+      <td>#ffffe0
+      <td>255 255 224
+     <tr>
+      <td style="background:lime">
+      <td style="background:#00ff00">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-lime">lime</dfn>
+      <td>#00ff00
+      <td>0 255 0
+     <tr>
+      <td style="background:limegreen">
+      <td style="background:#32cd32">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-limegreen">limegreen</dfn>
+      <td>#32cd32
+      <td>50 205 50
+     <tr>
+      <td style="background:linen">
+      <td style="background:#faf0e6">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-linen">linen</dfn>
+      <td>#faf0e6
+      <td>250 240 230
+     <tr>
+      <td style="background:magenta">
+      <td style="background:#ff00ff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-magenta">magenta</dfn>
+      <td>#ff00ff
+      <td>255 0 255
+     <tr>
+      <td style="background:maroon">
+      <td style="background:#800000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-maroon">maroon</dfn>
+      <td>#800000
+      <td>128 0 0
+     <tr>
+      <td style="background:mediumaquamarine">
+      <td style="background:#66cdaa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumaquamarine">mediumaquamarine</dfn>
+      <td>#66cdaa
+      <td>102 205 170
+     <tr>
+      <td style="background:mediumblue">
+      <td style="background:#0000cd">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumblue">mediumblue</dfn>
+      <td>#0000cd
+      <td>0 0 205
+     <tr>
+      <td style="background:mediumorchid">
+      <td style="background:#ba55d3">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumorchid">mediumorchid</dfn>
+      <td>#ba55d3
+      <td>186 85 211
+     <tr>
+      <td style="background:mediumpurple">
+      <td style="background:#9370db">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumpurple">mediumpurple</dfn>
+      <td>#9370db
+      <td>147 112 219
+     <tr>
+      <td style="background:mediumseagreen">
+      <td style="background:#3cb371">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumseagreen">mediumseagreen</dfn>
+      <td>#3cb371
+      <td>60 179 113
+     <tr>
+      <td style="background:mediumslateblue">
+      <td style="background:#7b68ee">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumslateblue">mediumslateblue</dfn>
+      <td>#7b68ee
+      <td>123 104 238
+     <tr>
+      <td style="background:mediumspringgreen">
+      <td style="background:#00fa9a">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumspringgreen">mediumspringgreen</dfn>
+      <td>#00fa9a
+      <td>0 250 154
+     <tr>
+      <td style="background:mediumturquoise">
+      <td style="background:#48d1cc">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumturquoise">mediumturquoise</dfn>
+      <td>#48d1cc
+      <td>72 209 204
+     <tr>
+      <td style="background:mediumvioletred">
+      <td style="background:#c71585">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mediumvioletred">mediumvioletred</dfn>
+      <td>#c71585
+      <td>199 21 133
+     <tr>
+      <td style="background:midnightblue">
+      <td style="background:#191970">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-midnightblue">midnightblue</dfn>
+      <td>#191970
+      <td>25 25 112
+     <tr>
+      <td style="background:mintcream">
+      <td style="background:#f5fffa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mintcream">mintcream</dfn>
+      <td>#f5fffa
+      <td>245 255 250
+     <tr>
+      <td style="background:mistyrose">
+      <td style="background:#ffe4e1">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-mistyrose">mistyrose</dfn>
+      <td>#ffe4e1
+      <td>255 228 225
+     <tr>
+      <td style="background:moccasin">
+      <td style="background:#ffe4b5">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-moccasin">moccasin</dfn>
+      <td>#ffe4b5
+      <td>255 228 181
+     <tr>
+      <td style="background:navajowhite">
+      <td style="background:#ffdead">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-navajowhite">navajowhite</dfn>
+      <td>#ffdead
+      <td>255 222 173
+     <tr>
+      <td style="background:navy">
+      <td style="background:#000080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-navy">navy</dfn>
+      <td>#000080
+      <td>0 0 128
+     <tr>
+      <td style="background:oldlace">
+      <td style="background:#fdf5e6">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-oldlace">oldlace</dfn>
+      <td>#fdf5e6
+      <td>253 245 230
+     <tr>
+      <td style="background:olive">
+      <td style="background:#808000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-olive">olive</dfn>
+      <td>#808000
+      <td>128 128 0
+     <tr>
+      <td style="background:olivedrab">
+      <td style="background:#6b8e23">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-olivedrab">olivedrab</dfn>
+      <td>#6b8e23
+      <td>107 142 35
+     <tr>
+      <td style="background:orange">
+      <td style="background:#ffa500">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-orange">orange</dfn>
+      <td>#ffa500
+      <td>255 165 0
+     <tr>
+      <td style="background:orangered">
+      <td style="background:#ff4500">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-orangered">orangered</dfn>
+      <td>#ff4500
+      <td>255 69 0
+     <tr>
+      <td style="background:orchid">
+      <td style="background:#da70d6">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-orchid">orchid</dfn>
+      <td>#da70d6
+      <td>218 112 214
+     <tr>
+      <td style="background:palegoldenrod">
+      <td style="background:#eee8aa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-palegoldenrod">palegoldenrod</dfn>
+      <td>#eee8aa
+      <td>238 232 170
+     <tr>
+      <td style="background:palegreen">
+      <td style="background:#98fb98">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-palegreen">palegreen</dfn>
+      <td>#98fb98
+      <td>152 251 152
+     <tr>
+      <td style="background:paleturquoise">
+      <td style="background:#afeeee">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-paleturquoise">paleturquoise</dfn>
+      <td>#afeeee
+      <td>175 238 238
+     <tr>
+      <td style="background:palevioletred">
+      <td style="background:#db7093">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-palevioletred">palevioletred</dfn>
+      <td>#db7093
+      <td>219 112 147
+     <tr>
+      <td style="background:papayawhip">
+      <td style="background:#ffefd5">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-papayawhip">papayawhip</dfn>
+      <td>#ffefd5
+      <td>255 239 213
+     <tr>
+      <td style="background:peachpuff">
+      <td style="background:#ffdab9">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-peachpuff">peachpuff</dfn>
+      <td>#ffdab9
+      <td>255 218 185
+     <tr>
+      <td style="background:peru">
+      <td style="background:#cd853f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-peru">peru</dfn>
+      <td>#cd853f
+      <td>205 133 63
+     <tr>
+      <td style="background:pink">
+      <td style="background:#ffc0cb">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-pink">pink</dfn>
+      <td>#ffc0cb
+      <td>255 192 203
+     <tr>
+      <td style="background:plum">
+      <td style="background:#dda0dd">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-plum">plum</dfn>
+      <td>#dda0dd
+      <td>221 160 221
+     <tr>
+      <td style="background:powderblue">
+      <td style="background:#b0e0e6">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-powderblue">powderblue</dfn>
+      <td>#b0e0e6
+      <td>176 224 230
+     <tr>
+      <td style="background:purple">
+      <td style="background:#800080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-purple">purple</dfn>
+      <td>#800080
+      <td>128 0 128
+     <tr>
+      <td style="background:rebeccapurple">
+      <td style="background:#663399">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-rebeccapurple">rebeccapurple</dfn>
+      <td>#663399
+      <td>102 51 153
+     <tr>
+      <td style="background:red">
+      <td style="background:#ff0000">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-red">red</dfn>
+      <td>#ff0000
+      <td>255 0 0
+     <tr>
+      <td style="background:rosybrown">
+      <td style="background:#bc8f8f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-rosybrown">rosybrown</dfn>
+      <td>#bc8f8f
+      <td>188 143 143
+     <tr>
+      <td style="background:royalblue">
+      <td style="background:#4169e1">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-royalblue">royalblue</dfn>
+      <td>#4169e1
+      <td>65 105 225
+     <tr>
+      <td style="background:saddlebrown">
+      <td style="background:#8b4513">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-saddlebrown">saddlebrown</dfn>
+      <td>#8b4513
+      <td>139 69 19
+     <tr>
+      <td style="background:salmon">
+      <td style="background:#fa8072">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-salmon">salmon</dfn>
+      <td>#fa8072
+      <td>250 128 114
+     <tr>
+      <td style="background:sandybrown">
+      <td style="background:#f4a460">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-sandybrown">sandybrown</dfn>
+      <td>#f4a460
+      <td>244 164 96
+     <tr>
+      <td style="background:seagreen">
+      <td style="background:#2e8b57">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-seagreen">seagreen</dfn>
+      <td>#2e8b57
+      <td>46 139 87
+     <tr>
+      <td style="background:seashell">
+      <td style="background:#fff5ee">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-seashell">seashell</dfn>
+      <td>#fff5ee
+      <td>255 245 238
+     <tr>
+      <td style="background:sienna">
+      <td style="background:#a0522d">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-sienna">sienna</dfn>
+      <td>#a0522d
+      <td>160 82 45
+     <tr>
+      <td style="background:silver">
+      <td style="background:#c0c0c0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-silver">silver</dfn>
+      <td>#c0c0c0
+      <td>192 192 192
+     <tr>
+      <td style="background:skyblue">
+      <td style="background:#87ceeb">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-skyblue">skyblue</dfn>
+      <td>#87ceeb
+      <td>135 206 235
+     <tr>
+      <td style="background:slateblue">
+      <td style="background:#6a5acd">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-slateblue">slateblue</dfn>
+      <td>#6a5acd
+      <td>106 90 205
+     <tr>
+      <td style="background:slategray">
+      <td style="background:#708090">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-slategray">slategray</dfn>
+      <td>#708090
+      <td>112 128 144
+     <tr>
+      <td style="background:slategrey">
+      <td style="background:#708090">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-slategrey">slategrey</dfn>
+      <td>#708090
+      <td>112 128 144
+     <tr>
+      <td style="background:snow">
+      <td style="background:#fffafa">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-snow">snow</dfn>
+      <td>#fffafa
+      <td>255 250 250
+     <tr>
+      <td style="background:springgreen">
+      <td style="background:#00ff7f">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-springgreen">springgreen</dfn>
+      <td>#00ff7f
+      <td>0 255 127
+     <tr>
+      <td style="background:steelblue">
+      <td style="background:#4682b4">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-steelblue">steelblue</dfn>
+      <td>#4682b4
+      <td>70 130 180
+     <tr>
+      <td style="background:tan">
+      <td style="background:#d2b48c">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-tan">tan</dfn>
+      <td>#d2b48c
+      <td>210 180 140
+     <tr>
+      <td style="background:teal">
+      <td style="background:#008080">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-teal">teal</dfn>
+      <td>#008080
+      <td>0 128 128
+     <tr>
+      <td style="background:thistle">
+      <td style="background:#d8bfd8">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-thistle">thistle</dfn>
+      <td>#d8bfd8
+      <td>216 191 216
+     <tr>
+      <td style="background:tomato">
+      <td style="background:#ff6347">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-tomato">tomato</dfn>
+      <td>#ff6347
+      <td>255 99 71
+     <tr>
+      <td style="background:turquoise">
+      <td style="background:#40e0d0">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-turquoise">turquoise</dfn>
+      <td>#40e0d0
+      <td>64 224 208
+     <tr>
+      <td style="background:violet">
+      <td style="background:#ee82ee">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-violet">violet</dfn>
+      <td>#ee82ee
+      <td>238 130 238
+     <tr>
+      <td style="background:wheat">
+      <td style="background:#f5deb3">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-wheat">wheat</dfn>
+      <td>#f5deb3
+      <td>245 222 179
+     <tr>
+      <td style="background:white">
+      <td style="background:#ffffff">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-white">white</dfn>
+      <td>#ffffff
+      <td>255 255 255
+     <tr>
+      <td style="background:whitesmoke">
+      <td style="background:#f5f5f5">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-whitesmoke">whitesmoke</dfn>
+      <td>#f5f5f5
+      <td>245 245 245
+     <tr>
+      <td style="background:yellow">
+      <td style="background:#ffff00">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-yellow">yellow</dfn>
+      <td>#ffff00
+      <td>255 255 0
+     <tr>
+      <td style="background:yellowgreen">
+      <td style="background:#9acd32">
+      <th scope="row"><dfn class="dfn-paneled css" data-dfn-for="<color>, <named-color>" data-dfn-type="value" data-export id="valdef-color-yellowgreen">yellowgreen</dfn>
+      <td>#9acd32
+      <td>154 205 50
+   </table> -->
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="simetri-graphics/simetri"
+        data-repo-id="R_kgDOOZEfEg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOOZEfEs4CpLF3"
+        data-mapping="title"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="1"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Fahri Başeğmez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.path", "content.code.annotate", "content.code.copy", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
