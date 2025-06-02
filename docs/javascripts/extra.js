@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "../assets/even_odd_lace.svg",
         "../assets/376dap_pg14.svg",
         "../assets/376dap_pg55.svg",
-        "../assets/376dap_pg61.svg"
+        "../assets/376dap_pg61.svg",
+        "../assets/selimiye.svg",
 
     ]; // Replace with your image URLs
     const randomImage = images[Math.floor(Math.random() * images.length)];
@@ -62,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "../../assets/even_odd_lace.svg",
         "../../assets/376dap_pg14.svg",
         "../../assets/376dap_pg55.svg",
-        "../../assets/376dap_pg61.svg"
+        "../../assets/376dap_pg61.svg",
+        "../../assets/selimiye.svg",
 
     ]; // /docsReplace with your image URLs
     const randomImage = images[Math.floor(Math.random() * images.length)];
