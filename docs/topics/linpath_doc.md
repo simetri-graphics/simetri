@@ -417,8 +417,8 @@ canvas.help_lines(pos=(-50, -50), width=300, height=200, spacing=25)
 
 path = sg.LinPath()
 path.forward(50)
-path.turn(sg.pi/4, 50)
-path.turn(sg.pi/2, 50)
+path.turn(-sg.pi/4, 100)
+path.turn(-sg.pi/2, 100)
 canvas.draw(path, line_width=2)
 canvas.display()
 ```
