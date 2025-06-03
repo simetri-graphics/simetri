@@ -414,7 +414,25 @@ canvas.display()
 
 ![png](linpath_doc_files/linpath_doc_21_0.png)
 
+### `path.turn(angle, distance)`
 
+`path.turn` turns the path by the given angle and moves it forward by the given distance. The angle is in radians and counterclockwise positive from the positive x-axis.
+```python
+import simetri.graphics as sg
+
+canvas = sg.Canvas()
+
+canvas.help_lines(pos=(-50, -50), width=300, height=200, spacing=25)
+
+path = sg.LinPath()
+path.forward(50)
+path.turn(sg.pi/4, 50)
+path.turn(sg.pi/2, 50)
+canvas.draw(path, line_width=2)
+canvas.display()
+```
+
+![png](linpath_doc_files/linpath_doc_22_0.png)
 
 ## Relative motions
 
