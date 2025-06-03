@@ -437,6 +437,7 @@ New position is computed by adding dx to the path's x coordinate and dy to the p
 
 path.r_line(dx, dy)
 :   `path.r_line` draws a line between the path's position and (dx, dy) offset from this position.
+
 path.r_move(dx, dy)
 :   `path.r_move` moves the path by the given offset values without drawing a line.
 
