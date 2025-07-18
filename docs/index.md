@@ -2,6 +2,7 @@
 
 # SİMETRİ Home
 
+
 ![logo](assets/sg_logo_transp.svg)
 
 

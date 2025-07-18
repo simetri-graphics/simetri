@@ -32,9 +32,10 @@ nav:
   #     - Tree maker: topics/tree-maker.md
   - Gallery: gallery.md
   - Tutorials: tutorials.md
+  - Blog: blog.md
   - Tags: tags.md
-  - Posts:
-      - blog/index.md
+  # - Posts:
+      # - blog.md
       # - Tags: tags.md
       # - Beginner: tags/#beginner
       # - Usage: usage.md
