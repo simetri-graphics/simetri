@@ -33,8 +33,8 @@ nav:
   - Gallery: gallery.md
   - Tutorials: tutorials.md
   - Tags: tags.md
-  # - Posts:
-      # - blog/index.md
+  - Posts:
+      - blog/index.md
       # - Tags: tags.md
       # - Beginner: tags/#beginner
       # - Usage: usage.md
