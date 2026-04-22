@@ -59,7 +59,6 @@ theme:
     - navigation.path
     - content.code.annotate
     - content.code.copy
-    - content.code.expand
     # - navigation.instant
     - navigation.tracking
     # - navigation.footer
@@ -98,11 +97,9 @@ plugins:
       blog_dir: .
       post_url_format: "{slug}"
       archive_date_format: yyyy
-      categories: true
       # archive_date_format: MM yyyy
   - tags:
       tags_file: tags.md
-  - mkquartodocs
   - glightbox:
       touchNavigation: true
       loop: false
@@ -234,4 +231,4 @@ extra_javascript:
 
 
 
-copyright: Copyright &copy; 2026 Fahri Başeğmez
+copyright: Copyright &copy; 2025 Fahri Başeğmez
