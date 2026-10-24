@@ -116,6 +116,14 @@ plugins:
       background: white
       shadow: true
       manual: false
+  # - mkdocstrings:
+  #     handlers:
+  #     python:
+  #       options:
+  #        docstring_style: google
+  #        show_source: true
+  #        members_order: source
+
 
   # - blog:
   #     blog_dir: .
